@@ -23,6 +23,7 @@ def transform_file(csvfile):
                 'copropriete': '',
                 'adresse': '',
                 'ville': '',
+                'RP':'Non',
                 'tel1':'',
                 'tel2':'',
                 'tel3':'', 

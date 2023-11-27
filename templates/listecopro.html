@@ -1,14 +1,8 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="fr">
+{% block title %}fichiers CSV {% endblock %}
 
-<head>
-    <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1">
-    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
-    <title>fichiers CSV</title>
-</head>
-<body>
+{% block main %}
     <h1> Transformer la liste copropriétaires d'ICS vers un fichier détaillé </h1>
     <form action="/fichier" method="POST" enctype="multipart/form-data">
         <label for="file_csv">Déposer votre dossier au format .csv :</label>
@@ -20,5 +14,4 @@
         <img class="avant" src="{{url_for('static', filename='Avant.png')}}">
         <img class="apres" src="{{url_for('static', filename='Apres.png')}}">
     </div>
-</body>
-</html>
+{% endblock %}
