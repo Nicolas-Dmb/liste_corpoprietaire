@@ -5,9 +5,9 @@
 {% block main %}
     <h1> Transformer la liste copropriétaires d'ICS vers un fichier détaillé </h1>
     <form action="/fichier/RP" method="POST" enctype="multipart/form-data">
-        {% for name in nombre_coproprietes %}
-        <label for="{{liste_coproprietes[name]}}"> Indiquez la ou les adresses de cet immeuble : {{liste_coproprietes[name]}} </label>
-            <textarea name="adresses_{{liste_coproprietes[name]}}" id="{{liste_coproprietes[name]}}" placeholder="adresse avec le code postale"></textarea>
+        {% for row in range(nombre_coproprietes) %}
+        <label for="{{liste_coproprietes[row]}}"> Indiquez la ou les adresses de cet immeuble : {{liste_coproprietes[row]}} </label>
+            <textarea name="adresses_{{liste_coproprietes[row]}}" id="{{liste_coproprietes[row]}}" placeholder="adresse avec le code postale"></textarea>
         {% endfor %}
         <input type="submit" value="transformer mon fichier">
 
