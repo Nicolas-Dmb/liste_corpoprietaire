@@ -34,7 +34,7 @@ def transform_file(csvfile):
                 'informations2':'',
                 'informations3':'',
                 'lot_logement':'',
-                'n_lot/n_plan/localisation(bat,esc,etg,pt)':'',
+                'n°_lot/n°_plan/loca(bât,esc,etg,pt)':'',
                 'lot_professionnel':'',
                 'lot_autre':'',
             }
@@ -402,5 +402,5 @@ def transform_file(csvfile):
         #fichier.insert(col, columns[col],'', allow_duplicates=False)
     df = pd.DataFrame(data)
     #print (fichier)
-    df.to_csv('liste_coproprietaires.csv', sep=';', index=False)
-    return 'liste_coproprietaires.csv'
+    df.to_csv('tests/liste_coproprietaires.csv', sep=';', index=False)
+    return 'tests/liste_coproprietaires.csv'

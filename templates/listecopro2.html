@@ -1,14 +1,26 @@
 {% extends "layout.html" %}
 
-{% block title %}fichiers CSV 2 {% endblock %}
-
+{% block title %}fichiers CSV 2{% endblock %}
+{% block link %}
+<script src="{{url_for('static', filename='listecopro2.js')}}" defer></script>
+<link rel="stylesheet" href="{{url_for('static', filename='listecopro2_3.css')}}">
+{% endblock %}
 {% block main %}
     <h1> Transformer la liste copropriétaires d'ICS vers un fichier détaillé </h1>
     <form action="/fichier/RP" method="POST" enctype="multipart/form-data">
-        {% for row in range(nombre_coproprietes) %}
-        <label for="{{liste_coproprietes[row]}}"> Indiquez la ou les adresses de cet immeuble : {{liste_coproprietes[row]}} </label>
-            <textarea name="adresses_{{liste_coproprietes[row]}}" id="{{liste_coproprietes[row]}}" placeholder="adresse avec le code postale"></textarea>
-        {% endfor %}
+        <p>Souhaitez-vous intégrer une colonne <bold>Résidence principale</bold> à votre liste ?</p>
+        <div class="OuiNonRP">
+            <label for="Oui_RP">Oui</label>
+                <input type="radio" name="OuiNon_RP" id="Oui_RP" value="oui">
+            <label for="Non_RP">Non</label>
+                <input type="radio" name="OuiNon_RP" id="Non_RP" value="non">
+        </div>
+        <div id="adresses_copro" class="adresses_copro">
+            {% for row in range(nombre_coproprietes) %}
+            <label class="label_copro" for="{{liste_coproprietes[row]}}"> Indiquez la ou les adresses de cet immeuble : {{liste_coproprietes[row]}} </label>
+                <textarea class="textarea_copro" name="adresses_{{liste_coproprietes[row]}}" id="{{liste_coproprietes[row]}}" placeholder="adresse avec le code postale"></textarea>
+            {% endfor %}
+        </div>
         <input type="submit" value="transformer mon fichier">
 
     </form>

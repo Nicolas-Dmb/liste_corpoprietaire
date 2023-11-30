@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static', filename='listecopro.css')}}">
+{% endblock %}
 {% block title %}fichiers CSV {% endblock %}
 
 {% block main %}
@@ -11,7 +14,7 @@
     </form>
     <div class="img">
         <p>Avant</p><p>Après</p>
-        <img class="avant" src="{{url_for('static', filename='Avant.png')}}">
-        <img class="apres" src="{{url_for('static', filename='Apres.png')}}">
+        <img alt="exemple avant" class="avant" src="{{url_for('static', filename='Avant.png')}}">
+        <img alt="exemple après" class="apres" src="{{url_for('static', filename='Apres.png')}}">
     </div>
 {% endblock %}

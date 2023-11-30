@@ -17,25 +17,8 @@ h1 {
     text-align: center;
 }
 
-.img{
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 90%;
-    margin-top: 50px;
-}
-
-.avant, .apres{
-    width:95%;
-    margin:10px;
-}
-.img p{
-    margin-left:10%;
-    margin-bottom: 2%;
-    font-weight: bold;
-}
-
 label{
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 input[type="submit"]{
@@ -50,6 +33,10 @@ input[type="file"]{
     display:flex;
     flex-direction: column;
 }
-
+p{
+    font-size: 1.5em;
+    margin: 20px;
+    text-align: center;
+}
 
 

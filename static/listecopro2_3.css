@@ -1,0 +1,30 @@
+.adresses_copro, .file_lot{
+    transition: opacity 1.5s ease-out;
+    opacity: 0;
+    height:0;
+    overflow:hidden;
+    width:0;
+}
+
+.adresses_copro.active, .file_lot.active{
+    overflow: visible;
+    height:auto;
+    opacity:1;
+    width:auto;
+    margin:50px; 
+}
+
+.label_copro{
+    display:flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+}
+
+.textarea_copro{
+    display:flex; 
+    flex-direction: row;
+    width:200px;
+    margin:auto;
+}

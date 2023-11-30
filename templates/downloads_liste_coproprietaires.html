@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static', filename='dowloads_liste_coproprietaires.css')}}">
+{% endblock %}
+{% block title %}Télécharger{% endblock %}
+
+{% block main %}
+    <h1> Votre liste est prête </h1>
+    <div class="container">
+        <p> Conservez la colonne <strong>code_coproprietaire</strong> dans votre tableau pour assurer une mise à jour correcte du dossier.</p>
+        <img alt="vue du fichier "class="vue_du_fichier" src="{{url_for('static', filename='Apres.png')}}">
+        <a href="/downloads"><button class="downloads">Télécharger</button></a>
+    </div>
+{% endblock %}
