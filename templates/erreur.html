@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static', filename='erreur.css')}}">
+{% endblock %}
+{% block title %} Erreur {% endblock %}
+
+
+{% block main %}
+    <h1>Une erreur s'est produite</h1>
+    <img alt="erreur" class="erreur" src="{{url_for('static', filename='erreur.jpg')}}">
+    <p>{{attention}}</p>
+    <p>{{erreur}}</p>
+{% endblock %}

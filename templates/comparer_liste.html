@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="">
+{% endblock %}
+{% block title %} MAJ_liste {% endblock %}
+
+{% block main %}
+    <h1> mettre à jour ma liste de copropriétaires : </h1>
+    <form action="/MAJliste" method="POST" enctype="multipart/form-data">
+        <label for="votre_liste">Déposer votre liste au format .csv :</label>
+            <input type="file" name="votre_liste" id="votre_liste" accept=".csv">
+        <label for="liste_ics">Déposer la liste ICS au format .csv :</label>
+            <input type="file" name="liste_ics" id="liste_ics" accept=".csv">
+        <input type="submit" value="transformer mon fichier">
+    </form>
+{% endblock %}

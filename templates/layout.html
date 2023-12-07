@@ -10,6 +10,9 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <header>
+        <a class="homepage" href="{{url_for('accueil')}}"><img class="logo_accueil" src="{{url_for('static', filename='homepage.svg')}}"></a>
+    </header>
     {% block main %}
     {% endblock %}
 </body>

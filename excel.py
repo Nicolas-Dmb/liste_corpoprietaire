@@ -3,7 +3,7 @@ import pandas as pd
 def names_coproprietes(liste_csv):
     names_coproprietes=[]
     liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1')
-    liste.columns = ['code_coproprietaire','Nom','civilite','code_copropriete', 'copropriete','adresse','ville','RP','tel1','tel2','tel3', 'mail1','mail2','mail3','informations1','informations2','informations3', 'lot_logement','n°_lot/n°_plan/localisation(bât,esc,etg,pt)','lot_professionnel','lot_autre']
+    liste.columns = ['code_coproprietaire','Nom','civilite','code_copropriete', 'copropriete','adresse','ville','RP','tel1','tel2','tel3', 'mail1','mail2','mail3','informations1','informations2','informations3', 'lot_logement','n_lot/n_plan/localisation(bat,esc,etg,pt)','lot_professionnel','lot_autre']
     for row in range(len(liste)):
         if row == 0:
             names_coproprietes.append(liste['copropriete'][row])
@@ -70,7 +70,7 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
 
     # on défini liste_csv 
     liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1')
-    liste.columns = ['code_coproprietaire','Nom','civilite','code_copropriete', 'copropriete','adresse','ville','RP','tel1','tel2','tel3', 'mail1','mail2','mail3','informations1','informations2','informations3', 'lot_logement','n°_lot/n°_plan/localisation(bât,esc,etg,pt)','lot_professionnel','lot_autre']
+    liste.columns = ['code_coproprietaire','Nom','civilite','code_copropriete', 'copropriete','adresse','ville','RP','tel1','tel2','tel3', 'mail1','mail2','mail3','informations1','informations2','informations3', 'lot_logement','n_lot/n_plan/localisation(bat,esc,etg,pt)','lot_professionnel','lot_autre']
                 
     # on liste les copropriétaires dans liste_csv on vérifie ceux de l'immeuble puis ceux de la ville de l'immeuble puis l'adresse 
     for row in range(len(liste)):

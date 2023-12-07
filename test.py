@@ -108,9 +108,9 @@ def transform_file(csvfile):
         entre_nom_copro = 0
         while letter < len(column): 
                 char = column[letter]
-                if 47<ord(char)<58 : 
+                if 47<ord(char)<58 and entre_nom_copro == 0 : 
                     data[row]['code_copropriete'] += char
-                elif 64 <ord(char)< 91 or 96 <ord(char)< 123:
+                elif 64 <ord(char)< 91 or 96 <ord(char)< 123 or 47<ord(char)<58 and entre_nom_copro == 1:
                     data[row]['copropriete'] += char
                     entre_nom_copro = 1
                 elif char == ' ' and entre_nom_copro == 1: 

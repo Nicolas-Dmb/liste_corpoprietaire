@@ -1,6 +1,16 @@
 # liste-corpopri-taire
-Récupérer les fichiers excel d'ICS et le traiter 
+Récupérer les
 
+=> compare fonctionne mais si l'user à supprimer des colonnes le logiciel risque de beuger il vaut mieux créer un nouveau fichier compare voir audio iphone. 
+=> indiquer que si on met des copropriété dans notre fichier user qu'il n'y a pas dans liste ics on en tiendra pas compte, à l'inverse il rajoutera les copropriété présente dans liste ics et non présente dans liste user. 
+=> problème sur les lignes tel et informations voici ce que j'ai sur informations : Tel. / 02 23 52 16 46 Tel. 
+Tel fixe / 06 77 47 69 35 Tel portable 
+=> protéger la fiche nottament colone numéro de copro et numéro copropriétaire pour la MAJ. 
+=> ajouter du vert quand nouveau proprio et ajouter du vert sur les proprio qui ont changés d'info. 
+=> regler ce problème qui fait que si un numéro se trouve dans le nom de la copro alors il va le mettre dans le numéro de la copro exemple : 401446	MOKA 
+=> problème avec les RP il ne faut pas tenir compte de la liste ICS ni pour les lots 
+=> dès que l'app se coupe elle supprime les fichiers CSV présents 
+=> au lieu de supprimer un par un tous les csv juste faire une boucle qui supprime tous les csv, dans /MAJliste supprimer tous sauf liste_copropriétaires.csv 
 => Tester avec plusieurs copro si RP OUI/NON marche bien et lot OUI/NON marche bien,
 => Gestion des erreurs (s'il met un dossier qui ne correspond pas avec des colonnes différentes ou si aucun dossier n'est déposé revenir sur le formulaire et indiquer en rouge aucun dossier déposer au lieu de retourner sur une page vierge. etc...)
 => faire une page d'acceuil sur laquelle on est retourné une fois le fichier généré. 

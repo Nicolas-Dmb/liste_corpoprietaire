@@ -8,15 +8,17 @@ import time
 from test import transform_file
 from excel import names_coproprietes, residence_principale
 from lots import tri_liste_lot, add_lot
+from compare import compare_list
 
 app=Flask(__name__)
 
-
 @app.route("/")
-def homepage():
+def accueil():
     if os.path.exists("liste_coproprietaires.csv"):
         os.remove("liste_coproprietaires.csv")
-    return render_template("listecopro.html")
+    if os.path.exists("liste_lots.csv"):
+        os.remove("liste_lots.csv")
+    return render_template("accueil.html")
 
 @app.route("/fichier", methods=["GET", "POST"])
 def fichier(): 
@@ -29,13 +31,16 @@ def fichier():
 
                 fichier_upload.save(nom_fichier)
 
-                if nom_fichier.lower().endswith(".csv"):
+                if fichier_upload.filename.lower().endswith(".csv"):
                     
                     #récupere la liste donner par l'user 
                     fichier = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
                     #transforme la liste de l'user en une liste détaillé  
-                    new_list = transform_file(fichier)
-
+                    try: 
+                        new_list = transform_file(fichier)
+                    except Exception as e: 
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+            
 
                     # on liste la ou les copropriétés présente dans notre nouvelle liste et le nombre de copro qu'on renvoie au second form 
                     liste_coproprietes = names_coproprietes(new_list)
@@ -46,11 +51,11 @@ def fichier():
                 else:
                     # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                     os.remove(nom_fichier)
-                    return "Le fichier téléchargé n'est pas un fichier CSV."
+                    return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='')
             else:
-                return "Aucun fichier n'a été sélectionné."
+                return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné.", erreur='')
         else: 
-            return "Aucun fichier n'a été téléchargé dans la requête."
+            return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='')
     else: 
         return render_template("listecopro.html")
 
@@ -61,7 +66,11 @@ def form():
         if request.form.get("OuiNon_RP")== "oui":
             # On refait la liste des différentes copro pour connaitre le nombre de retour
             new_list = 'liste_coproprietaires.csv'
-            liste_coproprietes = names_coproprietes(new_list)
+            try: 
+                liste_coproprietes = names_coproprietes(new_list)
+            except Exception as e: 
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des immeubles, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+            
             nombre_coproprietes = len(liste_coproprietes)
 
             # on liste copro par copro les adresses recu 
@@ -70,7 +79,11 @@ def form():
                     nom_immeuble = liste_coproprietes[copropriete]
                     adresse_residence = request.form.get(f"adresses_{liste_coproprietes[copropriete]}") 
                     
-                    new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
+                    try :
+                        new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
+                    except Exception as e: 
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
+                    
                 else : 
                     continue
 
@@ -96,16 +109,23 @@ def form2():
 
                     fichier_upload.save(nom_fichier)
 
-                    if nom_fichier.lower().endswith(".csv"):
+                    if fichier_upload.filename.lower().endswith(".csv"):
                         
                         #récupere la liste donner par l'user 
                         liste_lot = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
-                        #récupère les noms/prénoms en enlevant le () 
-                        fichier_lot = tri_liste_lot(liste_lot)
+                        
+                        #récupère les noms/prénoms en enlevant le ()
+                        try :  
+                            fichier_lot = tri_liste_lot(liste_lot)
+                        except Exception as e: 
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des lots, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
 
                         #pour chaque nom de copropritaire ajouter une colonne avec lot de l'appartement
                         new_list='liste_coproprietaires.csv'
-                        new_list = add_lot(fichier_lot, new_list)
+                        try :
+                            new_list = add_lot(fichier_lot, new_list)
+                        except Exception as e: 
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
 
                         return redirect("/liste_coproprietaires_downloads")
                         
@@ -113,11 +133,11 @@ def form2():
                     else:
                         # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                         os.remove(nom_fichier)
-                        return "Le fichier téléchargé n'est pas un fichier CSV."
+                        return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='')
                 else:
-                    return "Aucun fichier n'a été sélectionné."
+                    return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné", erreur='')
             else: 
-                return "Aucun fichier n'a été téléchargé dans la requête."
+                return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='')
         else:
             liste_csv = pd.read_csv('liste_coproprietaires.csv', delimiter=';', encoding='latin-1')
             del liste_csv['lot_logement']
@@ -141,6 +161,59 @@ def telechargement():
             as_attachment=True,
             download_name='liste_coproprietaires.csv',
             mimetype='text/csv')
+
+@app.route('/MAJliste', methods=["GET", "POST"])
+def recuperer_newliste(): 
+    if request.method == "POST":
+        fichiers_user = ["votre_liste", "liste_ics"]
+        name_fichier = ["liste_user.csv", "liste_ics.csv"]
+        for name in range(len(fichiers_user)): 
+            if fichiers_user[name] in request.files: 
+                fichier = request.files[fichiers_user[name]]
+
+                if fichier.filename != "": 
+                    fichier.save(name_fichier[name])
+
+                    if fichier.filename.lower().endswith(".csv"):
+                        continue
+                    else:
+                        os.remove(name_fichier[name])
+                        return render_template("erreur.html", attention = f"Le fichier {fichiers_user[name]} n'est pas un fichier CSV.", erreur='')
+                else: 
+                     return render_template("erreur.html", attention = f"Aucun fichier n'a été sélectionné pour '{fichiers_user[name]}'", erreur='')
+            else: 
+                return render_template("erreur.html", attention = f"Aucun fichier n'a été téléchargé concernant {fichiers_user[name]}'", erreur='')
+        
+        # on met en page comme à la creation le fichier ICS 
+        try: 
+            fichier = pd.read_csv("liste_ics.csv", delimiter=';', encoding='latin-1')
+            liste_ics = transform_file(fichier)
+            # on colle liste_ics dans liste_ics.csv
+            fichier = pd.read_csv(liste_ics, delimiter=';', encoding='latin-1')
+            fichier.to_csv("liste_ics.csv", sep=';', index=False)
+            #puis supprimer le fichier liste_copropriétaires pour éviter la confusion 
+            if os.path.exists("liste_coproprietaires.csv"):
+                os.remove("liste_coproprietaires.csv")
+        except Exception as e: 
+            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+        
+        # on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
+        #try : 
+        liste_user = compare_list("liste_ics.csv", "liste_user.csv")
+        #except Exception as e:
+            #return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
+
+        # on supprime nos deux anciens csv
+        #if os.path.exists("liste_ics.csv"):
+         #       os.remove("liste_ics.csv")
+        #if os.path.exists("liste_user.csv"):
+         #       os.remove("liste_user.csv")
+        
+        return redirect("/liste_coproprietaires_downloads")
+    else:
+        return render_template("comparer_liste.html") 
+    
+     
 
 if __name__ == "__main__":
     app.run(debug=True)
