@@ -51,7 +51,7 @@ def add_lot(liste_lot, liste_copro):
     liste_lots = pd.read_csv(liste_lot, delimiter=';', encoding='latin-1')
     liste_copros = pd.read_csv(liste_copro, delimiter=';', encoding='latin-1')
 # on vient ici mettre les lots en fonction du type de lot dans la colonne qui correspond au mm nom dans liste copro 
-    # deux limites 
+    # trois limites 
     # - si le copropriétaire est inscrit plusieurs fois dans la liste copro il y aura les même lot d'indiqué 
     # - si le copropriétaire à plus d'un apt plus d'un lot divers et plus d'un bien local commercial il n'apparaitra qu'un seul de chaque type 
     # - on ne distingue aucun immeuble ici car la liste lot n'affiche pas l'immeuble on regarde juste les noms si un copro est copro dans deux immeubles il sera affiche les lot d'un de ses immeubles sur les deux copro 
@@ -65,12 +65,12 @@ def add_lot(liste_lot, liste_copro):
             if name_liste_lot == name_liste_copro : 
                 type_lot = str(liste_lots['type_lot'][row_l])
                 if type_lot.lower() == 'appartement' or type_lot.lower() == 'studio' or type_lot.lower() == 'maison' or type_lot[0] == 'T': 
-                    liste_copros['lot_logement'][row_c] = type_lot
-                    liste_copros['n_lot/n_plan/localisation(bat,esc,etg,pt)'][row_c] = liste_lots['n_lot/n_plan/localisation(bat,esc,etg,pt)'][row_l]
+                    liste_copros.loc[row_c,'lot_logement'] = type_lot
+                    liste_copros.loc[row_c,'n_lot/n_plan/localisation(bat,esc,etg,pt)'] = liste_lots['n_lot/n_plan/localisation(bat,esc,etg,pt)'][row_l]
                 elif type_lot.lower() == 'local commerc.' or type_lot.lower() == 'local activites' or type_lot.lower() == 'bureau': 
-                    liste_copros['lot_professionnel'][row_c] = type_lot
+                    liste_copros.loc[row_c,'lot_professionnel'] = type_lot
                 else :
-                    liste_copros['lot_autre'][row_c] = type_lot
+                    liste_copros.loc[row_c,'lot_autre'] = type_lot
 
     df = pd.DataFrame(liste_copros)
     #print (fichier)

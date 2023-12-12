@@ -1,19 +1,14 @@
 import pandas as pd
+from pandas import *
 
 def transform_file(csvfile):
     # chargé les fichiers excel et changer le nom des colonnes  
     fichier = csvfile
     fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees']
 
-    # trier dans un dictionnaire chaque copropriétaire
-        #variable de la boucle
-    rows = len(fichier)
-    column=['coproprietaires', 'immeubles', 'coordonnees']
-    columns=len(column)
-
     #définition de toutes mes colonnes de mon futur tableau 
     data= []
-    for row in range(rows) : 
+    for row in range(len(fichier)): 
         if not pd.isnull(fichier['coproprietaires'][row]):
             columns = {
                 'code_coproprietaire': '',
@@ -110,9 +105,11 @@ def transform_file(csvfile):
                 char = column[letter]
                 if 47<ord(char)<58 : 
                     data[row]['code_copropriete'] += char
+
                 elif 64 <ord(char)< 91 or 96 <ord(char)< 123:
                     data[row]['copropriete'] += char
                     entre_nom_copro = 1
+
                 elif char == ' ' and entre_nom_copro == 1: 
                     data[row]['copropriete'] += char
                 letter += 1
@@ -146,240 +143,121 @@ def transform_file(csvfile):
                     data[row][columnedata[n]] = list[n][columnlist]
             n+=1
 
+    def add_to_list(list, coordonnee, categorie, information): 
+        liste_mail = coordonnee.split("(")
+        #ajouter la coordonnée à la liste 
+        liste_mail[0] = str(liste_mail[0]).strip()
+        if categorie == 'numéro' : 
+            liste_mail[0] = str(liste_mail[0]).replace(' ', '.')
+        donnée = {
+            categorie:liste_mail[0],
+        }
+        list.append(donnée)
+        #ajouter à info ce qu'il y a après la parenthèse si l'info est plus grande que 14 
+        if len(liste_mail) > 1:
+            if len(liste_mail[1]) > 15 : 
+                info = str(liste_mail[1]).strip('('' ')#on supprime les espaces au début et à la fin ainsi que la '('
+                donnée ={
+                    'info': '{info}',
+                }
+                information.append(donnée)
+        return list, information
+
+
     def hash_coordonnées(column, row):
-        letter = 0
-        adresse = False
-        city = False
-        i=0 #nombre de / sur la ligne 
-        coordonnee= [{'mail_numero':'',}]
-        M = 0 #Nombre de mail sur la ligne 
-        T = 0 #Nombre de tel sur la ligne 
-        Inf = 0 #Nombre d'information pertinente
-        A = 0 #Nombre d'adresse en théorie 1
-        V = 0 #Nombre de ville  en théorie 1
+        #listes de stockages de coordonnées 
         Email= []
         tel= []
         information= []
         adresse_P=[]
         ville=[]
-        # Je sépare chaque coordonnée de la ligne 
-        while letter < len(column):
-            char = column[letter]
-            if char == '!': 
-                i +=1
-                donnee = {
-                    'mail_numero':'',
-                }
-                coordonnee.append(donnee)
-            else: 
-                coordonnee[i]['mail_numero'] += char
-            letter+=1
-        # Pour chaque coordonnée de la ligne 
-        y = 0 #situe la coordonnée à laquelle on se situe 
-        for y in range(i+1): #je me +1 car le i rpz le nombre de / mais il y a une coordonnée avant le / 
-            #Je copie la coordonnée  
-            info = coordonnee[y]['mail_numero']
-            # on dissocie la coordonnées de l'info
-            x=0 #nombre de char pour la coordonnée nommé info 
-            parenthese = 0
-            TelMail= str('') #receuille une coordonnée un mail ou un tel 
-            detail= str('') #recueille une info à récupérer ou non 
-            leninfo = len(info)
-            caractère = 0
-            while x < leninfo:
-                if info[x] == '(': 
-                    parenthese = 1
-                elif parenthese == 0: 
-                    if x == 0 and info[x] == ' ':
-                        parenthese = 0
-                    elif info[x] == ' ': 
-                        if x+1 == leninfo :
-                            parenthese = 0
-                        elif info[x+1] == '(': 
-                            parenthese = 0
-                        elif 64 < ord(info[x-1].upper()) < 91 or 64 < ord(info[x+1].upper()) < 91 : 
-                            TelMail += ' '
-                        else: 
-                            if caractère == 1: 
-                                parenthese = 0
-                            else : 
-                                TelMail += '.'
-                    elif 0 <= x <= leninfo-1 and info[x] != '': 
-                        TelMail += info[x]
-                    if 64 < ord(info[x].upper()) < 91 : 
-                        caractère = 1
-                elif parenthese == 1:
-                    if info[x] == ')':
-                        parenthese = 1
-                    else:
-                        detail += info[x]
-                x += 1
-            #puis je vérifie si c'est un mail ou un tel 
-            mail = 0#permet de savoir si c'est un mail ou un tel
-            lenTelMail= len(TelMail) 
-            for char in range(lenTelMail): 
-                if TelMail[char]=='@': 
-                    mail = 1
-                    adresse_mail = {
-                    'mail':'',
-                    }
-                    Email.append(adresse_mail)
-            # si mail égale 1 alors j'inscit dans la liste le mail 
-            if mail == 1: 
-                Email[M]['mail']=TelMail
-                M +=1
-            # sinon j'inscrit dans ma liste de tel 
-            elif mail == 0: 
-                #on vient vérifier que c'est que des chiffres ou des espaces mais pas des lettre maj ou min
-                num_tel = 0 #compte le nombre de chiffre dans le TelMail
-                num_letter = 0 #compte le nombre de chiffre dans le TelMail
-                # je dois mettre ca au cas ou il y ait des coordonnées de prises en compte s'il y a un espace et donc telmail = 'nan' ou ''. 
-                if TelMail == 'nan': 
-                    lenTelMail = 0
-                    parenthese = 1
-                for char in range(lenTelMail):
-                    if 47 < ord(TelMail[char]) < 58 :
-                        num_tel+=1
-                    else : 
-                        num_letter +=1
-                if num_tel > 9 and parenthese==1 : #on vient récup que les tels car il y a forcément une parenthèse
-                    numero={
-                        'telephone':'',
-                    }
-                    tel.append(numero)
-                    tel[T]['telephone']=TelMail
-                    T += 1
-                elif parenthese == 0 :
-                    if adresse == False: 
-                        detail_ad ={
-                            'adresse':'',
-                        }
-                        adresse_P.append(detail_ad)
-                        adresse_P[A]['adresse']=TelMail
-                        A = 1 # on ne met pas +1 car il faut uniquement une adresse
-                        adresse=True
-                    elif adresse == True: 
-                        detail_ville ={
-                            'ville':'',
-                        }
-                        ville.append(detail_ville)
-                        ville[V]['ville']=TelMail
-                        V = 1 # on ne met pas +1 car il faut uniquement une ville 
-                        city = True
-                elif num_letter > 14: #sinon on le met dans info et non tel
-                    precision = {
-                    'info':'',
-                    }
-                    information.append(precision)
-                    information[Inf]['info']=TelMail
-                    Inf += 1 
-            # Je vais traité les info des coordonnées (les info pertinnennte sont plus longue que 13 char)
-            if len(detail) > 14 :
-                precision = {
-                    'info':'',
-                }
-                information.append(precision)
-                information[Inf]['info']=detail
-                Inf += 1 
-            y += 1
-        
-            # J'ai maintenant deux liste avec l'une comptenant l'adresse et peut-être la ville et l'autre comptenant la ville si sur deux lignes. 
-        # Je vais vérifier que si l'adresse est complété alors la ville aussi elle doivent toutes les deux être égale à 1 
-        if adresse == True and city == False :
-            code_postale = adresse_P[0]['adresse']
-            new_adresse = ''
-            code = False
-            char = 0
-            new_code =''
-            while char < len(code_postale):
-                if code == False :  
-                    if 47 < ord(code_postale[char]) < 58: 
-                        new_code =''
-                        while char < len(code_postale): 
-                            if 47 < ord(code_postale[char]) < 58 and len(new_code) == 4:
-                                new_code += code_postale[char]
-                                code = True
-                                char += 1 
-                                break
-                            elif 47 < ord(code_postale[char]) < 58:
-                                new_code += code_postale[char]
-                                char += 1 
-                                continue
-                            elif code_postale[char] == ' ': 
-                                new_code += code_postale[char] 
-                                char +=1
-                                continue
-                            else :
-                                new_adresse += new_code 
-                                new_adresse += code_postale[char]
-                                char +=1
-                                new_code =''
-                                break
-                    else : 
-                        new_adresse += code_postale[char]
-                        char += 1
-                elif code == True: 
-                    new_code += code_postale[char]
-                    char += 1
-            #permet d'éviter de garder dans ville les derniers chiffres d'une adresse
-            if code == False: 
-                new_adresse += new_code
-                new_code = ''
-            #on créer copy la nouvelle adresse dans adresse_P et on créer la colonne dans ville avec sa valeur new_code quelle existe ou non. 
-            adresse_P[0]['adresse'] = new_adresse
-            detail_ville ={
-                'ville':'',
-            }
-            ville.append(detail_ville)
-            ville[0]['ville'] = new_code
-            V = 1
+        # je créer une liste des coordonnées en séparant les ! et les / avant une ') ': 
+        column = column.replace(") /", "!")
+        list_coordonnees = column.split('!')
 
-                # Sinon cela veut dire que l'adresse comptient aussi la ville 
-                        # je devrais donc recherche une suite de 5 chiffres si je l'ai alors tout ce qui vient à partir du premier chiffre de la suite vient dans ville
-            # Pas besoin de vérifier les doublons mais trouver les RP puis ajouter les colonnes villes et adresse. 
+        #je vérifie chaque type de coordonnées 
+        for coordonnee in list_coordonnees : 
+            coordonnee = coordonnee.strip()
+
+        # on cherche à verifier si c'est un num en comptant le nom de chiffre
+            digit = 0 
+            for char in coordonnee: 
+                if char.isdigit() : 
+                    digit += 1 
+
+            if "@" in coordonnee : 
+                add_to_list(Email,coordonnee,'mail',information)
+            
+            elif digit > 9 :
+                add_to_list(tel,coordonnee,'numéro',information)
+
+            
+            elif "(" not in coordonnee : 
+                if len(adresse_P) == 0 : 
+                    #verifier si add_to_list n'est pas out of range car il n'y a pas de '('
+                    add_to_list(adresse_P, coordonnee, 'adresse', information)
+                else : 
+                    add_to_list(ville, coordonnee, 'ville', information)
+            
+        # si on a pas de ville et une adresse alors on doit sortir la ville de adresse 
+        if len(adresse_P) > 0 and len(ville) == 0 : 
+            char = len(adresse_P[0]['adresse']) - 1 
+            adresse = adresse_P[0]['adresse']
+            digit = 0
+            # on fait une boucle inversée pour trouver les 5 derniers chiffres à la suite 
+            while char != 0 : 
+                if adresse[char].isdigit() :
+                    digit += 1
+                    if digit == 5 : 
+                        adresse_P[0] = adresse[:char-1]
+                        CP_ville = adresse[char:]
+                        add_to_list(ville, CP_ville, 'ville', information)
+                        break
+                elif adresse[char] == ' ': 
+                    pass
+                else : 
+                    digit = 0 
+                char -= 1
+
+
         # Une fois trié je vais vérifier que deux coordonnées ne sont pas similiaire si c'est le cas je la supprime
-        tel = doublon(tel, 'telephone', T)
-        Email = doublon(Email, 'mail', M)
-        information = doublon(information, 'info', Inf)
-
+        tel = doublon(tel, 'numéro', len(tel))
+        Email = doublon(Email, 'mail', len(Email))
+        information = doublon(information, 'info', len(information))
         # j'envoie chaque liste dans data
         columnTel=['tel1','tel2','tel3']
         columnMail=['mail1','mail2','mail3']
         columninfo=['informations1','informations2','informations3']
         columnadresse = ['adresse']
         columnville = ['ville']
-        SendToData(tel, 'telephone', columnTel, row)
+        SendToData(tel, 'numéro', columnTel, row)
         SendToData(Email, 'mail', columnMail, row)
         SendToData(information, 'info', columninfo, row)
         SendToData(adresse_P, 'adresse', columnadresse, row )
         SendToData(ville, 'ville', columnville, row)
-
-
-
-
-        # Lire chaque ligne du csv et remettre sur la même ligne les coordonnées 
+    
+    # Lire chaque ligne du csv et remettre sur la même ligne les coordonnées 
     row = 0
     i = 1 
-    while i < rows:
+    while i < len(fichier):
         if not pd.isnull(fichier['coproprietaires'][i]):
             last_row = fichier.loc[i]
         else: 
             coordonnees = str(last_row['coordonnees'])
-            Newcoordonnees = str(fichier['coordonnees'][i])
-            last_row['coordonnees'] = coordonnees+" ! "+Newcoordonnees
+            if not pd.isnull(fichier['coordonnees'][i]):
+                Newcoordonnees = str(fichier['coordonnees'][i])
+                last_row['coordonnees'] = coordonnees+" ! "+Newcoordonnees
         
     #envoie chaque ligne au hash pour trier chaque colonne 
-        if i+1 < rows :
+        if i+1 < len(fichier):
             if not pd.isnull(fichier['coproprietaires'][i+1]):
                 #maintenant tout est sur la même ligne on va trier les informations 
-                #print (last_row)
-                #print ('prochaine row\n')
                 hash_coproprietaires(last_row['coproprietaires'], row)
                 hash_copropriété(last_row['immeubles'], row)
                 hash_coordonnées(last_row['coordonnees'], row)
                 row += 1
                 
-        elif i+1 == rows:
+        elif i+1 == len(fichier):
             #maintenant tout est sur la même ligne on va trier les informations 
             hash_coproprietaires(last_row['coproprietaires'], row)
             hash_copropriété(last_row['immeubles'], row)
@@ -388,19 +266,11 @@ def transform_file(csvfile):
 
         i=i+1
 
-
-    # on peut maintenant supprimer puis pousser les datas vers le fichier csv 
-    #on supprime les colonnes 
-    for col in range(len(column)): 
-        fichier.pop(column[col])
-
-    #on ajoute les nouvelles colonnes 
-
-    #on ajoute les rows 
-    #columns=['code_coproprietaire','Nom','Prenom','civilite','code_copropriete','copropriete','tel1','tel2','tel3','mail1','mail2','mail3','informations1','informations2','informations3']
-    #for col in range(len(columns)): 
-        #fichier.insert(col, columns[col],'', allow_duplicates=False)
+    #on remplace notre ancien fichier par les données de data 
     df = pd.DataFrame(data)
-    #print (fichier)
     df.to_csv('tests/liste_coproprietaires.csv', sep=';', index=False)
     return 'tests/liste_coproprietaires.csv'
+
+
+fichier = pd.read_csv('tests/liste_coproprietaires.csv', delimiter=';', encoding='latin-1')
+new_files = transform_file(fichier)

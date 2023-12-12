@@ -136,7 +136,7 @@ def form2():
                         return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='')
                 else:
                     return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné", erreur='')
-            else: 
+            else:
                 return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='')
         else:
             liste_csv = pd.read_csv('liste_coproprietaires.csv', delimiter=';', encoding='latin-1')
@@ -197,19 +197,26 @@ def recuperer_newliste():
         except Exception as e: 
             return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
         
-        # on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
-        #try : 
-        liste_user = compare_list("liste_ics.csv", "liste_user.csv")
-        #except Exception as e:
-            #return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
+        #on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
+        try : 
+            liste_user = compare_list("liste_ics.csv", "liste_user.csv")
+        except Exception as e:
+            return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
 
-        # on supprime nos deux anciens csv
-        #if os.path.exists("liste_ics.csv"):
-         #       os.remove("liste_ics.csv")
-        #if os.path.exists("liste_user.csv"):
-         #       os.remove("liste_user.csv")
+        #on supprime nos deux anciens csv
+        if os.path.exists("liste_ics.csv"):
+           os.remove("liste_ics.csv")
+        if os.path.exists("liste_user.csv"):
+           os.remove("liste_user.csv")
         
-        return redirect("/liste_coproprietaires_downloads")
+        #on  verifie le retour de compare_list 
+        if liste_user == 'code_copropriétaire': 
+            return render_template("erreur.html", attention = "la colonne 'code_copropriétaire' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
+        elif liste_user == 'code_copropriété': 
+            return render_template("erreur.html", attention = "la colonne 'code_copropriete' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
+        else : 
+            return redirect("/liste_coproprietaires_downloads")
+        
     else:
         return render_template("comparer_liste.html") 
     

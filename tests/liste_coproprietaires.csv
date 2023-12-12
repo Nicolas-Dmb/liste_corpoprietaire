@@ -1,6 +1,2592 @@
-code_coproprietaire;Nom;civilite;code_copropriete;copropriete;adresse;ville;RP;tel1;tel2;tel3;mail1;mail2;mail3;informations1;informations2;informations3;lot_logement;n_lot/n_plan/localisation(bat,esc,etg,pt);lot_professionnel;lot_autre;observation
-424882;YVON Philippe ;M/Mme;4400;MOKA PARK;5. Rue des Tulipes ;35400 SAINT MALO;Non;629160985;06.25.16.09.85;;philippe.yvon@sahlm-lesfoyers.com;;;Tel. / pyvon1@hotmail.fr Email ;Cel. / 02 99 40 29 50 Tel ;;;;;;
-424853;LERAY Alainï¿½;M/Mme;4400;MOKA PARK;La Poutaisï¿½;35290 LE CROUAIS;Non;02.99.09.65.11;;;leray.alain1@aliceadsl.fr;;;Tel. / 02.99.09.65.11 Tel FIXE;;;;;;MAJ;
-425162;AUFFRAY Rene ;Indivision;4400;MOKA PARK;13 BOULEVARD DES TALARDS ;35400 ST MALO;Non;01.78.53.54.69;06.32.75.15.30;;auffray.armel@gmail.com;;;Tel. / 06 32 75 15 30 Tel. ;Cel. PORTABLE / 01 78 53 54 69 Tel FIXE ;;;;;AJ;
-424853;LERAY AlainÃ;M/Mme;4400;MOKA PARK;La PoutaisÃ;35290 LE CROUAIS;Non;02.99.09.65.11;;;leray.alain1@aliceadsl.fr;;;Tel. / 02.99.09.65.11 Tel FIXE;;;;;;MAJ;z
-425015;AL AHDAB Nasir ;M/Mme;4400;MOKA PARK;21. av. de Villers ;35400 SAINT MALO;Non;;;;nasser67100@hotmail.com;;;;;;;;;;
+COPROPRIETAIRES;IMMEUBLES;
+;;
+420904 MARTIN Alfred (M ou Mme);4001 CHAMPLAIN;02.99.40.29.85 (Tel.)
+;;18 Rue Jumelais 35400 SAINT
+;;
+420906 VALLEE Eric (M.);4001 CHAMPLAIN;02 99.56.72.58 (Tel.)
+;;valleeblais@orange.fr (Email petit-fils)
+;;06 11 55 97 94 (Cel.)
+;;628 Launay 35320 LE PETIT FOUGERAY
+;;
+420910 KERMARREC Claudine (Madame);4001 CHAMPLAIN;06 72 54 12 60 (Tel.) / 06 72 54 12 60 (Cel. PORTABLE)
+;;kerbzh@orange.fr (Email E-mail)
+;;5 Rue du Marechal leclerc 35870 LE MINIHIC-SUR-RANCE
+;;
+420912 JOUAN Christine (Madame);4001 CHAMPLAIN;04 50 60 52 28 (Tel.) / 06 72 40 18 86 (Tel.)
+;;06 72 40 18 86 (Cel. PORTABLE)
+;;Le Parmelan 1056 route de la Leche
+;;74370 SAINT-MARTIN BELLEVUE
+;;
+420917 JAMET Aristide (M ou Mme);4001 CHAMPLAIN;02.99.56.58.56 (Tel.) / 06 45 81 88 71 (Tel.)
+;;0645818871 (Cel.) / 0299565856 (Tel)
+;;17 Allee de la Corvette 35400 SAINT-MALO
+;;
+420918 BESSEC Jean (Indivision);4001 CHAMPLAIN;08 77 08 30 76 (Tel.) / 06 70 63 70 93 (Tel.)
+;;01 47 83 63 56 (Tel fixe) / 06 70 63 70 93 (Cel. mobile)
+;;jbessec@gmail.com (Email mail)
+;;56-62 rue de Vouille 75015 PARIS
+;;
+424944 LATASTE Jean-Claude (Monsieur);4001 CHAMPLAIN;06 30 23 32 72 (Tel.) / lte456@sfr.fr (Email)
+;;jeanclaude.lataste@sfr.fr (Email MAIL)
+;;06.30.23.32.72 (Cel.)
+;;14  rue des Mimosas 92160 ANTONY
+;;
+428334 DAVY Benoit (Monsieur);4001 CHAMPLAIN;benoit.davy@gmail.com (Email)
+;;davyjean@wanadoo.fr (Email Inf adresse mail)
+;;07 84 15 20 57 (Cel.) / 06.50.88.56.42 (Cel.)
+;;8 Avenue Jacques Picavet 59130 LAMBERSART
+;;
+428383 GOUYETTE Loic et Lydia (M et Mme);4001 CHAMPLAIN;06 14 25 92 59 (Tel.) / 02 99 48 27 78 (Tel.)
+;;familygouyette@wanadoo.fr (Email)
+;;02 99 48 27 78 (Tel fixe) / 06 14 25 92 59 (Cel. mobile)
+;;11 La Becanne 35120 MONT DOL
+;;
+446744 LANDEAU Brigitte (Mme);4001 CHAMPLAIN;bpl@sfr.fr (Email) / 06.21.45.02.76 (Cel.)
+;;La Dortiere 72400 LA CHAPELLE DU BOIS
+;;
+449626 CANET Sophie (Mme);4001 CHAMPLAIN;sophie.anne.canet@gmail.com (Email)
+;;1 Moulin de la Potinaie 53190 LANDIVY
+;;
+420926 TEXIER (M ou Mme);4006 SALONIC;99.30.26.95 (Tel.) / 06 08 00 12 38 (Tel.)
+;;02 99 52 33 77 (Fax.) / texier-dm@orange.fr (Email mail)
+;;02 99 52 33 77 (Tel fixe) / 06 08 00 12 38 (Cel. mobile)
+;;
+;;2, rue de la Rochelle 35230 NOYAL-CHATILLON / SEICHE
+;;
+420928 MAGOT CUVRU Eric (M ou Mme);4006 SALONIC;02.99.40.35.21 (Tel.) / eric.magot.cuvru@gmail.com (Email)
+;;02.99.40.35.21 (Tel) / 06.09.45.70.80 (Cel.)
+;;86  Bd de Rochebonne -apt 59 35400 SAINT-MALO
+;;
+420929 RIGOURD Genevieve (Madame);4006 SALONIC;02 99 50 82 96 (Tel.) / 1/2 donation 9 (Tel.)
+;;xarigourd@gmail.com (Email) / 02 99 50 82 96 (Tel)
+;;8 Square du Luxembourg Les Olympiades - Apt 102
+;;35200 RENNES
+;;
+420935 GOLIVET GALPIN Armelle (Madame);4006 SALONIC;aggmalo@gmail.com (Email) / 06.86.91.80.28 (Cel.)
+;;6 Rue Miguel Hidalgo 75019 PARIS
+;;
+420941 JEAN-BAPTISTE Yves (Monsieur);4006 SALONIC;02 99 40 20 91 (Tel.) / 06 64 43 98 36 (Tel.)
+;;06 64 43 98 36 (Cel. PORTABLE)
+;;14  rue du Vallon 35400 SAINT-MALO
+;;
+420948 RUBIN Jeanne (SUCCESSION);4006 SALONIC;06 07 79 92 17 (Tel FILLE MME RUBIN)
+;;Chez Maitre Paulet 4 rue du Champ Dolent
+;;35000 RENNES
+;;
+420950 GARNIER Rose (Mme);4006 SALONIC;06 19 92 70 41 (Tel.) / 06 19 92 70 41 (Cel. PORTABLE)
+;;56 Boulevard Clemenceau 35200 RENNES
+;;
+420954 CORDIER Ginette (Mme);4006 SALONIC;01.46.80.15.23 (Tel.) / 06 17 50 75 87 (Tel.)
+;;margaux.ricard@orange.fr (Email) / 06.17.50.75.87 (Cel.)
+;;01 46 80 15 23 (Tel) / 06.82.14.62.81 (Cel.)
+;;10  rue Gounod 94400 VITRY SUR SEINE
+;;
+421985 COURTEILLE Michel (M.);4006 SALONIC;mcourteille@hotmail.com (Email fils)
+;;06.19.73.43.52 (Cel. fils)
+;;8 rue Monplaisir 72000 LE MANS
+;;
+421993 BERTHE Jonas et Colette (M ou Mme;4006 SALONIC;06 33 71 19 65 (Tel.) / 06 19 86 11 52 (Tel.)
+;;berthe.colette@sfr.fr (Email Inf) / 06.33.71.19.65 (Cel.)
+;;06.19.86.11.52 (Cel.)
+;;44 rue Constant Lemoine 49100 ANGERS
+;;
+422219 HERVOCHON Daniel (Monsieur);4006 SALONIC;06.82.21.71.69 (Tel.) / 02 99 52 33 85 (Tel.)
+;;daniel.hervochon@orange.fr (Email mail)
+;;06 82 21 71 69 (Cel. mobile) / 02 99 52 33 85 (Tel fixe)
+;;16  rue des Potiers 35230 NOYAL CHATILLON
+;;
+424434 KUHRY Chantal et Marc (M ou Mme);4006 SALONIC;06 10 57 28 26 (Tel.) / marckuhry@free.fr (Email MAIL)
+;;06.10.57.28.26 (Cel.)
+;;38  rue Bautain 67000 STRASBOURG
+;;
+424703 COUTARD Roger & Christine (M ou M;4006 SALONIC;06 07 89 68 20 (Tel.) / 06.07.89.68.20 (Cel. PORTABLE)
+;;rcoutard@aol.com (Email mail)
+;;5 Residence La Fontaine 53100 PARIGNE SUR BRAYE
+;;
+425033 SELLIER Jean-Francois (Monsieur);4006 SALONIC;06 27 94 09 65 (Tel.)
+;;jeanfrancoissellier@gmx.com (Email MAIL)
+;;06 27 94 09 65 (Cel.)
+;;7  rue du Reverend Pere Lebret 35400 SAINT-MALO
+;;
+;;
+425239 D'ENGREMONT Pierre & Dominique (M;4006 SALONIC;pdengrem@club-internet.fr (Email) / 06.75.69.68.11 (Cel.)
+;;4  rue Diderot 95320 SAINT-LEU-LA-FORET
+;;
+425335 LE BIGOT Charles et Maryvonne (M;4006 SALONIC;06 88 85 85 14 (Tel.) / 02 99 64 11 02 (Tel.)
+;;charles.le-bigot@wanadoo.fr (Email mail)
+;;02 99 64 11 02 (Tel fixe) / 06 88 85 85 14 (Cel. mobile)
+;;19 RUE DUGUESCLIN 35590 L HERMITAGE
+;;
+425359 THOMAS Jean-Louis (Monsieur);4006 SALONIC;06 86 21 53 47 (Tel.) / 06.86.21.53.47 (Cel.)
+;;jlt10@live.fr (Email)
+;;13, Venelle de la Douane 29241 LOCQUIREC
+;;
+425557 BASLE Bernard & Isabelle (M ou Mm;4006 SALONIC;02.99.73.95.92 (Tel.) / bernard.basle@orange.fr (Email)
+;;Malabry 35720 SAINT-PIERRE-DE-PLESGUEN
+;;
+425864 HOTEL CLEMENTINE ();4006 SALONIC;06 12 77 38 95 (Tel.) / SIREN 529 286 536 (Cel. PORTABLE)
+;;06.12.77.38.95 (Cel. PORTABLE)
+;;06.12.77.38.95 (Cel. PORTABLE)
+;;juliejosset@hotmail.com (Email)
+;;7 rue du Docteur Roux 75015 PARIS 15
+;;
+441172 FOURNIER Mireille (INDIVISION);4006 SALONIC;02 33 29 20 79 (Tel.) / 06 29 81 14 66 (Tel.)
+;;mireille.fournier@yahoo.fr (Email)
+;;02 33 29 20 79 (Tel fixe) / 06 29 81 14 66 (Tel portable)
+;;CHEZ MME FOURNIER HERVIANT 84 BLD DE ROCHEBONNE
+;;35400 ST MALO
+;;
+441809 LETOURNEUR/MICHEL Jean-Pierre et;4006 SALONIC;letourneur.cat@wanadoo.fr (Email) / 06.72.51.07.04 (Cel.)
+;;Chez Mme MICHEL Catherine 7 RUE DE LA TANNERIE
+;;35400 ST MALO
+;;
+447766 LEPEIGNEUL Jean-Loic et Sylvie (M;4006 SALONIC;lepeigneuljls@gmail.com (Email) / 06 48 10 03 80 (Cel.)
+;;9 rue du Commandant Marchand 75016 PARIS
+;;
+451431 GIBET Alexis (M.);4006 SALONIC;06 98 34 84 49 (Cel.) / Alexis.gibet1994@gmail.com (Email)
+;;rue Jean Boucher 32/34 35630 HEDE BAZOUGES
+;;
+452810 HEDAN Denise (Mme);4006 SALONIC;denise.hedan@orange.fr (Email)
+;;96 Boulevard de Rochebonne 35400 ST MALO
+;;
+453495 TANVERT AURELIE (Mme);4006 SALONIC;aurelie.tanvert@yahoo.fr (Email)
+;;11 AVENUE DES MELIETTES 35135 CHANTEPIE
+;;
+420970 LE SCORNET MARIE-CLAUDE (Madame);4014 MOKA 46;02.99.56.17.36 (Tel.)
+;;66 Av. Waldeck Rousseau 35400 SAINT-MALO
+;;
+420978 GAUBERT Michel (Monsieur);4014 MOKA 46;02.99.56.68.92 (Tel.) / 06 07 77 86 77 (Tel.)
+;;michel.gaubert7@orange.fr (Email) / 06.07.77.86.77 (Cel.)
+;;Residence Moka - apt 54 46 Avenue de Moka
+;;35400 SAINT-MALO
+;;
+420981 LACOUR Lionel (Monsieur);4014 MOKA 46;02.99.56.31.38 (Tel.)
+;;lionel.lacour0120@orange.fr (Email mail)
+;;Residence Moka - apt 51 46 Avenue de Moka
+;;35400 SAINT-MALO
+;;
+420983 GIRARD (Indivision);4014 MOKA 46;02.99.19.50.42 (Tel.) / Donation 02/10 (Tel.)
+;;
+;;Voir Indivision (Cel. PORTABLE)
+;;DCD en 01/2010 (Cel. PORTABLE)
+;;06 73 56 71 71 (Cel. Mr GIRARD)
+;;06 73 56 71 71 (Cel. Mr GIRARD)
+;;Chez Mr GIRARD Jean-Loic 13 rue Albert Forget
+;;35400 SAINT-MALO
+;;
+420987 MEUNIER Jean Pierre (M ou Mme);4014 MOKA 46;02 99.40.45.45 (Tel.)
+;;132, rue Emile Bergerat 35800 SAINT-LUNAIRE
+;;
+420989 ROLLAND Catherine (Madame);4014 MOKA 46;06 16 86 20 05 (Tel.) / catrolland@orange.fr (Email mail)
+;;06.16.86.20.05 (Cel. Mobile)
+;;46 Avenue de Moka - lot 53 35400 SAINT-MALO
+;;
+420990 PORTAT Claudine (Madame);4014 MOKA 46;02.99.56.84.47 (Tel.)
+;;beaussant.portat@orange.fr (Email mail)
+;;SCI   Enfin Chez Soi 46 avenue de Moka - local 16
+;;35400 SAINT-MALO
+;;
+420992 SIMON Regine (Madame);4014 MOKA 46;02.99.69.44.52 (Tel.) / 06 84 63 92 52 (Tel.)
+;;06.84.63.92.52 (Cel. PORTABLE)
+;;Le Bois aux Moines 35720 PLEUGUENEUC
+;;
+422090 MULLER Denis (Indivision);4014 MOKA 46;06 84 44 57 57 (Tel.) / Mme DCD 23/07/ (Tel.)
+;;muller44150@gmail.com (Email E-MAIL)
+;;06 84 44 57 57 (Cel. PORTABLE)
+;;48 QUAI DE VERSAILLES APPART 202
+;;44000 NANTES
+;;
+422151 LADAM Jean-Francois (M ou Mme);4014 MOKA 46;06.84.19.16.94 (Tel.) / denys.ladam@wanadoo.fr (Email)
+;;06.84.19.16.94 (Tel)
+;;Indivision LADAM-LE MAITRE 20 rue des Trois Freres
+;;35260 CANCALE
+;;
+425169 GRAVERAND Helene (Madame);4014 MOKA 46;02 99 82 69 07 (Tel.) / 06 83 18 50 50 (Tel.)
+;;helenegraverand@hotmail.fr (Email mail)
+;;02 99 82 69 07 (Tel fixe) / 06 83 18 50 50 (Cel. mobile)
+;;2  Allee du Grand Domaine 35400 SAINT-MALO
+;;
+425488 ETAT INVEST (AXA) (S.C.I.);4014 MOKA 46;arnaud.trebulle@wanadoo.fr (Email) / 02.99.40.48.06 (Tel)
+;;Chez AXA agence TREBULLE 46, avenue de Moka
+;;35400 ST MALO
+;;
+425510 LASVIGNE-PLANES Nicole et Jean (M;4014 MOKA 46;06 77 26 25 42 (Tel.) / 02 99 58 24 84 (Tel.)
+;;Usufruit 100% (Fax.) / njplanes@orange.fr (Email mail)
+;;Usufruit 100% (Fax FAX) / 02 99 58 24 84 (Tel Fixe)
+;;06 77 26 25 42 (Cel. Mobile)
+;;Donation NP a leur fils le 31/12/2014 (Cel. info)
+;;9  rue de la Bisquine La ville Neree
+;;35350 LA GOUESNIERE
+;;
+425951 ERPST Eddie & Martine (M ou Mme);4014 MOKA 46;06 12 78 32 37 (Tel.) / 06.12.78.32.37 (Cel.)
+;;33 rue Gambetta 94120 FONTENAY-SOUS-BOIS
+;;
+425980 ROBIN ET JOURNIAUX Jacques & Fabi;4014 MOKA 46;fabienne.journiaux@gmail.com (Email)
+;;robin_jacques@hotmail.com (Email) / 06.71.41.94.52 (Cel.)
+;;25 Rue Emile Guene 35400 SAINT-MALO
+;;
+;;
+438841 AUBER Jacques et Stephanie (M. et;4014 MOKA 46;auber.jacques@orange.fr (Email) / 07.86.23.29.99 (Cel.)
+;;46 Avenue de Moka 35400 ST MALO
+;;
+440391 SOLIAN (S.C.I.);4014 MOKA 46;solenndumier@hotmail.fr (Email CHALMEL SOLEN)
+;;adrian.becker@hotmail.fr (Email BECKER ADRIAN)
+;;06 48 54 12 32 (Cel. CHALMEL SOLENN)
+;;06 08 23 43 54 (Cel. BECKER ADRIAN)
+;;GEREE PAR MME CHALMEL SOLENN 114 AVENUE DES PORTES CARTIER
+;;35400 ST MALO
+;;
+452818 LE ROUX Evelyne (Mme);4014 MOKA 46;leroux.evelyne@sfr.fr (Email) / 06.46.41.31.04 (Cel.)
+;;46 AVENUE DE MOKA 35400 ST MALO
+;;
+420996 CREDIT AGRICOLE ST JACQUES ();4016 FLAUBERT (2);02.99.56.48.52 (Tel.) / 02 99 03 34 11 (Tel.)
+;;nadya.rahier@ca-illeetvilaine.fr (Email Mail)
+;;02.99.03.37.43 (Tel fixe)
+;;A l'attention de Nadya Rahier 4  rue Louis Baille
+;;35136 SAINT-JACQUES-DE-LA-LANDE
+;;
+420998 JEHANNE Allain (Monsieur);4016 FLAUBERT (2);06 15 44 60 56 (Tel.) / a.jehanne@live.fr (Email EMAIL)
+;;06 15 44 60 56 (Cel. mobile)
+;;2 rue Flaubert 35400 SAINT-MALO
+;;
+421002 AUMOND Pierre (Monsieur);4016 FLAUBERT (2);02.99.56.65.94 (Tel.) / pierre.aumond@wanadoo.fr (Email)
+;;B.P. 10 35404 SAINT MALO CEDEX
+;;
+422012 DERRIEN Genevieve (Madame);4016 FLAUBERT (2);jacques.derrien607@orange.fr (Email mail)
+;;29  Rue de l'Hospitalite 37510 BALLAN MIRE
+;;
+422145 FLEURY Marie-Therese (Madame);4016 FLAUBERT (2);02.99.40.38.83 (Tel.)
+;;2  rue Gustave Flaubert 35400 SAINT-MALO
+;;
+422224 GAIGEOT Danielle (SUCCESSION);4016 FLAUBERT (2);vgo.saintmalo@notaires.fr (Email)
+;;C/O EMERAUDE NOTAIRES 51, bd Douville - CS 21862
+;;35418 SAINT-MALO CEDEX
+;;
+422409 SCI HAIR MARIN ();4016 FLAUBERT (2);02.99.40.56.83 (Tel.) / lair.marin@orange.fr (Email E-MAIL)
+;;06 76 02 38 65 (Cel.)
+;;Madame LEBLANC Nathalie 2, rue Gustave Flaubert
+;;35400 SAINT-MALO
+;;
+423634 LE GOFF Jean Michel (Monsieur);4016 FLAUBERT (2);06 73 20 79 19 (Tel.) / flaubert35@gmail.com (Email)
+;;06.73.20.79.19 (Cel.)
+;;2 RUE GUSTAVE FLAUBERT 35400 SAINT-MALO
+;;
+423635 GROSSET Joseph (M ou Mme);4016 FLAUBERT (2);02.99.66.95.65 (Tel.) / 06 72 92 15 30 (Tel.)
+;;jgrosset@orange.fr (Email EMAIL)
+;;06.72.92.15.30 (Cel. PORTABLE)
+;;11 rue des Guimondieres 35520 MELESSE
+;;
+425238 LABOURIN Janick (Madame);4016 FLAUBERT (2);02.99.56.92.26 (Tel) / 02.99.56.92.26 (Tel)
+;;2  rue Gustave Flaubert 35400 SAINT-MALO
+;;
+425984 COTARD Marcel & Madeleine (M ou M;4016 FLAUBERT (2);02.99.81.55.86 (Tel)
+;;38 rue des Acadiens 35400 SAINT-MALO
+;;
+;;
+428319 DUBREUIL Jean-Paul (M et Mme);4016 FLAUBERT (2);06.07.49.53.01 (Cel.)
+;;51 avenue Alexandre Dumas 91550 PARAY VIEILLE POSTE
+;;
+445981 CNP (S.C.I.);4016 FLAUBERT (2);pazapa35@orange.fr (Email) / 06.88.15.84.12 (Cel.)
+;;C/O PAZAPA 2, rue Gustave Flaubert
+;;35400 ST MALO
+;;
+421015 SIKORA Dominique (Monsieur);4017 TIMONERIE;dsikora@free.fr (Email E-MAIL)
+;;87 Avenue Ledru Rollin 75012 PARIS
+;;
+421017 MARTIN Chantal (Mme);4017 TIMONERIE;martin-gourson@orange.fr (Email Mail)
+;;01 43 70 30 08 (Tel fixe)
+;;06 45 15 30 56 (Cel. mobile mme)
+;;11.13.Rue de Lagny 75020 PARIS
+;;
+421019 MARIE-CATHERINE Catherine (Madame;4017 TIMONERIE;04.73.68.93.17 (Tel.) / o.mariecath@orange.fr (Email)
+;;06.81.28.17.27 (Cel.) / 06.81.28.17.27 (Cel.)
+;;La Martre 63160 MONTMORIN
+;;
+421023 BULLIER Anne (Mme);4017 TIMONERIE;02 48 48 18 88 (Tel.) / bullier.anne@gmail.com (Email)
+;;0672929271 (Cel.) / 0778807276 (Cel.)
+;;25, rue Chevremont  35400 ST MALO
+;;
+421033 SECHER (INDIVISION);4017 TIMONERIE;02.99.19.50.10 (Tel.) / 02.99.46.93.41 (Tel.)
+;;josir.secher@orange.fr (Email) / 0683309302 (Cel.)
+;;CHEZ MR & MME SECHER Joseph 15 ALLEE DE CARTAGENE
+;;35800 DINARD
+;;
+421040 BEZARD Jeanne (Madame);4017 TIMONERIE;06.33.74.46.13 (Cel.)
+;;5 SQUARE DE SENDAI 35700 RENNES
+;;
+421048 BODIN Marcel et Francoise (M ou M;4017 TIMONERIE;fbodin@hotmail.fr (Email E-MAIL)
+;;Le Bourg BAILLE
+;;35460 ST MARC LE BLANC
+;;
+421054 ROUZEL Francis (M ou Mme);4017 TIMONERIE;02.99.81.65.32 (Tel.) / 02.99.30.07.31 (Tel.)
+;;f6f7.rouzel@wanadoo.fr (Email) / 02 99 81 65 32 (Tel)
+;;18 RUE DE LA CITE 35400 ST MALO
+;;
+421059 CADIOU C. (Madame);4017 TIMONERIE;02.99.56.35.21 (Tel.) / Donation 12/20 (Tel.)
+;;06.66.81.09.43 (Cel. LOCATAIRE MR LEGUICHER)
+;;06.84.12.91.18 (Cel.)
+;;10 Bld Hebert 35400 SAINT-MALO
+;;
+421068 CLOCHARD Daniel (Monsieur);4017 TIMONERIE;domalo35@orange.fr (Email) / 0677748779 (Cel.)
+;;9 Rue Mesle 35400 SAINT MALO
+;;
+421071 LIBERT Max (Monsieur);4017 TIMONERIE;06 13 80 23 49 (Tel.) / 02 99 97 22 61 (Tel.)
+;;02 99 97 22 61 (Tel Fixe) / 06 13 80 23 49 (Cel. Mobile)
+;;max.libert@orange.fr (Email Mail)
+;;La Touche 35133 LANDEAN
+;;
+421072 CASTELLA Pascale (Mme);4017 TIMONERIE;jeanjacques75.castella@gmail.com (Email E-MAIL)
+;;06.74.62.59.14 (Cel. PORTABLE)
+;;Mere et fils gere par fils-jean-jacques.castella@snfc.fr (Em
+;;servicedroitfametrechy.91020@notaires.fr (Email NOTAIRES)
+;;63 rue de Gerofosse 91150 ETAMPES
+;;
+;;
+422008 BOUTIN Jean-claude (M ou Mme);4017 TIMONERIE;02.99.09.13.67 (Tel.) / 02 99 09 13 67 (Tel Fixe)
+;;06 83 63 89 38 (Cel. Mobile)
+;;eliane-boutin@orange.fr (Email Mail)
+;;2  Rue de la Fee Viviane 35160 MONTFORT-SUR-MEU
+;;
+422052 COADIC Yvon (M ou Mme);4017 TIMONERIE;02.99.53.19.47 (Tel.) / 02.23.36.50.60 (Tel.)
+;;yvoncoadic@gmail.com (Email) / 02.99.53.19.47 (Tel)
+;;19  Chemin des Nouennes 35770 VERN-SUR-SEICHE
+;;
+422060 DUMONT Jacques (M ou Mme);4017 TIMONERIE;02.99.19.89.65 (Tel.) / ou 09 64 29 32 (Tel.)
+;;jacques.dumont3@orange.fr (Email EMAIL)
+;;09.64.29.32.66 (Tel Fixe) / 06 89 56 35 38 (Cel. mobile)
+;;11  rue Mesle 35400 SAINT-MALO
+;;
+422223 MARTIN Bruno (Monsieur);4017 TIMONERIE;09.54.51.15.58 (Tel.) / 06 85 01 56 88 (Tel.)
+;;06 85 01 56 88 (Cel. MOBILE)
+;;bruno2martin@free.fr (Email MAIL)
+;;77 avenue Georges V 35800 DINARD
+;;
+423607 FORESTIER Eugene (Monsieur);4017 TIMONERIE;03 80 53 74 02 (Tel.)
+;;eg.forestier@wanadoo.fr (Email eg.forestier@wanadoo.fr)
+;;3 B cours General De Gaulle 21000 DIJON
+;;
+423653 BOURLIAUD Yvonne (Madame);4017 TIMONERIE;02 99 82 48 40 (Tel.) / 02 99 82 48 40 (Tel Fixe)
+;;11 TER RUE MESLE 35400 SAINT-MALO
+;;
+424633 BOUTIN Anita (Madame);4017 TIMONERIE;boutin.anita@neuf.fr (Email mail) / 06 62 76 04 82  (Cel.)
+;;06 62 76 04 82  (Cel.)
+;;22 Rue Pasteur-Maison J01 Residence Escale Oceane
+;;40130 CAPBRETON
+;;
+424937 GUILLAUMA Pierre (Monsieur);4017 TIMONERIE;06.80.20.25.58 (Cel. PORTABLE)
+;;guillauma.p@wanadoo.fr (Email)
+;;guillauma.p@wanadoo.fr (Email)
+;;30 rue aux Ligneaux 45800 SAINT-JEAN-DE-BRAYE
+;;
+425312 MENJOT Patricia (M ou Mme);4017 TIMONERIE;patricia.menjot@orange.fr (Email) / 06.87.39.51.74 (Cel.)
+;;16 rue Slimmic 35740 PACE
+;;
+425437 ATHIMON-BREVAULT Monique (Madame);4017 TIMONERIE;06 68 87 35 96 (Cel. MOBILE)
+;;5  Chemin de la Corderie 35400 SAINT-MALO
+;;
+425504 FERET Jean-Pierre (M ou Mme);4017 TIMONERIE;02.99.21.93.36 (Tel.) / jpferet@wanadoo.fr (Email E-MAIL)
+;;06.16.28.91.00 (Cel. PORTABLE) / 06.23.85.70.70 (Cel.)
+;;06.23.85.70.70 (Cel.)
+;;1 RUE DE L ILE GAVRINIS PARC DU VINCIN
+;;56000 VANNES
+;;
+425552 MONNIER Bernard (Monsieur);4017 TIMONERIE;0299569315 (Tel.) / 0667839345 (Tel.)
+;;02.99.56.93.15 (Tel Fixe) / 06.67.83.93.45 (Cel. Mobile)
+;;jacbermonnier@hotmail.fr (Email Email)
+;;4  impasse Augustin Fresnel 35400 SAINT-MALO
+;;
+425609 LEGEAI Patrick et Catherine (M ou;4017 TIMONERIE;02.99.99.89.16 (Tel Fixe) / 06.59.29.55.48 (Cel. Mobile)
+;;patcat.legeai@orange.fr (Email Mail)
+;;07.68.80.96.37 (Cel.)
+;;
+;;16 rue de Plaisance 35133 JAVENE
+;;
+425636 BLOT Thierry et Marie-France (M o;4017 TIMONERIE;bestif-blot@orange.fr (Email) / 02.99.00.37.14 (Tel TEL)
+;;06.70.44.68.17 (Cel.)
+;;5 Bis rue du Vieux moulin SAINT-MELAINE
+;;35220 CH�TEAUBOURG
+;;
+426074 CARLIER Patrick et Claudine (M ou;4017 TIMONERIE;06 76 33 53 75 (Tel.)
+;;patrickcarlier@wanadoo.fr (Email Mail)
+;;06 76 33 53 75 (Cel. mobile)
+;;9 Ter Rue Mesle appt 16
+;;35400 ST MALO
+;;
+441273 PELE Charles et Isabelle (M. et M;4017 TIMONERIE;ic.pele@laposte.net (Email mail) / 06.87.58.14.21 (Cel.)
+;;12 rue des Aubepines 77400 THORIGNY SUR MARNE
+;;
+447653 LEBARBENCHON Yann (M.);4017 TIMONERIE;lebarbenchony@gmail.com (Email) / 06 84 47 83 83 (Cel.)
+;;11 TER RUE MESLE 35400 ST MALO
+;;
+421075 WEISSER Chantal (Madame);4022 TALARDS (7);02.99.56.13.37 (Tel.)
+;;chantal.weisser@wanadoo.fr (Email mail)
+;;02 99 56 13 37 (Tel fixe)
+;;23 avenue de la Varde 35400 SAINT-MALO
+;;
+421076 BARBIER Dominique (Madame);4022 TALARDS (7);06 31 31 75 71 (Tel.) / LISTE ROUGE (Tel.)
+;;02 99 56 01 24 (Fax.) / lagasca10@orange.fr (Email EMAIL)
+;;0299560124 (Tel fixe) /  06 31 31 75 71 (Cel. PORTABLE)
+;;28  rue d'Alger 35400 SAINT-MALO
+;;
+421089 DERRIEN Joel (Monsieur);4022 TALARDS (7);06 07 41 79 90 (Tel.) / joel.derrien@yahoo.fr (Email mail)
+;;06 07 41 79 90 (Cel.)
+;;3  Rue Andre Desilles 35000 RENNES
+;;
+421090 COURTOIS Pierre (M ou Mme);4022 TALARDS (7);02 99 82 28 17 (Tel.) / 02.99.82.28.17 (Tel fixe)
+;;6 Impasse Cornillet 35400 SAINT-MALO
+;;
+425982 GUILLAUME Dominique (M ou Mme);4022 TALARDS (7);dguillaume35@laposte.net (Email mail)
+;;06.07.37.94.11 (Cel. portable)
+;;8 La Theaudiere 35470 BAIN-DE-BRETAGNE
+;;
+445954 LEBRET Matthieu (M.);4022 TALARDS (7);matlebret@gmail.com (Email) / 06.87.95.84.08 (Cel.)
+;;46 RUE DE VERGENNES 78000 VERSAILLES
+;;
+447719 GUERIN & RIAND Florian et Margaux;4022 TALARDS (7);margauxriand@laposte.net (Email)
+;;2, allee Gerard de Nerval 35300 FOUGERES
+;;
+452751 MARIE & OLLIER Benoit et Helena (;4022 TALARDS (7);helena.ollier@gmail.com (Email)
+;;benoit.marie10@gmail.com (Email Inf)
+;;7 Boulevard des Talards 35400 ST MALO
+;;
+421093 AIGUILLON CONSTRUCTION ();4025 GRAND JARDIN;02.99.32.86.86 (Tel.) / 02.99.26.44.99 (Fax.)
+;;copropriete@aiguillon.com (Email)
+;;sclaudel@aiguillon.com (Email Inf MME CLAUDEL INCH ET INFOS)
+;;171 Rue de Vern B.P. 50147
+;;35201 RENNES CEDEX 2
+;;
+421102 CARLO Robert (M ou Mme);4025 GRAND JARDIN;02.99.81.43.24 (Tel.) / rolandecarlsm@hotmail.fr (Email)
+;;
+;;06.86.63.29.07 (Cel.) / 02.99.81.43.24 (Tel)
+;;8 Place du Manoir 35400 SAINT-MALO
+;;
+421113 GALAIS Joelle (Mademoiselle);4025 GRAND JARDIN;02.99.82.23.60 (Tel.) / 02 99 82 23 60 (Tel FIXE)
+;;1 Avenue des Comptoirs 35400 SAINT-MALO
+;;
+421122 HUARD Jean-Paul et Colette (M et;4025 GRAND JARDIN;02.99.82.29.63 (Tel.) / 06 65 31 54 17 (Tel.)
+;;06.65.31.54.17 (Cel.) / 02 99 82 29 63 (Tel fixe)
+;;8 Avenue des Comptoirs 35400 SAINT-MALO
+;;
+421126 JOUVET Patrick (Monsieur);4025 GRAND JARDIN;patrickjouvet@yahoo.fr (Email E-MAIL)
+;;06 85 72 64 96 (Cel. Mobile)
+;;8  avenue des Comptoirs 35400 SAINT-MALO
+;;
+421141 MARTIN Paul (M ou Mme);4025 GRAND JARDIN;02.99.81.18.42 (Tel.) / jacqumartin@wanadoo.fr (Email)
+;;8 Place du Manoir 35400 SAINT-MALO
+;;
+421149 BOUVET Joelle (Madame);4025 GRAND JARDIN;nee PONAIRE (Tel.) / Veuve QUERUEL (Tel.)
+;;divorcee BAYER (Cel. PORTABLE)
+;;06.78.26.85.92 (Cel. PORTABLE)
+;;bouvet.patrice@orange.fr (Email)
+;;2 rue des digitales 35350 LA GOUESNIERE
+;;
+421157 THEBAULT Pierrick (Monsieur);4025 GRAND JARDIN;02.23.18.27.70 (Tel.) / thebault.pierrick@free.fr (Email)
+;;9  Rue des Senechaux 35400 SAINT-MALO
+;;
+421172 BONENFANT Denis (M ou Mme);4025 GRAND JARDIN;bonenfant.denis@orange.fr (Email) / 06.63.53.61.12 (Cel.)
+;;06.63.53.61.12 (Cel.)
+;;23 avenue des comptoirs 35400 SAINT-MALO
+;;
+421179 GOZILLON Alain (Monsieur);4025 GRAND JARDIN;
+;;Ancienne adresse 1, Allee de la rencontre (Cel. PORTABLE)
+;;Le grand Frotu 35400 SAINT-MALO
+;;
+421182 BIARD Yvette (Madame);4025 GRAND JARDIN;02.99.81.43.26 (Tel.) / 07 81 69 38 33 (Tel.)
+;;07 81 69 38 33 (Cel. MOBILE)
+;;Residence Le Grand Jardin 10 Avenue des Comptoirs
+;;35400 SAINT-MALO
+;;
+421191 LE GALL Denis (Monsieur);4025 GRAND JARDIN;02.99.81.40.50 (Tel) / denis-legall@wanadoo.fr (Email)
+;;SCI RENAISSANCE 1 Place du Manoir
+;;35400 SAINT-MALO
+;;
+421194 GAUDIN Daniel (M ou Mme);4025 GRAND JARDIN;02.99.81.09.09 (Tel.) / 02 99 81 09 09 (Tel FIXE)
+;;13 Avenue des comptoirs 35400 SAINT-MALO
+;;
+421205 BIGOT-DENIS Lucette (Madame);4025 GRAND JARDIN;02.99.81.42.21 (Tel.) / 06 30 89 47 03 (Tel.)
+;;bigot-denis.lucette@orange.fr (Email E MAIL)
+;;02 99 81 42 21 (Tel FIXE) / 06 30 89 47 03 (Cel. mobile)
+;;Residence   Le Grand Jardin 23 Avenue des Comptoirs
+;;35400 SAINT-MALO
+;;
+421210 LEGUERINEL Pierrick (Monsieur);4025 GRAND JARDIN;06.61.36.42.94 (Cel. PORTABLE) / 06.56.86.27.15 (Cel.)
+;;jarry.edwige@orange.fr (Email)
+;;39  rue la Chesnaie 35730 PLEURTUIT
+;;
+421217 MARGELY Daniel (M ou Mme);4025 GRAND JARDIN;02.99.19.81.69 (Tel.)
+;;
+;;23  avenue des Comptoirs 35400 SAINT-MALO
+;;
+421219 RESTOUT Robert (Monsieur);4025 GRAND JARDIN;02.99.81.03.15 (Tel.) / 02 99 81 03 15 (Tel FIXE)
+;;06 08 61 93 49 (Cel. MOBILE)
+;;19 rue Georges Halna 35400 SAINT-MALO
+;;
+421974 THOUVENOT Catherine (Madame);4025 GRAND JARDIN;06 70 62 09 52 (Tel.) / 02.99.19.60.44 (Tel.)
+;;catherinethouvenot@hotmail.fr (Email)
+;;06 70 62 09 52 (Cel.)
+;;8  Avenue des Comptoirs 35400 SAINT MALO
+;;
+421988 GORIAUX Andre (M ou Mme);4025 GRAND JARDIN;02.99.58.39.51 (Tel.)
+;;christelle-a.goriaux@laposte.net (Email)
+;;06 76 94 94 86 (Cel. PORTIBLE)
+;;4  La Brizardiere 35430 CHATEAUNEUF D'I.et V.
+;;
+421989 MARC Dominique (Monsieur);4025 GRAND JARDIN;02.99.81.98.71 (Tel.) / 02 99 81 98 71 (Tel fixe)
+;;06 29 57 16 98 (Cel. mobile)
+;;dominiquemarc06@gmail.com (Email)
+;;1  Avenue des Comptoirs 35400 SAINT MALO
+;;
+422003 GAUCHET Bruno (M ou Mme);4025 GRAND JARDIN;brunog_35@hotmail.fr (Email) / 06 66 01 26 86 (Cel.)
+;;06 66 01 26 86 (Cel.)
+;;3  Allee du verseau 35400 SAINT MALO
+;;
+422037 MAIRIE DE ST MALO ();4025 GRAND JARDIN;Modifie 11/04/ (Tel.) / facturesstmalo@keredes.coop (Email)
+;;Modifie 31/10/12 (Cel. PORTABLE)
+;;025170-025169 H202 (Fax FAX)
+;;tlhermet@saint-malo.fr (Email Inf)
+;;ex Batiment de rapport CRDP (Tel)
+;;tlhermet@saint-malo.fr (Email Inf)
+;;DFM B.P. No 147
+;;35408 SAINT MALO CEDEX
+;;
+422038 MAIRIE DE ST MALO ();4025 GRAND JARDIN;facturesstmalo@keredes.coop (Email)
+;;025169 LOT 202 (Cel. PORTABLE) / 31/10/2012 (Fax FAX)
+;;jforet@saint-malo.fr (Email Inf)
+;;tlhermet@saint-malo.fr (Email Inf)
+;;BATIMENT DE RAPPORT AIGUILLON B.P. 147
+;;35408 SAINT-MALO CEdex
+;;
+422039 MAIRIE DE ST MALO ();4025 GRAND JARDIN;02 99 21 53 27 (Tel.) / facturesstmalo@keredes.coop (Email)
+;;jforet@saint-malo.fr (Email Inf)
+;;ddp@saint-malo.fr (Email Inf mail)
+;;02 99 21 53 27 (Tel accueil)
+;;tlhermet@saint-malo.fr (Email Inf)
+;;C.L.C.V. B.P. 147
+;;35408 SAINT MALO CEDEX
+;;
+422117 BRODIN ou Melle PREVEL (Monsieur);4025 GRAND JARDIN;06.66.54.31.71 (Tel.) / 06.66.54.31.71 (Cel. PORTABLE)
+;;morgan.brodin@orange.fr (Email)
+;;corinne.prevel@orange.fr (Email)
+;;8  Place du Manoir 35400 SAINT MALO
+;;
+422154 LE DANTEC Isabelle (Madame);4025 GRAND JARDIN;02.99.19.85.47 (Tel.) / Mr DIVET DCD (Tel.)
+;;voir indivision (Cel. PORTABLE)
+;;0682450664 (Cel. PORTABLE)
+;;
+;;1  rue du Haut Puits 35400 SAINT MALO
+;;
+422200 JARY Mickael (Monsieur);4025 GRAND JARDIN;02 99 69 49 35 (Tel.)
+;;mickael.jary@wanadoo.fr (Email mail)
+;;06 85 91 62 96  (Cel.) / 06 85 91 62 96  (Cel.)
+;;1 bis la Cocheriais 35720 PLESDER
+;;
+422231 LAMBERT Martine (Madame);4025 GRAND JARDIN;09.53.21.82.12 (Tel.) / 06 03 12 69 65 (Tel.)
+;;06.03.12.69.65 (Cel. PORTABLE)
+;;martine.bau@live.fr (Email)
+;;16 AVENUE DES COMPTOIRS 35400 SAINT MALO
+;;
+422303 DALLET Laurent et Gisele (M ou Ml;4025 GRAND JARDIN;06 08 26 28 24 (Tel.) / 02 96 86 40 71 (Tel.)
+;;nc.dallet@orange.fr (Email Mail)
+;;02 96 86 40 71 (Tel fixe) / 06 08 26 28 24 (Cel. mobile)
+;;21  rue F. Letellier 22830 PLOUASNE
+;;
+422324 ANDREWS Marie-Christine et France;4025 GRAND JARDIN;kiki.andrews1958@icloud.com (Email) / 06.63.98.45.91 (Cel.)
+;;RESIDENCE LES CAP HORNIER N 98 2 IMPASSE CLEMENT ADER
+;;35730 PLEURTUIT
+;;
+422327 LEBLANC - LE MEUR Virginie (Mme);4025 GRAND JARDIN;lebvirgie@live.fr (Email MAIL)
+;;lebvirgie@live.fr (Email MAIL)
+;;06 25 94 65 94 (Cel. portable)
+;;44 RUE DE L'ARGOAT GUERLEDAN
+;;22530 MUR DE BRETAGNE
+;;
+422352 FATOUT Patrick (Monsieur);4025 GRAND JARDIN;06.62.68.61.87 (Cel. PORTABLE) / pfatout@yahoo.fr (Email)
+;;23  avenue des comptoirs 35400 Saint-Malo
+;;
+422903 TRAVERT Marie (Madame);4025 GRAND JARDIN;07 68 78 76 82 (Tel.) / 07 68 78 76 82 (Cel. MOBILE)
+;;23 Avenue des Comptoirs 35400 SAINT-MALO
+;;
+424775 REYRE Martine (Madame);4025 GRAND JARDIN;07 86 45 85 73 (Tel.) / 07 86 45 85 73 (Cel. mobile)
+;;martine.greyre@gmail.com (Email mail)
+;;8 avenue des Comptoirs 35400 SAINT MALO
+;;
+425178 AMO MMES RUELLAN-BILLOIS ET MORIN;4025 GRAND JARDIN;02 99 82 39 38 (Tel.) / Morin martine (Tel.)
+;;ruellanbillois@orange.fr (Email MAIL)
+;;morin.ortho@orange.fr (Email mail 2)
+;;02 99 82 39 38 (Tel fixe)
+;;4  place du Manoir Avenue des Comptoirs
+;;35400 SAINT MALO
+;;
+425198 PREDA (S.C.I.);4025 GRAND JARDIN;david.bilap@gmail.com (Email E-MAIL)
+;;mlucas@amexconseils.com (Email Inf) / 07 60 75 35 35 (Cel.)
+;;Gerant : Monsieur BILAP 8 Place du Manoir
+;;35400 SAINT MALO
+;;
+425287 DULUARD Louise (Madame);4025 GRAND JARDIN;02.43.20.14.66 (Tel.) / 06.29.94.98.76 (Cel. PORTABLE)
+;;02 43 20 14 66 (Tel fixe)
+;;1, rue Alexandre Moreau 72140 SILLE LE GUILLAUME
+;;
+425448 EZZAID Ahmed (Monsieur);4025 GRAND JARDIN;06.19.86.00.95 (Cel. PORTABLE)
+;;wavestmal@hotmail.fr (Email)
+;;1 Avenue des comptoirs 35400 SAINT MALO
+;;
+;;
+425913 LOUVEL Didier & Nathalie (M ou Mm;4025 GRAND JARDIN;natlouvel@sfr.fr (Email mail) / 02 99 75 23 03 (Tel fixe)
+;;06 84 51 54 64 (Cel. mobile)
+;;1 allee d'Irlande 35500 VITRE
+;;
+425936 MARQUET Kurniasih (Mme);4025 GRAND JARDIN;0662403324 (Tel.) / marquetolivier@yahoo.fr (Email)
+;;1  rue Jean-Marie Cochet 35400 SAINT-MALO
+;;
+425969 ROUSSEL Martine (Madame);4025 GRAND JARDIN;06 79 90 46 68 (Tel.) / 02 99 81 43 42 (Tel.)
+;;02 99 81 43 42 (Tel fixe) / 06 79 90 46 68 (Cel. mobile)
+;;8 Avenue des comptoirs 35400 SAINT-MALO
+;;
+425981 BARBAROUX Ludovic (Monsieur);4025 GRAND JARDIN;06.46.57.82.27 (Cel.)
+;;Chez ASSOCIATION APASE 33 rue des landelles CS 61794
+;;35517 CESSON SEVIGNE CEDEX
+;;
+426028 WENKER Harald (Monsieur);4025 GRAND JARDIN;feeltheforceflow@t-online.de (Email)
+;;Im Sonnentau 6 91161 HILPOLTSTEIN
+;;ALLEMAGNE
+;;
+428087 HERVE Guillaume (Monsieur);4025 GRAND JARDIN;guillaume35herve@gmail.com (Email) / 06.85.70.08.93 (Cel.)
+;;8 place du Manoir 35400 ST MALO
+;;
+428099 CALABREIZH 3 (SCI);4025 GRAND JARDIN;02 99 66 12 75 (Tel) / compta@aldosferra.com (Email)
+;;Lotissement 6 ZA BEAUSEJOUR 35520 LA MEZIERE
+;;
+428162 MARSOUIN Typhen (Madame);4025 GRAND JARDIN;typhenmarsoin@hotmail.fr (Email Marsouin Typhen)
+;;06 03 20 36 35 (Cel.)
+;;8 avenue des Comptoirs 35400 SAINT MALO
+;;
+428163 TOURNIER Pascal (Monsieur);4025 GRAND JARDIN;pascaltournier@sfr.fr (Email) / 06.04.67.47.81 (Cel.)
+;;8 Avenue Charles Prevet 35400 SAINT MALO
+;;
+428320 HARDOUIN Valentin (Monsieur);4025 GRAND JARDIN;valentin.hardou1@outlook.fr (Email)
+;;16 avenue des comptoirs 35400 SAINT MALO
+;;
+428362 DAMAGNEZ ET ZANNOU Mael et Dolore;4025 GRAND JARDIN;mael.damagnez@free.fr (Email)
+;;9 rue Etienne MEHUL  94220 CHARENTON LE PONT
+;;
+428663 PETROLEUSE (SCI);4025 GRAND JARDIN;maelchapelain@orange.fr (Email)
+;;maelchapelain@orange.fr (Email)
+;;2 RUE DU BIGNON 35870 LE MINIHIC SUR RANCE
+;;
+428712 VIDAL Dominique (Monsieur);4025 GRAND JARDIN;dom.vidal@wanadoo.fr (Email) / 06.87.27.38.51 (Cel.)
+;;16 Avenue des Comptoirs 35400 SAINT MALO
+;;
+428733 MOREAU ET PLOUET David et Maiwenn;4025 GRAND JARDIN;06 21 09 01 40 (Tel.) / 09 87 00 82 34 (Tel.)
+;;davidfromtgo@yahoo.fr (Email mail)
+;;09 87 00 82 34 (Tel fixe) / 06 21 09 01 40 (Cel. mobile)
+;;1 Avenue des Comptoirs 35400 SAINT MALO
+;;
+428775 ZELVELDER Dominique  (M.);4025 GRAND JARDIN;zelvelder@gmail.com (Email) / 06 51 80 31 97  (Cel.)
+;;11 VILLA DES BUTTES CHAUMONT 75019 PARIS
+;;
+428797 MEHOUAS Stephanie (Mademoiselle);4025 GRAND JARDIN;stephaniemehouas@yahoo.fr (Email) / 06.22.10.13.87 (Cel.)
+;;12 Avenue des Comptoirs  35400 SAINT MALO
+;;
+438706 LEKEUX Joelle (Mme);4025 GRAND JARDIN;malochel@gmail.com (Email) / 06 74 63 81 31 (Cel.)
+;;
+;;1 AVENUE DES COMPTOIRS 35400 ST MALO
+;;
+438926 DUVAL Timothee (M.);4025 GRAND JARDIN;timothee_duval@live.fr (Email) / 06 10 81 07 43 (Cel.)
+;;8, Place du Manoir 35400 ST MALO
+;;
+438933 MARQUET Olivier (M.);4025 GRAND JARDIN;marquetolivier@yahoo.fr (Email) / 06 62 40 33 24 (Cel.)
+;;02 56 52 73 97 (Tel)
+;;1, rue Jean Marie Cochet 35400 ST MALO
+;;
+440699 DELALANDE PASCAL ET ANNA-MARIA (M;4025 GRAND JARDIN;06.42.22.10.54 (Cel.)
+;;delalande.pascalmaria@orange.fr (Email)
+;;8 Place du Manoir 35400 SAINT MALO
+;;
+440752 GALLEE Marie-Therese (Mme);4025 GRAND JARDIN;marietherese.gallee@gmail.com (Email)
+;;02 99 07 09 73 (Tel)
+;;10 La Besneraye 35137 PLEUMELEUC
+;;
+441176 LOGNONE Philippe (M.);4025 GRAND JARDIN;philippe.lognone@gmail.com (Email) / 06 60 06 79 18 (Cel.)
+;;35 RUE JEAN XXIII 35400 ST MALO
+;;
+441584 PAUMIER Lenaick et Isabelle (M. e;4025 GRAND JARDIN;les5pommes@live.fr (Email) / 06.46.01.40.82 (Cel.)
+;;7 rue des Lilas 35440 MONTREUIL SUR ILLE
+;;
+441950 ARLABOSSE - CASTEL Bertrand - Els;4025 GRAND JARDIN;bertrand.arlabosse@gmail.com (Email)
+;;06 51 11 64 09 (Cel.)
+;;Mandataire Mr.ARLABOSSE  1 AVENUE DES COMPTOIRS
+;;35400 ST MALO
+;;
+442342 POULHET/MARTIN JACKY ET CHRYSTELE;4025 GRAND JARDIN;chrystele-martin@orange.fr (Email) / 06.74.87.72.54 (Cel.)
+;;02 99 57 58 45 (Tel) / carine.mar@sfr.fr (Email)
+;;9 LA MIAUDIERE 35890 BOURG DES COMPTES
+;;
+443149 SAHEL AHMAD (M.);4025 GRAND JARDIN;sahelahmad@gmail.com (Email  ) / 06 61 26 93 92 (Cel.)
+;;12 BIS RUE RENE BOLTZ 35400 ST MALO
+;;
+443150 LAGRANGE FRANCOISE (Mme);4025 GRAND JARDIN;kanso.mjpm@orange.fr (Email PROTECTION MAJEUR MME KANSO)
+;;02 99 30 28 09 (Tel fixe protection kanso)
+;;felvalav@yahoo.fr (Email) / 02 56 52 77 83  (Tel)
+;;06.03.45.58.87 (Cel.)
+;;Gere Par Mme KANSO Manuela BP 10
+;;35490 SENS DE BRETAGNE
+;;
+443396 KRAWCZYK-MOULLEC RICHARD ET CAROL;4025 GRAND JARDIN;richard.krawczyk1963@gmail.com (Email)
+;;06.07.66.27.32 (Cel.)
+;;23 RUE PRINCIPALE 02420 AUBENCHEUL AUX BOIS
+;;
+444380 SOUBEN AURORE (Mme);4025 GRAND JARDIN;06 6476 50 52 (Tel.) / asouben@hotmail.fr (Email)
+;;06 64 76 50 52 (Cel.)
+;;16 AVENUE DES COMPTOIRS 35400 ST MALO
+;;
+448407 PILORGE Romuald et Marion (M. et;4025 GRAND JARDIN;egrolip@gmail.com (Email) / 06 81 48 77 11 (Cel.)
+;;197 rue de la roche Blanche 35800 ST LUNAIRE
+;;
+449339 BRUNE JOSSELIN (M.);4025 GRAND JARDIN;josselin.brune@icloud.com (Email) / 06 35 90 37 50 (Cel.)
+;;23 AVENUE DES COMPTOIRS 35400 ST MALO
+;;
+450063 SAMSON Rene et Hertha (M. et Mme);4025 GRAND JARDIN;hertha.samson35@yahoo.com (Email) / 06 24 24 29 47 (Cel.)
+;;
+;;02 90 04 06 14 (Tel)
+;;9 RUE DES CYCLAMENS  35400 ST MALO
+;;
+450768 BONKE Klaus (M.);4025 GRAND JARDIN;bonke.klaus@gmail.com (Email) / 06 27 43 43 04 (Cel.)
+;;13 RUE DE LA BERTHELIERE 35340 LA BOUEXIERE
+;;
+451041 TREMOUEREUX SYLVAIN & KATELL (M.;4025 GRAND JARDIN;stremoureux@yahoo.fr (Email MR)
+;;katell.martin29@yahoo.fr (Email MME)
+;;06 83 26 56 92 (Cel.)
+;;16 AVENUE DES COMPTOIRS 35400 ST MALO
+;;
+451661 RAMOS CARLOS (M.);4025 GRAND JARDIN;ramoscarlos1504@gmail.com (Email) / 06 34 87 75 96 (Cel.)
+;;6 AVENUE DES COMPTOIRS 35400 ST MALO
+;;
+451804 RAULO Jules (M.);4025 GRAND JARDIN;julesraulo1@gmail.com  (Email) / 06 25 16 47 40 (Cel.)
+;;2 rue des Orchidees 35400 ST MALO
+;;
+452090 LUCA FLORJAN (M.);4025 GRAND JARDIN;florjanluca@gmail.com (Email)
+;;13 AVENUE DES COMPTOIRS 35400 ST MALO
+;;
+452777 PEROGNA-CARRETIER (INDIVISION);4025 GRAND JARDIN;rodrigo_perogna@hotmail.com (Email) / 0649242312 (Cel.)
+;;0647698486 (Cel.)
+;;GEREE PAR MME MARINE CARRETIER 5 RUE LOUIS BRAILLE
+;;35400 ST MALO
+;;
+453857 NOKAYA AROUNY (Mme);4025 GRAND JARDIN;arouny.nokaya@gmail.com (Email) / 06 51 48 54 37 (Cel.)
+;;4 AVENUE DES COMPTOIRS 35400 ST MALO
+;;
+425334 BRAULT Jean-Marie & Isabelle (M o;4027 SCHUMAN (55);06 08 32 52 90 (Tel.)
+;;brault.jean-marie@wanadoo.fr (Email E-MAIL)
+;;06 08 32 52 90 (Cel. PORTABLE)
+;;22  allee de Rivasselou 35400 SAINT-MALO
+;;
+425672 BOQUILLON Berangere (Madame);4027 SCHUMAN (55);04 26 00 62 67 (Tel.) / 06 46 15 43 53 (Tel.)
+;;berengereboquillon@yahoo.fr (Email) / 04 26 00 62 67 (Tel)
+;;06 46 15 43 53 (Cel.)
+;;3 allee du Parc 69310 PIERRE-BENITE
+;;
+425694 OSSATO Jacques & Claudine (M ou M;4027 SCHUMAN (55);06 76 43 16 17 (Tel.) / 04 42 44 10 77 (Tel.)
+;;jc.ossato@orange.fr (Email EMAIL)
+;;04 42 44 10 77 (Tel fixe) / 06 76 43 16 17 (Cel. MOBILE)
+;;2 lotissement les pres Saint  roch Chemin St Roch
+;;13440 CABANNES
+;;
+428321 PINCON Frederique (Madame);4027 SCHUMAN (55);06 83 09 61 42 (Tel.) / frederique.pincon@orange.fr (Email)
+;;06.83.09.61.42 (Cel.)
+;;5 Passage Archambault 37000 TOURS
+;;
+428382 LYONNET Michael (Monsieur);4027 SCHUMAN (55);06 16 66 53 22 (Tel.)
+;;06.16.66.53.22 (Cel. LYONNET Michael)
+;;06.16.66.53.22 (Cel. LYONNET Michael)
+;;lyonnetmichael@gmail.com (Email)
+;;86, rue Gabriel Peri 28000 CHARTRES
+;;
+444432 KEOMANIVONG et ROLLAND Christophe;4027 SCHUMAN (55);keorolland@gmail.com (Email) / 06 26 49 63 26 (Cel. MR)
+;;06 61 30 04 87 (Cel. MME)
+;;27 rue Schnapper 78100 ST GERMAIN EN LAYE
+;;
+;;
+421262 BICHIER Francoise (Madame);4034 MONTREAL;02.99.46.13.41 (Tel.) / 06 76 75 18 96 (Tel.)
+;;p.harel@bizeulimmobilier.com (Email)
+;;06.71.17.41.27 (Cel.)
+;;49  avenue Edouard VII 35800 DINARD
+;;
+421271 MAGNON Gerard (M ou Mme);4034 MONTREAL;02.97.29.12.44 (Tel.) / 06 09 06 69 80 (Tel.)
+;;gmagnon@gmail.com (Email) / 06.09.06.69.80 (Cel.)
+;;7  rue du Pont Neuf 56400 AURAY
+;;
+421283 GORGE Marie (Mme);4034 MONTREAL;02.99.89.76.23 (Tel.) / 02 99 89 76 23 (Tel)
+;;06 16 13 63 84 (Cel. FILS GORGE MICHEL)
+;;michelgorge19@gmail.com (Email Inf FILS)
+;;Residence Les Girandieres 2 rue de l'Union
+;;22100 DINAN
+;;
+421287 COURTEILLE Gerard/Nicole (M ou Mm;4034 MONTREAL;06 84 92 78 20 (Tel.) / 02 33 38 60 28 (Tel.)
+;;g.courteille.61@wanadoo.fr (Email)
+;;02 33 38 60 28 (Tel fixe) / 06 84 92 78 20 (Cel. portable)
+;;11 Rue G. Le Conquerant 61700 DOMFRONT
+;;
+421297 SARDANT (M ou Mme);4034 MONTREAL;sardant denise (Fax.) / dcd 18/09/14 (Cel. PORTABLE)
+;;sardant denise (Fax FAX)
+;;2 Rue Jules Saffray 35400 SAINT-MALO
+;;
+421300 LORANS Patrick (M ou Mme);4034 MONTREAL;02.99.45.40.23 (Tel)
+;;28 RUE La Motte 35630 HEDE BAZOUGES
+;;
+421305 FAROUAULT Genevieve (M ou Mme);4034 MONTREAL;02.33.48.50.96 (Tel.)
+;;barre-farouault@wanadoo.fr (Email FILLE MME FAROUAULT)
+;;MR DCD LE 10/11/15 (Cel. PORTABLE)
+;;0233580502 (Tel FILLE MME BARBE)
+;;2 Les Prairies 50220 POILLEY
+;;
+421306 GUILLAUME Michelle (Madame);4034 MONTREAL;02.33.49.00.40 (Tel.) / 06 84 18 22 64 (Tel.)
+;;michelle.m.guillaume@gmail.com (Email   )
+;;06.84.18.22.64 (Cel.)
+;;Le Cerisier 50730 SAINT-BRICE-DE-LANDELLES
+;;
+421312 LOUBOUTIN Pierre (Monsieur);4034 MONTREAL;02.99.82.14.34 (Tel.) / louboutin.pierre@wanadoo.fr (Email)
+;;06.72.77.82.49 (Cel.)
+;;15  impasse du Clos Breton 35400 SAINT-MALO
+;;
+421316 OMARD Michel (M ou Mme);4034 MONTREAL;02.48.30.64.98 (Tel.) / 06.08.34.19.38 (Tel.)
+;;06 08 34 19 38 (Cel. PORTABLE) / 02 48 30 64 98 (Tel fixe)
+;;ledanich@alice.adsl.fr (Email mail)
+;;7 Impasse du Roussillon 18390 SAINT-GERMAIN-DU-PUY
+;;
+421317 BOUILLON Germaine (Madame);4034 MONTREAL;02 98 92 32 43 (Tel.) / 02.98.92.32.43 (Tel fixe)
+;;2 RUE JULES SAFFRAY 35400 ST MALO
+;;
+421319 ROCHER Josette (Madame);4034 MONTREAL;06 71 21 69 46 (Tel.) / 06.71.21.69.46 (Cel. portable)
+;;Residence Breteuil 8/13 carriere de la Funquee
+;;59800 LILLE
+;;
+421326 MENARD Edith (Mme);4034 MONTREAL;02.23.18.07.39 (Tel.)
+;;jean-pierre.menard0113@orange.fr (Email)
+;;
+;;01 60 79 03 56 (Tel)
+;;3 square Charles Gounod 91450 ETIOLLES
+;;
+421327 HARDY Marie-Annick (Mademoiselle);4034 MONTREAL;06.79.07.03.29 (Cel.)
+;;Residence le Montreal 2 Rue Jules Saffray
+;;35400 Saint-Malo
+;;
+421971 DECLERCK LECORNU Claudine (Madame;4034 MONTREAL;02.99.20.36.18 (Tel.) / 02 99 20 36 18 (Tel liste rouge)
+;;15 et 17  avenue Jean Jaures 35400 SAINT-MALO
+;;
+422094 DUBUS BRUNO (Monsieur);4034 MONTREAL;02.99.20.31.85 (Tel.)
+;;dubus.hardy@laposte.net (Email MAIL)
+;;02 99 73 70 51 (Tel fixe) / 06.79.78.29.03 (Cel.)
+;;17 Rue du Clos de l'Epine  22100 ST HELEN
+;;
+422155 MARNIER Jean-Marie et Yvonne (M o;4034 MONTREAL;02.99.48.29.30 (Tel.) / 06 86 75 90 18 (Tel.)
+;;06 86 75 90 18 (Cel.) / 02 99 48 29 30 (Tel FIXE)
+;;07.87.57.36.09 (Cel. MME)
+;;13  rue Henri Guerin 35120 DOL DE BRETAGNE
+;;
+422159 BUTTIER Serge (Monsieur);4034 MONTREAL;02.99.81.49.61 (Tel.) / buttiergs@wanadoo.fr (Email)
+;;02 99 81 49 61 (Tel Fixe) / 06.26.18.15.52 (Cel. PORTABLE)
+;;28  rue du Moulin Quinard 35430 SAINT-JOUAN-DES-GUERETS
+;;
+422164 BERTIAU Marie France (Madame);4034 MONTREAL;06 62 31 35 48 (Tel.) / 02 99 20 12 53 (Tel.)
+;;marie.f.bertiau@bbox.fr (Email mail)
+;;06 62 31 35 48 (Cel. mobile) / 02 99 20 12 53 (Tel fixe)
+;;15  avenue Jean Jaures 35400 SAINT-MALO
+;;
+422193 LEGAY Yann (M.);4034 MONTREAL;06 07 66 82 70 (Tel.) / 02 99 56 13 14 (Tel.)
+;;02 99 56 13 14 (Tel FIXE) / 06 07 66 82 70 (Cel.)
+;;25 rue du Puits Jacob 35000 RENNES
+;;
+422227 VAULEON nee VALLIER Arlette (Mada;4034 MONTREAL;06 81 25 56 66 (Tel.) / Vente du 09/03/95 (Cel. PORTABLE)
+;;06.81.25.56.66 (Cel. PORTABLE)
+;;La Patis Sauge 35150 JANZE
+;;
+422287 COURTAULT-HUET (Messieurs);4034 MONTREAL;Divorcee (Tel.) / HUET Jacques (Tel.)
+;;06 30 00 07 67 (Fax.) / huetfr@gmail.com (Email FILS )
+;;06.30.00.07.67 (Mme) (Cel. PORTABLE)
+;;06 48 64 87 44 (Cel. LOCATAIRE MME JAMET)
+;;michelle.courtault-huet@orange.fr (Email)
+;;COURTAULT Michele 27 cours Pasteur
+;;86270 LA ROCHE POSAY
+;;
+422288 HERELLE Daniel (M ou Mme);4034 MONTREAL;02 99 94 49 41 (Tel.) / 06 60 91 90 67 (Tel.)
+;;herelle@orange.fr (Email adresse mail)
+;;02 99 94 49 41 (Tel fixe) / 06 60 91 90 67 (Cel. mobile)
+;;2  allee du Champ d'Argent 35300 FOUGERES
+;;
+422523 GAUSSEN Geoffroy (Monsieur);4034 MONTREAL;01.48.57.81.53 (Tel.) / 02.99.89.42.21 (Tel.)
+;;06 14 76 50 55 (Fax.) / 06 14 76 50 55 (Cel.)
+;;gaussen@freesbee.fr (Email) / 01 48 57 81 53 (Tel FIXE)
+;;CO WEIDMANN 20 Rue des Hanots
+;;93100 MONTREUIL
+;;
+422636 LE BRETON Philippe (M ou Mme);4034 MONTREAL;01.39.50.10.49 (Tel.)
+;;
+;;philanne.lebreton@orange.fr (Email E-MAIL)
+;;0609702492 (Cel.)
+;;1 Rue Neuve Notre Dame 78000 VERSAILLES
+;;
+423610 KRIEF Bruno (Monsieur);4034 MONTREAL;06 82 51 13 86 (Tel.) / b.krief@rubis.fr (Email mail)
+;;06.82.57.13.86 (Cel.) / 06.82.57.13.86 (Cel.)
+;;149 rue de la pompe 75116 PARIS
+;;
+424136 MARIE Yolande (Madame);4034 MONTREAL;0299814772 (Tel.)
+;;12 allee de rivasselou 35400 SAINT-MALO
+;;
+424424 VOISIN Yves et Nicole (M. et Mme);4034 MONTREAL;02.43.87.62.00 (Tel) / 06.23.93.01.59 (Cel.)
+;;48 rue D'allonnes 72700 SPAY
+;;
+424509 LEBRET Jeannine (Madame);4034 MONTREAL;02 23 18 13 98 (Tel.) / 06 86 99 79 67 (Tel.)
+;;lebretjanine@orange.fr (Email mail)
+;;06 86 99 79 67 (Cel. portable) / 02 23 18 13 98 (Tel fixe)
+;;15  avenue Jean Jaures 35400 SAINT-MALO
+;;
+424661 SCI JAURES ();4034 MONTREAL;02 99 46 16 52 (Tel.)
+;;G: Mr DURAND 26 rue des etangs 35780 la richardais (Cel. POR
+;;comptabilite.durandpodo@orange.fr (Email)
+;;MR DURAND BP 90118
+;;35801 DINARD CEDEX
+;;
+424732 LEGAY Yann (M.);4034 MONTREAL;06 07 66 82 70 (Tel.) / yann@agm-prod.com (Email)
+;;25 rue du puits jacob 35000 RENNES
+;;
+424759 PITARD Michel (Monsieur);4034 MONTREAL;02 43 61 08 77 (Tel.) / 06 80 44 04 03 (Tel.)
+;;mcpitard@orange.fr (Email) / 06 80 44 04 03 (Cel.)
+;;02 43 61 08 77 (Tel)
+;;13  rue Saint-Bertrand 72000 LE MANS
+;;
+424761 BEASSE Jean-Yves (Monsieur);4034 MONTREAL;06 82 49 99 92 (Cel.)
+;;2 rue Jules Saffray 35400 SAINT-MALO
+;;
+424939 BOUVET Agnes (M ou Mme);4034 MONTREAL;ab1979@hotmail.fr (Email)
+;;29 avenue Georges Mandel 75016 PARIS 16EME
+;;
+425240 ARRIBARD Remy (Monsieur);4034 MONTREAL;02 99 68 88 66 (Tel.) / 06 06 42 09 83 (Tel.)
+;;02 99 68 88 66 (Tel) / 06 06 42 0983 (Cel.)
+;;remyarribard@gmail.com (Email)
+;;12 Clos des Haies 35760 MONTGERMONT
+;;
+425322 FOURNIE & MAINGON Christophe & Al;4034 MONTREAL;06 74 63 65 14 (Tel.) / 01 45 43 01 77 (Tel.)
+;;chfournie@yahoo.fr (Email E-MAIL)
+;;06.74.63.65.14 (Cel. PORTABLE) / 01.45.43.01.77 (Tel fixe)
+;;30 Bld d'Edouard Herriot 22000 ST BRIEUC
+;;
+425535 MARTY-MAHE Francis (Monsieur);4034 MONTREAL;06 33 54 59 94 (Tel.)
+;;francis.martymahe@laposte.net (Email)
+;;06 33 54 59 94 (Cel.)
+;;6 bis rue de Cadix 75015 PARIS
+;;
+425612 TREHEL Bertrand & Monique (M ou M;4034 MONTREAL;02 96 39 86 36 (Tel.) / 06 15 14 34 34 (Tel.)
+;;02.96.39.86.36 (Tel fixe) / 06.15.14.34.34 (Cel. portable)
+;;bertrand.monique.trehel@orange.fr (Email adresse mail)
+;;
+;;1  chemin des Granitiers 22100 SAINT-HELEN
+;;
+425932 GROSSELET Alain (Monsieur);4034 MONTREAL;06 73 07 89 06 (Cel.) / 06 73 07 89 06 (Cel.)
+;;haumondgrosselet@hotmail.com (Email)
+;;4  avenue Winston Churchill 94220 CHARENTON-LE-PONT
+;;
+428200 CABELLAN Gilles et Roselyne (M et;4034 MONTREAL;cabellan.gilles@orange.fr (Email) / 06.77.26.69.88 (Cel.)
+;;roselyne.cabellan@orange.fr (Email)
+;;15 avenue Jean Jaures 35400 ST MALO
+;;
+428672 MONMARCHE Yoann (Monsieur);4034 MONTREAL;yoann.monmarche@gmail.com (Email) / 06.60.88.79.88 (Cel.)
+;;22, rue du Commandant Corsaire 22640 PLESTAN
+;;
+428689 LE CALVEZ Patrick et Francoise (M;4034 MONTREAL;06 14 20 80 23 (Tel.) / 02 99 55 68 81 (Tel.)
+;;patrick.le-calvez4@wanadoo.fr (Email mail)
+;;02 99 55 68 81 (Tel fixe) / 06 14 20 80 23 (Cel. mobile)
+;;21 rue des Metairies 35250 ST AUBIN D'AUBIGNE
+;;
+439131 WALTER Josette (Mme);4034 MONTREAL;josette.walter@wanadoo.fr (Email) / 06 14 94 93 46 (Cel.)
+;;15 AVENUE JEAN JAURES 35400 ST MALO
+;;
+442148 HUNOT Jean-Paul et Christine (M.;4034 MONTREAL;jeanpaulhunot@yahoo.fr (Email) / 09 53 67 49 60  (Tel)
+;;06 15 58 38 04 (Cel.) / 06.09.04.33.97 (Cel.)
+;;42 Rue des Vignes 31650 ST ORENS DE GAMEVILLE
+;;
+445783 GOURDRE Thierry (M.);4034 MONTREAL;gourdre.thierry35@orange.fr (Email) / 06.85.62.46.93 (Cel.)
+;;5 chemin du Tertre Mignon 35800 DINARD
+;;
+446615 OUEST-FRANCE (Societe);4034 MONTREAL;juridique@ouest-france.fr (Email)
+;;10 rue du Breil ZI Rennes Sud-Est
+;;35000 RENNES
+;;
+447969 GAZELINE (Societe);4034 MONTREAL;contact@pymo.fr (Email) / 06 01 44 04 81 (Cel.)
+;;gerants Mme Peltier&Mr Picard 16 B rue de Saint-Malo
+;;35540 MINIAC MORVAN
+;;
+451818 BES Philippe et Christine (M. ou;4034 MONTREAL;bes.ph@free.fr (Email) / 07 82 84 85 03 (Cel.)
+;;06 18 28 58 50 (Cel.)
+;;9 rue Georges Pompidou 33400 TALENCE
+;;
+421330 LE GALLIARD RENE (Monsieur);4035 VAL;rene.legalliard@wanadoo.fr (Email MAIL)
+;;02 99 83 29 75 (Tel fixe) / 06 09 74 22 70 (Cel. mobile)
+;;5 Mail de Bourchevreuil 35510 CESSON-SEVIGNE
+;;
+421334 LE VOT Janine (Madame);4035 VAL;06 85 07 05 65 (Tel.) / 02 99 55 93 69 (Tel.)
+;;j1.levot@orange.fr (Email) / 06 85 07 05 65 (Cel.)
+;;02 99 55 93 69 (Tel)
+;;10 Avenue de Moretonhampstead 35830 BETTON
+;;
+421337 MARQUIS Yves (M et Mme);4035 VAL;06 03 08 69 22 (Tel.) / Donation 03/03 (Tel.)
+;;catherinemarquis71@gmail.com (Email)
+;;yvesmarquis35@gmail.com (Email Inf adresse mail)
+;;06.03.08.69.22 (Cel.)
+;;5 Bld Sebastopol 35000 RENNES
+;;
+421338 Societe Civile TOUTRANS Transport;4035 VAL;01.60.82.13.59 (Tel.) / 01.60.82.13.59 (Fax.)
+;;yvesmarquis35@gmail.com (Email) / 06 03 08 69 22 (Cel.)
+;;
+;;Mr Yves MARQUIS 5 boulevard Sebastopol
+;;35000 RENNES
+;;
+421340 SCI LES LUTINS MME LUCAS VERONIQU;4035 VAL;02 33 44 05 65 (Tel.) / veroniquelucas3@gmail.com (Email)
+;;02 33 44 05 65 (Tel FIXE) / 06 33 30 77 71 (Cel. portable)
+;;29 RUE DU PASTEUR 50110 TOURLAVILLE
+;;
+421341 MOURIER AGNES (Madame);4035 VAL;02.96.33.12.21 (Tel.) / 4 enfants NP (Fax.)
+;;tmad.mourier@gmail.com (Email mail)
+;;06.74.94.40.15 (Cel. PORTABLE) / 4 enfants NP (Fax FAX)
+;;100% usufruit Mme DRUAIS Edith (Fax)
+;;16  avenue de la Motte Picquet
+;;75007 PARIS 07
+;;
+421342 BEASSE (INDIVISION);4035 VAL;02.99.96.96.43 (Tel.) / william.bouland@wanadoo.fr (Email)
+;;02.99.96.96.43 (Tel) / 06.77.02.09.76 (Cel.)
+;;niniferron35@gmail.com (Email)
+;;CHEZ MME BEASSE VERONIQUE 53 RUE DE L AUBINIERE
+;;53800 RENAZE
+;;
+421345 DE LA BOUERE Nelly (Madame);4035 VAL;02.99.05.89.65 (Tel.) / malovly35@gmail.com (Email)
+;;02 99 05 89 65 (Tel)
+;;19 RUE DU TERTRE
+;;35170 BRUZ
+;;
+421346 MAILLARD Yves (M ou Mme);4035 VAL;02.99.39.50.42 (Tel.) / yves35yvon@gmail.com (Email)
+;;06.85.07.71.20 (Cel.)
+;;2  rue Pierre Hubert 35490 VIEUX-VY-SUR-COUESNON
+;;
+421347 BIRY Emmanuelle (Madame);4035 VAL;04.93.64.95.14 (Tel.) / 01 42 52 33 59 (Tel.)
+;;emma.biry@wanadoo.fr (Email MAIL) / 06 63 48 20 63  (Cel.)
+;;Les Panoramas 246 chemin des Bas Brusquets
+;;06220 VALLAURIS
+;;
+421353 MEHAT Noelle (Mademoiselle);4035 VAL;06.25.27.65.74 (Cel. PORTABLE) / 09.80.65.19.15 (Tel FIXE)
+;;7 Bis Bld de Verdun 35000 RENNES
+;;
+421354 PLASSARD Nicole (Madame);4035 VAL;01.47.08.10.66 (Tel.) / jcplassard@free.fr (Email)
+;;12 avenue Mary 92500 RUEIL-MALMAISON
+;;
+421359 VEILLE Gerard (M ou Mme);4035 VAL;02.99.41.26.90 (Tel.) / 06.99.21.19.48 (Cel. PORTABLE)
+;;gerard.veille@yahoo.fr (Email EMAIL)
+;;2 Rue Frederic Mistral 35131 CHARTRES-DE-BRETAGNE
+;;
+421363 PIOT Andree-Jeanne (Madame);4035 VAL;02.99.40.16.12 (Tel.) / 03 26 52 21 60 (Tel)
+;;2, place de l'Eglise 51700 STE GEMME
+;;
+421366 CHAUVEL Louisette (Madame);4035 VAL;02.99.39.51.16 (Tel.) / 02 99 39 51 16 (Tel)
+;;06 95 97 69 16 (Cel.)
+;;4 La Barrerie 35490 GAHARD
+;;
+421371 LAFARGE Louis (Monsieur);4035 VAL;02.99.40.97.37 (Tel.) / 06 80 41 75 77 (Cel. PORTABLE)
+;;louis.lafarge@me.com (Email)
+;;Residence de la Plage du Val 10 Place du Val
+;;35400 SAINT-MALO
+;;
+421372 LABESSE Annick (Mme);4035 VAL;02.99.38.22.85 (Tel.) / 02.99.36.42.21 (Tel)
+;;
+;;09.71.50.72.16 (Tel)
+;;12 Rue Francois MENEZ 35700 RENNES
+;;
+421373 KOLASKO Norbert (M ou Mme);4035 VAL;06 79 78 27 62 (Tel.) / 02 33 58 15 39 (Tel.)
+;;02.33.58.15.39 (Tel fixe) / 06.79.78.27.62 (Cel. portable)
+;;armelle.kolasko@sfr.fr (Email adresse mail)
+;;9 Rue du Manoir 50530 SARTILLY
+;;
+421374 TENDEL / JEAN Monique ou Bernadet;4035 VAL;02 99 56 62 12 (Tel.) / 06 81 33 49 40 (Cel.)
+;;nad.mo@orange.fr (Email)
+;;20 rue de la Perriere 35120 DOL-DE-BRETAGNE
+;;
+421995 WIDOOT Bernard (M ou Mme);4035 VAL;02.37.46.52.56 (Tel.) / 06 32 37 07 31 (Tel.)
+;;06.32.37.07.31 (Cel. PORTABLE)
+;;02.37.46.52.56 (Tel fixe a privilegier)
+;;4 rue des Noyers 95180 MENUCOURT
+;;
+422055 HEUDIN Jean-Claude (Monsieur);4035 VAL;06 19 42 26 68 (Tel.) / jcheudin@hotmail.fr (Email MAIL)
+;;06 19 42 26 68 (Cel. mobile)
+;;26, rue Rouelle 75015 PARIS
+;;
+422218 VALODIN Jean (M ou Mme);4035 VAL;Ete habite St (Tel.) / 01 56 29 03 39 (Tel.)
+;;jvalodin@gmail.com (Email) / 02.99.56.98.01 (Cel. PORTABLE)
+;;10 PLACE DU VAL ROTHENEUF
+;;35400 ST MALO
+;;
+422594 CLEMENCEAU Stephane ET Corinne (M;4035 VAL;06 14 70 29 55 (Tel.)
+;;corinne-clemenceau@orange.fr (Email mail)
+;;06 14 70 29 55  (Cel.)
+;;5  rue de la Garenne 35510 CESSON-SEVIGNE
+;;
+423569 ANDERSSON Nils (M.);4035 VAL;olmestam@hotmail.se (Email E-MAIL)
+;;+46 70 564 83 11 (Cel. MOBILE) / +46 8 25 65 09 (Tel FIXE)
+;;+46 70 542 91 80 (Tel NOUVEAU)
+;;johanthebanker@icloud.com (Email)
+;;HORNSBERGS STRAND 49 Lgh 1802
+;;11216 STOCKHOLM
+;;
+424734 PREAUX Marcel (M ou Mme);4035 VAL;06 89 76 23 50 (Tel.) / 02 90 04 04 28 (Tel.)
+;;m.loutreul@gmail.com (Email) / 02.90.04.04.28 (Tel FIXE)
+;;06.89.76.23.50 (Cel. PORTABLE)
+;;10 PLACE DU VAL ROTHENEUF
+;;35400 SAINT-MALO
+;;
+425516 ELLUARD Jeannine (Mme);4035 VAL;06 15 97 94 36 (Tel.)
+;;jeannineelluard@icloud.com (Email adresse mail)
+;;06.15.97.94.36 (Cel.)
+;;10, PLACE DU VAL 35400 ST MALO
+;;
+425610 MORVAN Joelle (Madame);4035 VAL;06 82 30 76 91 (Tel.) / 02 31 68 18 54 (Tel.)
+;;06 82 30 76 91 (Cel.) / 02 31 68 18 54 (Tel)
+;;1 Place du Marche 35350 ST COULOMB
+;;
+425843 ROBERT Stephane & Karine (M ou Mm;4035 VAL;stephane.robert0537@orange.fr (Email Mail)
+;;02 99 57 53 81 (Tel fixe) / 06 63 39 11 83 (Cel. mobile)
+;;06.71.39.25.88 (Cel.)
+;;4  bis rue es ajoncs 35890 BOURG-DES-COMPTES
+;;
+;;
+428384 VAROQUI Pierre-vincent et Emmanue;4035 VAL;pvvaroqui@gmail.com (Email EMAIL)
+;;06 63 17 27 11 (Cel. portable)
+;;LA ROSSAIS 50520 JUVIGNY LES VALLEES
+;;
+443438 BELLIER Maud (Mme);4035 VAL;maudbellier@orange.fr (Email) / 06.73.16.80.44 (Cel.)
+;;10 PLACE DU VAL ROTHENEUF
+;;35400 ST MALO
+;;
+444395 BRANDT Alexandre et Sylvie (M. ou;4035 VAL;06.87.20.42.64 (Tel.) / syalbrandt@gmail.com (Email)
+;;06.63.90.18.74 (Cel. MME) / 06.87.20.42.64 (Cel. MR)
+;;15 rue bertrand Robidou 35000 RENNES
+;;
+423646 LE CARFF Jean Francois et Sonia (;4036 VILLA HEBERT;02.99.40.14.30 (Tel.)
+;;sonia.trehel@hotmail.fr (Email E-MAIL)
+;;54 avenue Waldeck Rousseau 35400 SAINT-MALO
+;;
+424181 LE CARFF Jean-francois et Sonia (;4036 VILLA HEBERT;sonia.trehel@hotmail.fr (Email)
+;;54  Rue Waldeck Rousseau 35400 SAINT-MALO
+;;
+424183 ELIOT Daniel et Nicole (M ou Mme);4036 VILLA HEBERT;06 11 11 27 04 (Tel.) / 01 75 32 58 19 (Tel.)
+;;eliot.daniel@free.fr (Email E MAIL)
+;;01 75 32 58 19 (Tel fixe) / 06 11 11 27 04 (Cel. mobile)
+;;06 11 11 27 04 (Cel. mobile)
+;;127  Avenue Jean Jaures 92140 CLAMART
+;;
+424455 MARQUET BEATRICE (Mme);4036 VILLA HEBERT;02.99.20.08.61 (Tel.) / 06 72 32 61 09 (Tel.)
+;;b.marquet861@laposte.net (Email EMAIL)
+;;02.99.20.08.61 (Tel Fixe) / 06 72 32 61 09 (Cel. mobile)
+;;74 BIS BLD HEBERT
+;;35400 SAINT-MALO
+;;
+424609 VINCENT Yannick (M ou Mme);4036 VILLA HEBERT;06 76 38 44 60 (Tel.) / yannick20100@gmail.com (Email)
+;;06 76 38 44 60 (Cel. 06 76 38 44 60)
+;;7 rue des Forgerons 35410 NOUVOITOU
+;;
+426034 GONET-MOUCHAIN Francoise (Madame);4036 VILLA HEBERT;06 82 03 73 45 (Tel.) / gonetf@yahoo.fr (Email E MAIL)
+;;06.82.03.73.45 (Cel. Mobile)
+;;74 Bis Boulevard HEBERT 35400 SAINT-MALO
+;;
+442398 BOULAIRE Jean-Loup et Danielle (M;4036 VILLA HEBERT;jldboul@orange.fr (Email) / 02 99 56 13 97 (Tel)
+;;Villa Hebert 74 bis Boulevard Hebert
+;;35400 ST MALO
+;;
+443059 PERTHUIS Corinne (Mme);4036 VILLA HEBERT;perthuisc@gmail.com (Email) / 06 12 08 17 73 (Cel.)
+;;74 BIS BOULEVARD HEBERT 35400 ST MALO
+;;
+421385 BASTIDE (Madame);4039 HAVRE DE ROTHENEUF;02.99.89.06.18 (Tel.)
+;;8 Residence de la Ville Bague 35350 SAINT-COULOMB
+;;
+421394 DROIN-DA SILVA (INDIVISION);4039 HAVRE DE ROTHENEUF;Proprietaire 3 (Tel.) / Usufruit 3/6 (Cel. PORTABLE)
+;;01 39 78 48 08 (Tel) / 01 39 31 02 93 (Tel)
+;;annie.da.silva2@numericable.fr (Email)
+;;Chez Mme DROIN Martine 35 rue Thiers
+;;95240 CORMEILLES EN PARISIS
+;;
+421395 ROBERT-BUSCA (INDIVISION);4039 HAVRE DE ROTHENEUF;06 32 64 60 61 (Tel.) / malobey@aol.com (Email)
+;;
+;;06.32.64.60.61 (Cel. robert brigitte)
+;;CHEZ MME ROBERT BRIGITTE 167 RUE FRANCOIS MAURIAC
+;;13010 MARSEILLE
+;;
+421403 LE FUR Albert (SUCCESSION);4039 HAVRE DE ROTHENEUF;Donation enfan (Tel.) / LE FUR Andre (Tel.)
+;;02.99.31.82.32 (Fax.)
+;;jacqueline.lefur-weibel@laposte.net (Email)
+;;02.99.56.33.53 (Cel. PORTABLE) / 02.99.31.82.32 (Fax FAX)
+;;06 13 07 41 OU 44-07 (Cel. LE FUR JACQUELINE)
+;;Chez Me PANSAR 45 BD DE LA LIBERTE
+;;35000 RENNES
+;;
+421407 TOURNIER Brigitte (Madame);4039 HAVRE DE ROTHENEUF;06 58 93 20 64 (Tel.) / 09 81 05 06 05 (Tel.)
+;;tournierbrigitte@free.fr (Email E-MAIL)
+;;09 81 05 06 05 (Tel) / 06 58 93 20 64 (Cel.)
+;;6 impasse de l'Ile Besnard 35400 SAINT-MALO
+;;
+421409 ROYER Adrien (Monsieur);4039 HAVRE DE ROTHENEUF;06 72 68 59 18 (Tel.) / 02 23 19 56 96 (Tel.)
+;;adrien.royer0814@orange.fr (Email adresse mail)
+;;02.23.18.56.96 (Tel fixe) / 06.72.68.59.18 (Cel. portable)
+;;06 08 32 81 16 (Cel. PORTABLE)
+;;15 Residence Le Clos du Havre Saint Vincent
+;;35350 SAINT-COULOMB
+;;
+421412 NIVOIT Maryvonne (Madame);4039 HAVRE DE ROTHENEUF;02.23.46.25.26 (Tel.) / 06 82 15 81 44 (Tel.)
+;;nivoit.maryvonne@orange.fr (Email) / 06.82.15.81.44 (Cel.)
+;;25  rue de Lorgeril 25, rue de Lorgeril
+;;35000 RENNES
+;;
+421414 JONSSON Josiane (Madame);4039 HAVRE DE ROTHENEUF;02.99.20.01.05 (Tel.) / 06 15 62 00 06 (Tel.)
+;;06.15.62.00.06 (Cel. PORTABLE)
+;;josiane.jonsson@orange.fr (Email)
+;;Havre de Rotheneuf 6 Impasse de l'Ile Besnard
+;;35400 SAINT-MALO
+;;
+421415 LEPORT-DRUANT Marie (Madame);4039 HAVRE DE ROTHENEUF;02.43.81.49.85 (Tel.)
+;;didier.leportdruant@gmail.com (Email mail)
+;;02 43 81 49 85 (Tel fixe) / 07.82.06.05.54 (Cel.)
+;;06.18.98.45.52 (Cel.)
+;;15 rue Montmartre 72000 LE MANS
+;;
+421417 MANGIN Dominique (M ou Mme);4039 HAVRE DE ROTHENEUF;06.69.63.85.34 (Tel.) / 01.47.26.83.28 (Tel.)
+;;mangin.eunsook@gmail.com (Email) / 06.69.63.85.34 (Cel.)
+;;6 Impasse de l'Ile Besnard 35400 SAINT MALO
+;;
+421422 GERNIGON (INDIVISION);4039 HAVRE DE ROTHENEUF;02 23 45 15 74 (Tel.)
+;;mireille.gernigon@gmail.com (Email EMAIL)
+;;06.81.50.98.38 (Cel.)
+;;GERE PAR MME GERNIGON MIREILLE 117 RUE DE LA RABINE
+;;35510 CESSON-SEVIGNE
+;;
+421423 HORELLOU Jeannette (Madame);4039 HAVRE DE ROTHENEUF;indivision 3 e (Tel.) / Mari DCD (Tel.)
+;;Jeannette designe mandataire commun (Cel. PORTABLE)
+;;34 Bis  Rue des Iris 91270 VIGNEUX-SUR-SEINE
+;;
+424106 GRUSELIN Rene (Monsieur);4039 HAVRE DE ROTHENEUF;01.80.60.31.74 (Tel.) / 06 78 45 42 47 (Tel.)
+;;rene.gruselin@orange.fr (Email)
+;;
+;;06 78 45 42 47 (Cel. mobile) / 06 48 64 06 40 (Cel.)
+;;5 chemin des Sables 93220 GAGNY
+;;
+424607 BARBOTIN Catherine (Madame);4039 HAVRE DE ROTHENEUF;cat20bar@gmail.com (Email) / 06 14 99 77 77 (Cel. mobile)
+;;23 rue Paul Feval 35000 RENNES
+;;
+425245 RENARD Gerard & Marie-Christine (;4039 HAVRE DE ROTHENEUF;02.99.89.04.35 (Tel.) / 06 89 93 89 28 (Tel.)
+;;renard.gerard@wanadoo.fr (Email E-MAIL)
+;;06 89 93 89 28 (Cel.)
+;;18  rue de la Catelerie 35350 SAINT-COULOMB
+;;
+425623 CHEVALLIER Pierre-Antoine ou Laur;4039 HAVRE DE ROTHENEUF;02 43 04 28 61 (Tel.) / 06 82 67 01 40 (Tel.)
+;;p.a.chevalier@wanadoo.fr (Email mail)
+;;06.82.67.01.40 (Cel. portable) / 02 43 04 28 61 (Tel fixe)
+;;372  Rue des Landes 53100 MAYENNE
+;;
+425890 DESPRES Simonne (Madame);4039 HAVRE DE ROTHENEUF;02.99.82.33.94 (Tel.) / 06 82 03 85 66 (Tel.)
+;;06.82.03.85.66 (Cel. PORTABLE) / 02.99.82.33.94 (Tel fixe)
+;;simone.despres@wanadoo.fr (Email adresse mail)
+;;6 impasse de l'Ile Besnard 35400 SAINT-MALO
+;;
+425929 DELEPAUT Eric et Louisette (M ou;4039 HAVRE DE ROTHENEUF;03 20 50 76 70 (Tel.) / 06 63 58 08 26 (Tel.)
+;;eric.delepaut@hotmail.fr (Email adresse mail)
+;;03 20 50 76 70 (Tel fixe) / 06 63 58 08 26 (Cel. mobile)
+;;10 rue du Luxembourg 59320 HAUBOURDIN
+;;
+425960 TOURNIER Brigitte (Madame);4039 HAVRE DE ROTHENEUF;tournierbrigitte@free.fr (Email) / 0658 93 20 64 (Cel.)
+;;09 81 05 06 05 (Tel fixe)
+;;6 Impasse de l'ile Besnard 35400 SAINT-MALO
+;;
+427988 SCHMITT Guy et Simone (M et Mme);4039 HAVRE DE ROTHENEUF;02 99 36 46 97 (Tel.) / 02 99 36 46 97 (Tel)
+;;dumitt@orange.fr (Email EMAIL)
+;;dumitt@orange.fr (Email EMAIL)
+;;4 rue du Bois Rondel 35700 RENNES
+;;
+428378 BASLE Laurence (Madame);4039 HAVRE DE ROTHENEUF;06 67 34 62 81 (Tel.) / 06 67 34 62 81 (Cel. mobile)
+;;laurence.cario35@laposte.net (Email mail)
+;;6 Impasse de l'ile Besnard 35400 ST MALO
+;;
+428650 HUET Vincent et Brigitte (M ou Ml;4039 HAVRE DE ROTHENEUF;06 46 16 62 11 (Tel.) / 06 62 77 20 20 (Tel.)
+;;02 99 69 12 86 (Fax.) / vbac.huet@orange.fr (Email mail)
+;;06 46 16 62 11 (Cel. 1) / 06 62 77 20 20 (Cel. 2)
+;;02 99 69 12 86 (Tel fixe)
+;;3 allee de la rance 35850 GEVEZE
+;;
+421425 GREGOIRE Arlette (Madame);4043 DUGUAY TROUIN;06 86 48 71 62 (Tel.)
+;;arlette.gregoire@yahoo.fr (Email mail)
+;;06 86 48 71 62 (Cel.)
+;;6 RUE ROBELIN 35000 RENNES
+;;
+421426 FARNAULT Alain (M ou Mme);4043 DUGUAY TROUIN;01.45.85.24.29 (Tel.) / 06 86 08 29 48 (Tel.)
+;;alain.denise.farnault@orange.FR (Email)
+;;01 45 85 24 29 (Tel FIXE) / 06 86 08 29 48 (Cel. mobile)
+;;Batiment L1  porte 124 185 rue Chevaleret
+;;75013 PARIS 13
+;;
+421427 NEVEU Marcel (M ou Mme);4043 DUGUAY TROUIN;02.99.56.86.16 (Tel.) / 06 81 54 62 22 (Tel.)
+;;
+;;06.81.54.62.22 (Cel. PORTABLE)
+;;13 rue du Vallon 35400 SAINT-MALO
+;;
+421429 MAILLARD Michel (Monsieur);4043 DUGUAY TROUIN;01.43.71.17.04 (Tel.) / Pour convocati (Tel.)
+;;06 86 90 17 31 (Fax.)
+;;maillardfrance@yahoo.fr (Email E-MAIL)
+;;07.64.83.00.84 (Cel. PORTABLE)
+;;yann.lecorre@coteparticuliers.com (Email Inf)
+;;pour Mme MAILLARD Francette BP 11971
+;;98709 MAHINA
+;;
+421430 LOUAZEL Pierre (M ou Mme);4043 DUGUAY TROUIN;02.99.64.03.52 (Tel.) / louazel.pierre@orange.fr (Email)
+;;17 rue Lemordant 35590 L HERMITAGE
+;;
+421431 LEMARCHAND Joel (M ou Mme);4043 DUGUAY TROUIN;02.32.34.71.09 (Tel.) / 02.99.56.02.84 (Tel.)
+;;clemarch27@outlook.fr (Email mail)
+;;DP NP AUX ENFANTS ENVOI AUX (Tel)
+;;PARENTS USUFRUITIERS (Tel)
+;;22 Rue du Robichon 27930 NORMANVILLE
+;;
+421434 HAVARD Renee (Madame);4043 DUGUAY TROUIN;02 23 45 29 72 (Tel.) / 06 18 03 75 88 (Tel.)
+;;02.23.45.29.72 (Tel FIXE) / 06.18.03.75.88 (Cel. MOBILE)
+;;renee.havard@orange.fr (Email MAIL)
+;;24 Rue des Tertriers 35510 CESSON-SEVIGNE
+;;
+421438 JONCOUX Jean-Paul (Monsieur);4043 DUGUAY TROUIN;02.99.83.46.41 (Tel.) / 06 33 74 36 34 (Tel.)
+;;06.33.74.36.34 (Cel. PORTABLE) / 02.99.83.46.41 (Tel Fixe)
+;;jeanpaul.joncoux@wanadoo.fr (Email Mail)
+;;125 Rue de la Rabine 35510 CESSON-SEVIGNE
+;;
+421440 BAGOT Patrick (M ou Mme);4043 DUGUAY TROUIN;02.99.31.13.21 (Tel.) / 02.99.50.15.52 (Tel.)
+;;06 75 25 19 90 (Fax.) / bagot-patrick@orange.fr (Email)
+;;07.86.26.66.31 (Cel.)
+;;3 Rue du Louis d'Or 35000 RENNES
+;;
+422079 SCHLIENGER PIERRIC (M.);4043 DUGUAY TROUIN;pierric_schlienger@hotmail.com (Email FILS)
+;;06-03-61-56-05 (Cel. FILS)
+;;153 RUE DE L UBAC SAINT-JEAN DE CANNES
+;;83600 FREJUS
+;;
+422205 STEP SAMAJEAN ();4043 DUGUAY TROUIN;06 48 19 32 47 (Tel.) / tour22@orange.fr (Email MAIL)
+;;06 48 19 32 47 (Cel. mobile)
+;;Gere par Mr Jallu Jean claude 32 L'EPICURIE
+;;22550 MATIGNON
+;;
+423979 GANACHE rep GLE GUILLOU (SCI);4043 DUGUAY TROUIN;02 99 40 75 00 (Tel.)
+;;d.collin@thalasso-saintmalo.com (Email Inf)
+;;02.99.40.75.00 (Tel SCI GANACHE THALASSO)
+;;02.99.40.75.93 (Tel COMPTA MME COLLIN)
+;;100 Boulevard Hebert 35400 SAINT-MALO
+;;
+426066 CLOUET Marie-France (Madame);4043 DUGUAY TROUIN;06.25.70.65.51 (Cel. proprietaire)
+;;07.81.36.49.90 (Cel. locataire Mme RIAUX )
+;;07.86.18.90.48 (Cel. locataire Mr LECLERC )
+;;Lieu-Dit Les Enoulais 35390 GRAND-FOUGERAY
+;;
+421446 BOISARD Genevieve (Madame);4045 GRANDE HERMINE;02.99.40.26.99 (Tel.)
+;;
+;;genevieve.boisard@orange.fr (Email MAIL)
+;;02 99 40 26 99 (Tel fixe)
+;;2 Impasse du Jura 35400 SAINT-MALO
+;;
+421447 BRELURU Bernard et Catherine (M o;4045 GRANDE HERMINE;02.99.56.81.65 (Tel.) / 02 99 56 39 05 (Tel.)
+;;parame.presse@orange.fr (Email email)
+;;02 99 56 39 05 (Tel fixe magasin)
+;;7 Rue Julien Lemordant 35400 SAINT-MALO
+;;
+421460 GUINEMER Monique (Mademoiselle);4045 GRANDE HERMINE;02.99.40.12.51 (Tel.)
+;;5 Rue Julien Lemordant 35400 SAINT-MALO
+;;
+421466 JOSSE Maria (Madame);4045 GRANDE HERMINE;02.99.40.00.39 (Tel.) / 02 99 40 00 39 (Tel FIXE)
+;;3  rue Julien Lemordant 35400 SAINT-MALO
+;;
+421467 JOSSE Marie-Madeleine (Mademoisel;4045 GRANDE HERMINE;06 76 47 22 24 (Tel.) / mm.josse@orange.fr (Email)
+;;0676472224 (Cel.)
+;;1 Rue Julien Lemordant 35400 SAINT-MALO
+;;
+421469 LE GAL Francoise (Madame);4045 GRANDE HERMINE;CADORET (locat (Tel.) / VMC a part (Tel.)
+;;09 83 03 28 12 (Fax.) / 06.62.57.81.46 (Cel.)
+;;polletvillardfrancoise@gmail.com (Email)
+;;123 Route du Danay LE PRE ANTHOINE
+;;74450 SAINT JEAN DE SIXT
+;;
+421470 LE GAL (SUCCESSION);4045 GRANDE HERMINE;02.99.56.06.12 (Tel.) / 06 19 68 04 22 (Tel.)
+;;polletvillardfrancoise@gmail.com (Email MAIL)
+;;MME LE GAL - LE PRE ANTHOINE 123 route du Danay
+;;74450 ST JEAN DE SIXT
+;;
+421471 LEBRETON Romain (M ou Mme);4045 GRANDE HERMINE;03.99.80.21.81 (Tel.) / 06 10 03 91 65 (Tel.)
+;;02.99.80.21.81 (Tel fixe) / 06.10.03.91.65 (Cel. portable)
+;;roja0823@orange.fr (Email adresse mail)
+;;3 Le Moulin De Launay 35610 ROZ-SUR-COUESNON
+;;
+421474 LORANT Michele (Madame);4045 GRANDE HERMINE;02.99.40.04.18 (Tel.)
+;;lorant.soizic35@gmail.com (Email fille)
+;;06.02.32.41.64 (Cel. Inf fille)
+;;3 Rue Julien Lemordant 35400 SAINT-MALO
+;;
+421478 PALARIC Sylvie (Mademoiselle);4045 GRANDE HERMINE;02.99.58.06.44 (Tel.) / 02.99.58.05.72 (Fax.)
+;;sylviepalaric@orange.fr (Email) / 06.18.06.54.06 (Cel.)
+;;1  Rue Julien Lemordant 35400 SAINT-MALO
+;;
+421483 ROUAUX Pascal (Monsieur);4045 GRANDE HERMINE;pascal.rouaux@wanadoo.fr (Email) / 06.09.70.42.97 (Cel.)
+;;19 rue des saules 44230 ST SEBASTIEN SUR LOIRE
+;;
+421491 GUERENNEUR Maryvonne (Madame);4045 GRANDE HERMINE;02.99.88.53.21 (Tel.)
+;;2 Chemin des Bosses 35870 LE MINIHIC-SUR-RANCE
+;;
+421495 AUMOND Pierre (Monsieur);4045 GRANDE HERMINE;02.99.56.65.94 (Tel.) / 06 09 79 68 87 (Tel.)
+;;02.99.40.89.28 (Fax.) / 02.99.40.89.28 (Fax FAX)
+;;06.09.79.68.87 (Cel. portable)
+;;pierre.aumond@wanadoo.fr (Email adresse mail)
+;;2 Rue Gustave Flaubert B.P. 10
+;;35400 SAINT-MALO CEDEX
+;;
+;;
+421506 LAPEROTTE Liliane (Madame);4045 GRANDE HERMINE;01.69.48.62.19 (Tel.)
+;;30 Rue Gay Lussac 91330 YERRES
+;;
+422063 BRISION Jean-Claude (Monsieur);4045 GRANDE HERMINE;02.23.18.04.81 (Tel.) / 06 74 44 16 91 (Tel.)
+;;passagerduvent@wanadoo.fr (Email)
+;;06 74 44 16 91 (Cel. portable)
+;;7  rue Julien Lemordant 35400 SAINT-MALO
+;;
+422099 KERHOAS Jean (Monsieur);4045 GRANDE HERMINE;06.71.81.86.59 (Tel.) / kerhoas.jean@orange.fr (Email)
+;;06.71.81.86.59 (Cel.)
+;;3  Impasse du Jura 35400 SAINT-MALO
+;;
+422170 LEROY Alexandre (Monsieur);4045 GRANDE HERMINE;02.23.18.12.84 (Tel.) / alexandre.leroy51@orange.fr (Email)
+;;65 RESIDENCE ARTIMON 35350 SAINT COULOMB
+;;
+422198 LUCCHINO Hubert et Jeanine (M ou;4045 GRANDE HERMINE;02.23.18.42.11 (Tel.) / 06 89 21 02 43 (Tel.)
+;;06 89 21 02 43 (Cel. PORTABLE) / 02 23 18 42 11 (Tel fixe)
+;;3  rue Julien Lemordant 35400 SAINT-MALO
+;;
+422259 ORESVE Bernard (Monsieur);4045 GRANDE HERMINE;02 99 99 43 64 (Tel.) / 06 86 94 78 99 (Tel.)
+;;02.99.99.43.64 (Tel) / 06 86 94 78 99 (Cel.)
+;;4  allee des Chataigniers 35133 JAVENE
+;;
+422423 DISSAUX Claire (Madame);4045 GRANDE HERMINE;06 20 91 09 53 (Tel.) / mathebaide@gmx.com (Email E-MAIL)
+;;06.20.91.09.53 (Cel. PORTABLE)
+;;Claire Dissaux <mathebaide@gmx.com> (Email)
+;;40 bis avenue suffren 75015 PARIS
+;;
+423516 GUERIN Claude (M ou Mme);4045 GRANDE HERMINE;01 69 41 37 71 (Tel.) / 06 84 63 07 04 (Tel.)
+;;aoguerin@gmail.com (Email) / 06 84 63 07 04 (Cel.)
+;;cguerin@free.fr (Email)
+;;5 rue des Acacias 91430 IGNY
+;;
+423630 TIGEOT Pierrick (Monsieur);4045 GRANDE HERMINE;02.40.33.08.32 (Tel.) / 05/12/2005 Don (Tel.)
+;;06 09 71 05 64 (Fax.)
+;;pierrick.tigeot@club-internet.fr (Email mail)
+;;06 09 71 05 64 (Cel. PORTABLE)
+;;Donation 045085 (Cel. portable)
+;;5 rue du Calvaire 44000 NANTES
+;;
+424030 GUILLERM Jean-Marc (M ou Mme);4045 GRANDE HERMINE;parents (Tel.) / 02.23.46.22.24 (Tel.)
+;;06 88 43 82 05 (Fax.)
+;;jeanlouisguillerm@yahoo.fr (Email MAIL)
+;;02 23 46 22 24 (Tel fixe) / 06 88 43 82 05 (Cel. mobile)
+;;chez Mr GUILLERM Jean-Louis 10 bis rue bourgault ducoudray
+;;35000 RENNES
+;;
+424195 BUJACIC Stephane & Laure (M ou Mm;4045 GRANDE HERMINE;sllb35@orange.fr (Email) / 06.24.08.20.64 (Cel.)
+;;8 Avenue Herpin 35400 SAINT-MALO
+;;
+424210 MAZEAU Philippe et Francoise (M o;4045 GRANDE HERMINE;02.99.20.08.92 (Tel.) / 06.82.11.96.31 (Tel.)
+;;mazeau.philippe@orange.fr (Email) / 02 99 20 08 92 (Tel)
+;;06 82 11 96 31 (Cel. mobile)
+;;7 rue Julien Lemordant 35400 SAINT-MALO
+;;
+424223 DUPUY Michel & Marie-france (M ou;4045 GRANDE HERMINE;02 23 17 07 96 (Tel.) / 06 34 69 67 72 (Tel.)
+;;mariefrancedupuy@wanadoo.fr (Email)
+;;
+;;02 23 17 07 96 (Tel fixe) / 06 17 12 62 13 (Cel. PORTABLE)
+;;10  rue des ecoles 35400 SAINT-MALO
+;;
+425469 LE GAL Francoise (Madame);4045 GRANDE HERMINE;06 62 57 81 46 (Tel.) / 09 83 03 28 12 (Tel.)
+;;09 83 03 28 12 (Tel FIXE) / 06 62 57 81 46 (Cel. MOBILE)
+;;polletvillardfrancoise@gmail.com (Email MAIL)
+;;123 Route du Danay LE PRE ANTHOINE
+;;74450 SAINT JEAN DE SIXT
+;;
+425665 LAFEUILLE Jean-Luc (Monsieur);4045 GRANDE HERMINE;06 51 05 41 85 (Tel.) / jean-luclafeuille@orange.fr (Email)
+;;06 51 05 41 85  (Cel.) / 06 51 05 41 85  (Cel.)
+;;152 rue Pierre Joseph Proudhon 53000 LAVAL
+;;
+425666 HELARD Bernard (Monsieur);4045 GRANDE HERMINE;02.43.00.23.62 (Tel.) / 06.09.81.48.62 (Tel.)
+;;bernard.helard@gmail.com (Email) / 02 43 00 23 62 (Tel)
+;;06 09 81 48 62 (Cel.)
+;;17  rue Emile Zola 53100 MAYENNE
+;;
+425737 HAMON Solange (Madame);4045 GRANDE HERMINE;09.53.13.13.14 (Tel.) / 06 51 76 96 89 (Tel.)
+;;06.51.76.96.89 (Cel. PORTABLE)
+;;6 Avenue de Lorraine 35400 SAINT-MALO
+;;
+425912 SILLARD Michel (Monsieur);4045 GRANDE HERMINE;06 47 87 96 02 (Tel.) / 06.47.87.96.02 (Cel. PORTABLE)
+;;4  rue Henri Rabourdin 78140 VELIZY-VILLACOUBLAY
+;;
+425958 LETORT Bernard & Marylene (M ou M;4045 GRANDE HERMINE;02 99 62 43 29 (Tel.) / 06 85 39 43 85 (Tel.)
+;;bletort610@orange.fr (Email) / 02 99 62 43 29  (Tel)
+;;06 85 39 43 85  (Cel.) / 02 99 62 43 29  (Tel)
+;;06 85 39 43 85  (Cel.)
+;;La Grande Bretonniere 35510 CESSON-SEVIGNE
+;;
+428089 DENIS ET CARRERE Bruno et Martine;4045 GRANDE HERMINE;02 99 88 45 84 (Tel.) / 06 72 81 45 52 (Tel.)
+;;02.99.88.45.84 (Tel) / couvret.martine@wanadoo.fr (Email)
+;;06 72 81 45 52 (Cel. Mobile)
+;;9 rue Lemordant 35400 ST MALO
+;;
+428158 PAUL Emmanuel et Sophie (M et Mme;4045 GRANDE HERMINE;sophie.paul@aliceadsl.fr (Email EMAIL)
+;;20 rue des Erables 35520 MELESSE
+;;
+428589 FANTOU - LEVEQUE Jacques et Emeli;4045 GRANDE HERMINE;06 28 20 53 99 (Tel.) / esleveque@hotmail.com (Email MAIL)
+;;06 28 20 53 99  (Cel. mobile)
+;;33 TER IMPASSE DES GRANDES  VIGNES
+;;44620 LA MONTAGNE
+;;
+438815 LE RELAIS DU BLOSNE (S.C.I.);4045 GRANDE HERMINE;christianeguerin3548@yahoo.fr (Email)
+;;06 78 55 84 57  (Tel)
+;;M. ou MMe Guerin 9 SQUARE LUDOVIC TRARIEUX
+;;35200 RENNES
+;;
+439159 LIEURY Marcelle (Mme);4045 GRANDE HERMINE;06 12 38 89 00 (Tel.)
+;;marcelle.lieury@gmail.com (Email mail)
+;;06 12 38 89 00  (Cel. mobile)
+;;5, rue Julien lemordant 35400 ST MALO
+;;
+440751 ROCHEBONNE NAL (S.C.I.);4045 GRANDE HERMINE;
+;;fabien.lannoo@cateliagroup.com (Email Mr FABIEN LANNOO GERAN
+;;07.89.06.32.00 (Cel. Mr FABIEN LANNOO)
+;;
+;;02 56 27 19 60 (Tel MT CASTAING FRANCK ANCIEN GERA)
+;;franck.castaing@me.com (Email MR CASTAING FRANCK)
+;;GERE PAR MR FABIEN LANNOO 3 RUE JULIEN LEMORDANT
+;;35400 ST MALO
+;;
+442538 RONDEAU Philippe et Francoise (M.;4045 GRANDE HERMINE;rondeau.francoise@aliceadsl.fr (Email)
+;;39 avenue de Moka 35400 ST MALO
+;;
+444047 LIX Maelenn (Mme);4045 GRANDE HERMINE;maelennlix@yahoo.fr (Email) / 06 87 10 47 17 (Cel.)
+;;1 rue Julien Lemordant 35400 ST MALO
+;;
+444711 CHRAPECKI Sophie (Mme);4045 GRANDE HERMINE;jardin.jacky35@gmail.com (Email) / 06 37 91 00 79 (Cel.)
+;;sophiechrapecki@gmail.com (Email)
+;;3 allee Charles Le Goffic 35770 VERN SUR SEICHE
+;;
+447133 KAYEX IMMO (S.C.I.);4045 GRANDE HERMINE;karim.hamida@indexware.fr (Email) / 06 12 92 50 52 (Cel.)
+;;06 22 92 14 96 (Cel. ou) / annathie@laposte.net (Email)
+;;GERE PAR MR HAMIDA KARIM 9 RUE DE TOURS
+;;67800 BISCHHEIM
+;;
+448582 DALENCON Anne (Mme);4045 GRANDE HERMINE;adalencon@aol.com (Email) / +447968285676 (Cel.)
+;;+441344444639 (Tel)
+;;12 ALLEE DU BURON 35400 ST MALO
+;;
+450983 LE THOMAS Anne (Mme);4045 GRANDE HERMINE;annelethomas@gmail.com (Email) / 0789609907 (Cel.)
+;;7 rue des Tintiaux 35260 CANCALE
+;;
+451010 LE MEE Florence (Mme);4045 GRANDE HERMINE;florence.lemee@gmail.com (Email) / 06.45.67.63.64 (Cel.)
+;;3 IMPASSE DU JURA 35400 ST MALO
+;;
+452407 PATTIER/LEVACHER (INDIVISION);4045 GRANDE HERMINE;pattier.al@hotmail.fr (Email)
+;;Chez Mme PATTIER Anne-Laure 9 C allee de la Tannerie
+;;35340 LA BOUEXIERE
+;;
+452752 CHRYSOLI (S.C.I.);4045 GRANDE HERMINE;sci.chrysoli@gmail.com (Email) / 07 51 66 80 96 (Cel.)
+;;Gere par Mme AUFFRAY & M.MINEL 3 rue Julien Lemordant
+;;35400 ST MALO
+;;
+421524 BAZIN ODILE (Madame);4046 COLBERT;02 33 96 29 53 (Tel.) / 06 18 55 30 63 (Tel.)
+;;02 33 96 29 53 (Tel FIXE maman)
+;;06 22 21 03 61 (Cel. MOBILE fille)
+;;decosse.isabelle@gmail.com (Email FILLE MME DECOSSE)
+;;36, rue Principale 61100 LANDISACQ
+;;
+421525 MEUNIER Bernard ();4046 COLBERT;06 62 87 82 69 (Tel.) / 06 22 33 67 36 (Tel.)
+;;bnielss@aol.com (Email) / 06.62.87.82.69 (Cel. MME MEUNIER)
+;;veroniquedaniel@rocketmail.com. (Email)
+;;06 22 33 67 36 (Cel. M.MEUNIER)
+;;11 Place du parlement de Bretagne
+;;35000 RENNES
+;;
+421970 FEVRIER (INDIVISION);4046 COLBERT;s02fevrier@gmail.com (Email) / 07 54 35 85 44 (Cel.)
+;;Geree par Mme FEVRIER Sophie 21 RUE BERTHELLOT
+;;75005 PARIS
+;;
+422171 BINOIS Christian (M ou Mme);4046 COLBERT;06 09 34 81 84 (Tel.) / 02 99 98 89 91 (Tel.)
+;;02 99 88 93 33 (Fax.) / christianbinois@orange.fr (Email)
+;;
+;;02.99.98.89.91 (Fax FAX) / 02 99 40 27 52 (Tel MMe Pradel)
+;;02.99.88.93.33 (Tel FIXE)
+;;binois.marie-paule@orange.fr (Email Inf EMAIL)
+;;06.09.34.81.84 (Cel.)
+;;23, impasse des Forts 35400 SAINT-MALO
+;;
+425833 VALLIERES (S.C.I.);4046 COLBERT;06 63 90 60 00 (Tel.)
+;;claudinepuzin@gmail.com (Email EMAIL)
+;;06.63.90.60.00 (Cel. PORTABLE)
+;;2, rue Jules Piednoir 37230 FONDETTES
+;;
+428769 ROBINOT Thomas (Monsieur);4046 COLBERT;06.20.14.71.25 (Tel.) / tomarobinot@hotmail.com (Email)
+;;06.20.14.71.25 (Cel.)
+;;17, rue Nicolo 75016 PARIS
+;;
+421527 BRUNET Vincent (M ou Mme);4050 BRISE;06 28 19 97 55 (Tel.)
+;;brunetvincent@free.fr (Email E-MAIL)
+;;06 28 19 97 55 (Cel. mobile)
+;;23 BIS AVENUE DE LONGUEIL 78600 MAISONS LAFFITTE
+;;
+421536 MURY Daniel (M ou Mme);4050 BRISE;02.23.43.12.15 (Tel.) / 06 83 19 12 09 (Tel.)
+;;danielle.mury855@orange.fr (Email E-MAIL)
+;;06.83.19.12.09 (Cel. PORTABLE)
+;;La Boissiere 35290 SAINT-ONEN-LA-CHAPELLE
+;;
+421538 TREQUESSER Gilles (Monsieur);4050 BRISE;06 49 25 28 45 (Tel.)
+;;gilles_trequesser@yahoo.com (Email E-MAIL)
+;;06 49 25 28 45 (Cel. PORTABLE)
+;;19 RUE DE L'ISLET 22770 LANCIEUX
+;;
+421539 VALLOIS Michel (M ou Mme);4050 BRISE;03.26.59.79.13 (Tel.) / 06 86 16 78 11 (Tel.)
+;;daniellevallois51@gmail.com (Email) / 06 86 16 78 11 (Cel.)
+;;11 Grande Rue 51530 CUIS
+;;
+421545 LEMERIEL Remi (M ou Mme);4050 BRISE;04 94 53 68 45 (Tel.) / 02 96 86 33 99 (Tel.)
+;;06 15 88 39 18 (Fax.) / rlemeriel@gmail.com (Email)
+;;04 94 44 15 74 (Tel fixe) / 06 15 88 39 18 (Cel.)
+;;174 Avenue de la Source 83700 SAINT-RAPHAEL
+;;
+421549 BRUNEAU Gerard (M ou Mme);4050 BRISE;02.99.39.57.11 (Tel.) / 06 66 23 64 74 (Tel.)
+;;gerard.bruneau696@orange.fr (Email E-MAIL)
+;;06 66 23 64 74 (Cel. PORTABLE)
+;;02 99 39 57 11 (Tel DOMICILE)
+;;LA CHUPINAIS 35490 GAHARD
+;;
+422238 CLAUDIEN Florent (M ou Mme);4050 BRISE;02.96.85.23.83 (Tel.) / 06 76 06 63 94 (Tel.)
+;;florent.claudien@wanadoo.fr (Email E-MAIL)
+;;06 76 06 63 94 (Cel. PORTABLE)
+;;02 96 85 23 83 (Tel DOMICILE)
+;;8  avenue du Saint Esprit 22100 LEHON
+;;
+423837 LE MOUEL Veronique (Mme);4050 BRISE;06 80 46 63 58 (Tel.) / 01 41 08 80 69 (Tel.)
+;;vlemouel@orange.fr (Email veronique le mouel)
+;;01 41 08 80 69 (Tel FIXE) / 06.80.46.63.58 (Cel.)
+;;8 rue Solferino 92170 VANVES
+;;
+424476 MAUNY Jean-Luc (M ou Mme);4050 BRISE;06 80 89 06 17 (Tel.)
+;;
+;;jean-luc.mauny@wanadoo.fr (Email E-MAIL)
+;;06.80.89.06.17 (Cel. PORTABLE)
+;;6 rue de Belle Noe 35850 IRODOUER
+;;
+425112 LE DU Yves & Marie-therese (M ou;4050 BRISE;02.32.43.46.99 (Tel.) / 06 82 37 23 30 (Tel.)
+;;marie-the.le-du@wanadoo.fr (Email E-MAIL)
+;;06.82.37.23.30 (Cel. PORTABLE)
+;;4  route de la Foret 27300 VALAILLES
+;;
+425540 LE GOUX ET BALLINI Florent et Mar;4050 BRISE;06 80 28 93 12 (Tel.) / 06 60 81 07 18 (Tel.)
+;;florent_legoux@yahoo.fr (Email)
+;;marine_ballini@hotmail.com (Email) / 06 80 28 93 12 (Cel.)
+;;06 60 81 07 18 (Cel.)
+;;97 rue Pasteur 92150 SURESNES
+;;
+426002 BEAUMONT Laurent & Anne (M ou Mme;4050 BRISE;06 86 80 30 67 (Tel.)
+;;laurent.beaumont37@gmail.com (Email) / 06 86 80 30 67 (Tel)
+;;06.36.47.38.10 (Cel.)
+;;297 avenue Bollee 72000 LE MANS
+;;
+428616 MEILHAUD Valerie (Madame);4050 BRISE;06 73 82 66 87 (Tel.) / vmeilhaud@gmail.com (Email Mme)
+;;+88 01730315957 (Tel GENEVE) / +33 673 82 66 87 (Cel.)
+;;+33 296 86 34 89 (Tel)
+;;1 A Rue Julien RENAULT 22770 LANCIEUX
+;;
+428786 HENRY Felix et Sabina (M et Mme);4050 BRISE;badeasabina@yahoo.fr (Email) / 06.11.50.84.23 (Cel.)
+;;02.99.33.09.75 (Tel) / felifelo@gmail.com (Email)
+;;5 RUE DE LA GALERIE 35760 ST GREGOIRE
+;;
+439663 HAMON Chantal (Mme);4050 BRISE;chantal.moret@club-internet.fr (Email)
+;;15, rue du Port Navalo 35000 RENNES
+;;
+440423 COTTENCIN Jean-Francois (M.);4050 BRISE;jfcottencin@hotmail.com (Email)
+;;27 rue la croix thomas 35540 MINIAC MORVAN
+;;
+421550 CARPE DIEM (S.C.I.);4053 JARDINS DE LA MER;0608317059 (Tel.) / plnielles2013@orange.fr (Email)
+;;02.99.40.25.82 (Tel) / 02.99.40.69.88  (Tel LIGNE DIRECTE)
+;;10-12 rue de Constantine 35400 SAINT-MALO
+;;
+421551 LEROUXEL Jean-Pierre (M ou Mme);4053 JARDINS DE LA MER;jp.lerouxel@hotmail.fr (Email E-MAIL)
+;;06.83.16.80.96 (Cel. PORTABLE)
+;;16 Bd du Luxembourg 50300 AVRANCHES
+;;
+421560 GIRARD Anne (Mademoiselle);4053 JARDINS DE LA MER;02.99.20.17.61 (Tel.) / 06 80 42 88 27 (Tel.)
+;;06.80.42.88.27 (Cel. PORTABLE) / 02 31 44 50 98 (Tel FIXE)
+;;girard.amlpy@orange.fr (Email MAIL)
+;;Le Londel 14920 MATHIEU
+;;
+421979 QUEIGNEC Jean (M ou Mme);4053 JARDINS DE LA MER;02.99.07.22.74 (Tel.) / 06 76 72 55 65 (Tel.)
+;;02.99.07.22.74 (Fax.) / 06.76.72.55.65 (Cel.)
+;;02.99.07.22.74 (Tel) / jean.queignec@sfr.fr (Email)
+;;Les Haies Renault 35360 MEDREAC
+;;
+422190 GUILLOU Marie (Madame);4053 JARDINS DE LA MER;louis.guillou@numericable.fr (Email) / 06 81 73 74 04 (Tel)
+;;209  rue de Fougeres 35000 RENNES
+;;
+424192 LESAGE Pierre-Jean (Monsieur);4053 JARDINS DE LA MER;06 68 05 25 25 (Tel.) / pj.lesage35@gmail.com (Email)
+;;
+;;06.68.05.25.25 (Cel.)
+;;15 avenue des Nielles 35400 SAINT-MALO
+;;
+451805 GAUDFRIN Caroline (Mme);4053 JARDINS DE LA MER;caroland.lodge@gmail.com (Email) / 06 09 11 02 62 (Cel.)
+;;5 Les hauts du Golf 78590 NOISY LE ROI
+;;
+421564 CORINNE rep LOTELIER ROBIN Veroni;4054 BUREAUX REPUBLIQUE;avocatlotelier@orange.fr (Email mail)
+;;18 Avenue Jean Jaures
+;;35400 SAINT-MALO
+;;
+421583 COTE D'EMERAUDE (S.C.I.);4054 BUREAUX REPUBLIQUE;michele.natur@wanadoo.fr (Email) / 06.60.97.69.45 (Cel.)
+;;7 rue Doct Celestin Huet 35400 SAINT-MALO
+;;
+421586 SAINT MLEUX FRERES STE (SCI);4054 BUREAUX REPUBLIQUE;06 70 12 81 13 (Tel.) / 06 70 12 81 13 (Cel.)
+;;bertrand.saintmleux@gmail.com (Email)
+;;25 avenue Theophile Briant 35400 SAINT-MALO
+;;
+421595 LA RANCE S.A. ();4054 BUREAUX REPUBLIQUE;Mr PILLAIS (Tel.) / 02.99.40.02.20 (Tel.)
+;;02.99.40.30.78 (Fax.) / 02.99.40.30.78 (Fax FAX)
+;;pmarquer@larance.fr (Email)
+;;31 BLD DES TALARDS B.P. 1
+;;35401 SAINT MALO CEDEX
+;;
+421600 AUBLIN Alain (M ou Mme);4054 BUREAUX REPUBLIQUE;02.99.56.69.17 (Tel.) / 02.99.56.31.98 (Fax.)
+;;02.99.56.31.98 (Fax FAX)
+;;18 Avenue Jean Jaures 35400 SAINT-MALO
+;;
+421602 CHEVREUIL Olivier (Monsieur);4054 BUREAUX REPUBLIQUE;02.99.40.03.82 (Tel.) / 02.99.40.22.66 (Fax.)
+;;02.99.40.22.66 (Fax FAX)
+;;o.chevreuil.archi@wanadoo.fr (Email)
+;;Architecte 18 Avenue Jean Jaures
+;;35400 SAINT-MALO
+;;
+421614 HARMONIE MUTUELLE FONCIERE ET LIE;4054 BUREAUX REPUBLIQUE;02.43.67.28.52 (Tel.)
+;;gestionimmobilierenational@harmonie-mutuelle.fr (Email E-MAI
+;;02.43.67.28.52 (Tel)
+;;service_comptabilite_generale@harmonie-mutuelle.fr (Email)
+;;Pole immobilier- Mr MAGNIEZ  1, rue des Cheverus-CS85386
+;;53086 LAVAL CEDEX 9
+;;
+421615 HARMONIE MUTUELLE FONCIERE ET LIE;4054 BUREAUX REPUBLIQUE;02.43.67.28.52 (Tel.)
+;;gestionimmobilierenational@harmonie-mutuelle.fr (Email E-MAI
+;;02.43.67.28.52 (Tel)
+;;service_comptabilite_generale@harmonie-mutuelle.fr (Email)
+;;Pole immobilier- Mr MAGNIEZ  1 rue des cheverus-CS 85386
+;;53086 LAVAL CEDEX 9
+;;
+421622 CODES M. DESHAYES THOMAS (S.C.I.);4054 BUREAUX REPUBLIQUE;02.99.56.63.52 (Tel.) / 06 19 51 05 29 (Tel.)
+;;06 19 51 05 29 (Cel.)
+;;deshayes.cobus@orange.fr (Email Mail)
+;;02 99 56 63 52 (Tel Fixe)
+;;18 avenue Jean-Jaures 35400 SAINT-MALO
+;;
+421624 MEURY Gerard (M ou Mme);4054 BUREAUX REPUBLIQUE;02.99.82.89.43 (Tel.) / 06 80 20 53 10 (Tel.)
+;;gerardmeury@yahoo.com (Email MAIL)
+;;02 99 82 89 43 (Tel fixe) / 06 80 20 53 10 (Cel. mobile)
+;;34  boulevard Gouazon 35400 SAINT-MALO
+;;
+;;
+421626 SOFRACOMPTA-IMMO (S.C.I.);4054 BUREAUX REPUBLIQUE;Cabinet St Vin (Tel.) / 02.99.40.85.06 (Tel.)
+;;02.99.56.85.67 (Fax.)
+;;helene.reutenauer76@orange.fr (Email)
+;;02.99.56.85.67 (Fax FAX) / 06 32 14 60 65 (Cel.)
+;;02 99 19 77 89 (Cel.)
+;;CABINET MEDICAL SAINT VINCENT 18 Avenue Jean Jaures
+;;35400 SAINT-MALO
+;;
+421978 BRAULT Gilbert (M ou Mme);4054 BUREAUX REPUBLIQUE;02 33 60 08 81 (Tel.) / 06 81 30 71 77 (Tel.)
+;;braultgilbert@orange.fr (Email E-MAIL)
+;;02 33 60 08 81 (Tel FIXE) / 06 81 30 71 77 (Cel. MOBILE)
+;;4 Reage du Violet 50170 BEAUVOIR
+;;
+421998 MICHEL Christiane (Madame);4054 BUREAUX REPUBLIQUE;Mr DCD 18/08/0 (Tel.) / 02 45 04 32 98 (Tel.)
+;;06 75 04 37 55 (Fax.)
+;;cm.michel.mail@gmail.com (Email E-MAIL)
+;;06.75.04.37.55 (Cel. PORTABLE) / 01 45 04 32 98 (Tel fixe)
+;;9  Rue Adolphe Yvon 75116 PARIS
+;;
+422001 FESTINA SCI M. MOTTIN Jean (SCI);4054 BUREAUX REPUBLIQUE;06 77 99 69 32 (Tel.) / Locataire (Tel.)
+;;02.99.56.19.72 (Fax.) / jean.mottin@wanadoo.fr (Email mail)
+;;02.99.40.52.42 (Tel fixe) / 06 77 99 69 32 (Cel. mobile)
+;;1 BOULEVARD POREE 35400 SAINT-MALO
+;;
+422030 2 L (S.C.I.);4054 BUREAUX REPUBLIQUE;06.16.76.33.61 (Tel.) / 0616763361 (Cel. PORTABLE)
+;;paca.laynaud@orange.fr (Email Inf)
+;;cabinet@avocats-partenaires.fr (Email)
+;;Maitre Patrick A.LAYNAUD    18 AVENUE JEAN JAURES
+;;35400 SAINT-MALO
+;;
+422048 FESTINA SCI M. MOTTIN JEAN (SCI);4054 BUREAUX REPUBLIQUE;06 77 99 69 32 (Tel.) / jean.mottin@wanadoo.fr (Email)
+;;06 77 99 69 32 (Cel. MOBILE)
+;;1 BOULEVARD POREE 35400 SAINT-MALO
+;;
+422144 BNP PARISBAS SA IMEX SECRETARIAT;4054 BUREAUX REPUBLIQUE;01.40.14.11 41 (Tel.)
+;;isabelle.bernardo@bnpparibas.com (Email E-MAIL)
+;;MME BERNARDO (Cel. responsable) / 01 57 43 81 29 (Tel)
+;;SUPPORT PATRIMOINE-ACI:CML04B3 89-93 RUE MARCEAU
+;;93100 MONTREUIL
+;;
+422176 IMMOBILIERE REPUBLIQUE A2E-CODEX;4054 BUREAUX REPUBLIQUE;alain.lemaout@a2ecodex.fr (Email)
+;;M. LE MAOUT BP 70205
+;;35802 DINARD
+;;
+422178 COBER rep COTTERRET Johanne (SCI);4054 BUREAUX REPUBLIQUE;02 99 40 29 77 (Tel.) / 06 67 99 93 06 (Tel.)
+;;02 99 40 29 77 (Tel Fixe) / 06 67 99 93 06 (Cel. Mobile)
+;;gillesh.cotteret@gmail.com (Email Mail)
+;;johanne.cotteret@gmail.com (Email Inf Mail)
+;;83 bis Boulevard de Rotheneuf 35400 SAINT-MALO
+;;
+422207 GRANDSAIGNE Micheline (Madame);4054 BUREAUX REPUBLIQUE;06 72 77 46 58 (Tel.)
+;;mdgrandsaigne@gmail.com (Email E-MAIL)
+;;06 72 77 46 58 (Cel. PORTABLE)
+;;60  rue Marjolin 92300 LEVALLOIS-PERRET
+;;
+422211 LJC (S.C.I.);4054 BUREAUX REPUBLIQUE;02.23.18.20.37 (Tel.) / jclimbour@orange.fr (Email)
+;;
+;;Mr LIMBOUR Jean-Christophe 18 Avenue Jean-Jaures
+;;35400 SAINT-MALO
+;;
+423926 BONNET Jean-Pierre (Monsieur);4054 BUREAUX REPUBLIQUE;06 27 01 21 10 (Tel.) / jpb3575@gmail.com (Email)
+;;06 68 78 96 67 (Cel.) / 06 27 01 21 10 (Cel.)
+;;10 RUE DU PERE BROTTIER 75016 PARIS
+;;
+423972 DEBROISE Jean-Paul (Monsieur);4054 BUREAUX REPUBLIQUE;02 99 81 64 14 (Tel.)
+;;jpdebroise@hotmail.fr (Email adresse mail)
+;;02 99 81 64 14 (Tel fixe)
+;;17 rue Gabriel Desgres 35400 SAINT-MALO
+;;
+424202 VALCLEM (S.C.I.);4054 BUREAUX REPUBLIQUE;02.99.20.06.06 (Tel.) / fabienne.souetre@orange.fr (Email)
+;;Chez Mr et Mme SOUETRE 10 RUE DES FRERES BLIN
+;;35000 RENNES
+;;
+424239 MUTUALITE BRETAGNE BIENS MEDICAUX;4054 BUREAUX REPUBLIQUE;Fusion (Tel.) / mfca.logistique@vyv3.fr (Email)
+;;02 97 21 13 95 (Tel SIEGE) / 02 90 03 70 03 (Tel)
+;;02 97 21 75 71 (Tel CUILLERAT)
+;;isabelle.cuillerat@vyv3.fr (Email)
+;;ECOUTER VOIR OPTIQUE BRUZ 14 RUE COLBERT
+;;56325 LORIENT
+;;
+424680 ARASS-KER GOAT ();4054 BUREAUX REPUBLIQUE;02.99.40.20.51 (Tel.) / 02.99.88.73.73 (Tel.)
+;;compta.kergoat@arass.fr (Email pour compta et courrier)
+;;55 Rue de Dinan BP 20
+;;35730 PLEURTUIT
+;;
+424792 PERRIER Francois (Monsieur);4054 BUREAUX REPUBLIQUE;06 20 36 35 85 (Tel.)
+;;forfrancoisperrier@orange.fr (Email)
+;;06.20.36.35.85  (Cel.)
+;;48 rue de Montparnasse 75014 PARIS
+;;
+424802 HUROVA (S.C.I.);4054 BUREAUX REPUBLIQUE;06 77 62 67 54 (Tel.) / jpetit@argosomega.fr (Email mai)
+;;06.77.62.67.54 (Cel. PORTABLE)
+;;argos-securite-alarme@wanadoo.fr (Email)
+;;7 Ter boulevard Perrier 35400 SAINT-MALO
+;;
+424830 NOVIKOFF Pierre & Aude (M ou Mme);4054 BUREAUX REPUBLIQUE;02.99.46.84.03 (Tel.) / 06 85 30 57 02 (Tel.)
+;;pnovikoff@gmail.com (Email E-MAIL)
+;;06.85.30.57.02 (Cel. PORTABLE)
+;;16 rue du Docteur Babin 91470 FORGES LES BAINS
+;;
+425168 JOUENNE Marcelle (Madame);4054 BUREAUX REPUBLIQUE;02.43.05.58.02 (Tel.)
+;;USUFRUITIERE 100% ENVOI UNIQUE (Cel. PORTABLE)
+;;marcelle.jouenne@wanadoo.fr (Email adresse mail)
+;;chez Mme DURAND Christine 3 IMPASSE DU ROULLARD
+;;85230 ST GERVAIS
+;;
+425338 SCI M.G.C (S.C.I.);4054 BUREAUX REPUBLIQUE;harasduclos@wanadoo.fr (Email MR DURAND)
+;;06 75 73 88 52 (Cel.)
+;;1 Boulevard de la Liberte Le CLOS
+;;92320 CHATILLON
+;;
+425340 GAUDEFROY DE MOMBYNES Roch (Monsi;4054 BUREAUX REPUBLIQUE;rdemombynes@gmail.com (Email) / 0616312615 (Cel.)
+;;9 Rue Chateaubriand  35400 SAINT MALO
+;;
+;;
+425550 COLCOMBET Yves (Monsieur);4054 BUREAUX REPUBLIQUE;05 90 90 94 48 (Tel.) / 06 90 93 63 98 (Tel.)
+;;06 32 87 93 82 (Fax.) / colcombet.yves@orange.fr (Email)
+;;06.32.87.93.82 (Cel. Inf portable 2)
+;;06 90 93 63 98 (Cel.)
+;;27 RUE DE LA SALINETTE 35800 ST BRIAC SUR MER
+;;
+425626 LOURI (S.C.I.);4054 BUREAUX REPUBLIQUE;02.23.17.09.52 (Tel.) / hugues.brault@gmail.com (Email)
+;;06 01 40 36 69 (Cel. MR BRAULT)
+;;Gerant Mr & Mme BRAULT 11  rue des Etangs
+;;35780 LA RICHARDAIS
+;;
+425835 ELLAC'H (SCI);4054 BUREAUX REPUBLIQUE;SIREN : 537745408 (Cel. PORTABLE)
+;;cabinet@avocats-partenaires.fr (Email)
+;;MAITRE PATRICK A.LAYNAUD 18 AVENUE JEAN JAURES
+;;35400 SAINT-MALO
+;;
+425836 VI-SA (SCI);4054 BUREAUX REPUBLIQUE;gwenvibert@gmail.com (Email perso gerant)
+;;18 Avenue Jean Jaures 35400 SAINT-MALO
+;;
+425847 SDC J.JAURES PARKING VISITEUR ();4054 BUREAUX REPUBLIQUE;facturesstmalo@keredes.coop (Email)
+;;CHEZ KEREDES  26 AVENUE JEAN JAURES
+;;35400 ST MALO
+;;
+425858 BRIERE DE LA HOSSERAYE Nicolas (M;4054 BUREAUX REPUBLIQUE;ndelahoss@hotmail.com (Email MAIL)
+;;5 rue Nollet 75017 PARIS 17 BATIGNOLLES-MONC
+;;
+426027 VASSAL Didier et Anne (M ou Mme);4054 BUREAUX REPUBLIQUE;06 71 65 01 71 (Tel.) / anne.vassal@orange.fr (Email MAIL)
+;;06 71 65 01 71 (Cel. mobile)
+;;173  rue de Courcelles 75017 PARIS 17 BATIGNOLLES-MONC
+;;
+427989 TOUSSAINT Philippe et Brigitte (M;4054 BUREAUX REPUBLIQUE;phbtoussaint@hotmail.fr (Email) / 06 87 92 25 28 (Tel)
+;;17 rue Vasco de Gama 75015 PARIS 15
+;;
+427990 LEGRAND Jean-Francois et Monique;4054 BUREAUX REPUBLIQUE;06.07.73.66.04 (Tel.)
+;;jflegrand2003@yahoo.fr (Email adresse email)
+;;06 07 73 66 04 (Cel. mobile)
+;;25 rue de Chazelles 75017 PARIS 17
+;;
+427991 CALMON Alexis (Monsieur);4054 BUREAUX REPUBLIQUE;06 25 43 63 87 (Tel.) / alex@calmon.com (Email)
+;;0625436387 (Tel) / 0625436387 (Tel)
+;;22 Rue Saint Mathieu  L 2138 LUXEMBOURG
+;;
+428017 GMA (SCI);4054 BUREAUX REPUBLIQUE;j.dutertre@sastredan.fr (Email) / 06.44.27.14.93 (Cel.)
+;;02.23.17.49.22 (Tel) / natmathurin@gmail.com (Email)
+;;n.mathurin@mobilect.fr (Email)
+;;n.mathurin@mobilect.fr (Email)
+;;06 74 46 15 05 (Cel. dutertre)
+;;g.mathurin@sastredan.fr (Email)
+;;Mr et Mme Mathurin Gildas 9 Impasse de la Petite Hupee
+;;35400 SAINT MALO
+;;
+428049 LEMARCHANT Christophe (Monsieur);4054 BUREAUX REPUBLIQUE;07 83 52 80 45 (Tel.) / c.lemarchant@live.fr (Email mail)
+;;07 83 52 80 45 (Cel. portable)
+;;2 BD CHATEAUBRIAND 35400 ST MALO
+;;
+428123 CRETE Jean-Gerald (Monsieur);4054 BUREAUX REPUBLIQUE;06.78.65.08.64 (Tel.) / 01.46.54.17.49 (Tel.)
+;;jg.crete@orange.fr (Email mail) / 01 46 54 17 49 (Tel fixe)
+;;
+;;06 78 65 08 64 (Cel. mobile)
+;;45, rue Guy Moquet 92240 MALAKOFF
+;;
+428160 LEVEL Dominique et Camille (Indiv;4054 BUREAUX REPUBLIQUE;nickylevel@yahoo.com (Email) / 0622792455 (Cel.)
+;;2 rue de la Corne de Cerf 35400 ST MALO
+;;
+428328 AUGE Helene (Madame);4054 BUREAUX REPUBLIQUE;06.26.78.30.69 (Tel MOBILE)
+;;helenegine@orange.fr (Email EMAIL)
+;;77, avenue de Moka 35400 SAINT MALO
+;;
+428675 COTTEBRUNE Jean-Bernard (Monsieur;4054 BUREAUX REPUBLIQUE;0634473432 (Cel. Mobile) / 0634473432 (Cel. Mobile)
+;;67 boulevard du Villou 35800 DINARD
+;;
+428678 LEFAUCONNIER Christophe (Monsieur;4054 BUREAUX REPUBLIQUE;06 87 78 77 98 (Tel.)
+;;christophe_lefauconnier@yahoo.fr (Email)
+;;06 87 78 77 98 (Cel.)
+;;23 rue de Gilbert 35760 MONTGERMONT
+;;
+428696 LE JOLI CAVAJO (S.C.I.);4054 BUREAUX REPUBLIQUE;jerome@lgfholding.com (Email mail)
+;;Chez M. Jerome de Metz 28 Avenue du Louvre
+;;78000 VERSAILLES
+;;
+428784 LEFORT FRANCIS ET EDITH (M et Mme;4054 BUREAUX REPUBLIQUE;lefortfc@hotmail.com (Email)
+;;7 D RUE DE L ESPERANCE 22100 DINAN
+;;
+428801 NTSAKALA Raoul et Karine (M et Mm;4054 BUREAUX REPUBLIQUE;fntsakala@laposte.net (Email) / 02 23 52 46 30  (Tel)
+;;09 51 04 13 49 (Tel)
+;;12 RUE DES LOGES 22100 LANVALLAY
+;;
+428813 ELLIS INVEST (SCI);4054 BUREAUX REPUBLIQUE;ellis.gaelle@gmail.com (Email) / 02 23 17 38 64 (Tel)
+;;06 01 20 49 66 (Cel.)
+;;Chez Mme Gaelle ELLIS 4, La Haute Naye
+;;35800 ST BRIAC SUR MER
+;;
+438379 ACE DEVELOPPEMENT (S.C.I.);4054 BUREAUX REPUBLIQUE;turpin.avocat35@jurislaboris.fr (Email)
+;;02-57-64-01-20 (Cel. mme salvary)
+;;Gere par ME TURPIN LE CHAMP DOLENT
+;;35120 DOL DE BRETAGNE
+;;
+440091 MALOUINES Philippe (M.);4054 BUREAUX REPUBLIQUE;philippe.malouines@yahoo.fr (Email) / 06 24 27 18 19 (Cel.)
+;;9 RUE DE MANGOLERIAN 56250 MONTERBLANC
+;;
+440218 ARAN Bernhard (M.);4054 BUREAUX REPUBLIQUE;b.aran@free.fr (Email mail)
+;;76 St Mark's Road JE2 7LD ST SAVIOUR
+;;JERSEY
+;;
+440482 DOORENBOS Bernard et Laurence (M.;4054 BUREAUX REPUBLIQUE;0031 622506914 (Tel.) /  0031 6 22 50 69 14 (Tel Telephone)
+;;laurencedoorenbos@gmail.com (Email Mail)
+;;TALLSTRAAT 88 5261 VUGHT
+;;
+440537 HEURARD DE FONTGALLAND Christine;4054 BUREAUX REPUBLIQUE;06 74 94 05 99 (Tel.)
+;;06 74 94 05 99 (Tel Telephone portable)
+;;cfontgalland@gmail.com (Email Mail)
+;;32 avenue Duquesne 7eme arrondissement
+;;75007 PARIS
+;;
+440589 HUMA (SOCIETE);4054 BUREAUX REPUBLIQUE;06 30 35 54 95 (Tel.)
+;;
+;;nestorjeanpierre@gmail.com (Email Mail)
+;;06 30 35 54 95 (Cel.)
+;;16 avenue Louis Aubert 35400 ST MALO
+;;
+442586 GE CA PIERRES (S.C.I.);4054 BUREAUX REPUBLIQUE;harasduclos@wanadoo.fr (Email) / 06 75 73 88 52  (Cel.)
+;;204 avenue Marechal LECLERC  91300 MASSY
+;;
+446986 L'EMILIE (S.C.I.);4054 BUREAUX REPUBLIQUE;charles.tharaux@gmail.com (Email) / 06 29 55 09 21 (Cel.)
+;;Chez Mr THARAUX Charles 62, rue Ville Pepin
+;;35400 ST MALO
+;;
+447179 DRUMMOND Marie (Mme);4054 BUREAUX REPUBLIQUE;mariedf92@gmail.com (Email)
+;;15 RUE LOUIS VUITTON 92600 ASNIERES SUR SEINE
+;;
+448109 BAJZIK Dominique & Annie (M. et M;4054 BUREAUX REPUBLIQUE;dbajzik@orange.fr (Email) / anniebajzik@orange.fr (Email)
+;;06 30 83 49 48 (Cel.)
+;;33 RUE DE BEAUVAIS 60480 ABBEVILLE ST LUCIEN
+;;
+448173 LES CAMUS (S.C.I.);4054 BUREAUX REPUBLIQUE;stephanie.ledoux@alcyconie.com (Email)
+;;07.83.72.22.68 (Cel.)
+;;75 AVENUE DE LA ROSTOLANE 13540 AIX EN PROVENCE
+;;
+451433 AMEX IMMO 2 (S.C.I.);4054 BUREAUX REPUBLIQUE;gvibert@amexconseils.com (Email) / 06 20 54 31 29 (Cel.)
+;;02 99 40 50 95 (Tel)
+;;GERE PAR MME VIBERT Gwenaelle 18 AVENUE JEAN JAURES
+;;35400 ST MALO
+;;
+452057 SCHIMMEL DALIA (Mme);4054 BUREAUX REPUBLIQUE;dalsch@laposte.net (Email) / 06 12 84 77 72 (Cel.)
+;;16 RUE D'ALEMBERT 75014 PARIS
+;;
+453598 DES HACHES (S.C.I.);4054 BUREAUX REPUBLIQUE;contact@explor-avenir.fr (Email) / 06 37 01 15 24 (Cel.)
+;;Mme COLLIN DE LA BELLIERE 36 RUE HENRI SAMSON
+;;22770 LANCIEUX
+;;
+421634 SAUVAGE Marcel et Jocelyne (M ou;4056 BOUVET;02.99.56.66.81 (Tel.) / 02.99.80.25.10 (Tel.)
+;;jocelyne.sauvage50@orange.fr (Email mail)
+;;06 82 00 21 30 (Cel.)
+;;8 Residence Saint-Michel 50170 BEAUVOIR
+;;
+423719 LELIEVRE Patrick (Monsieur);4056 BOUVET;02 23 18 45 17 (Tel.) / 06 33 51 06 77 (Tel.)
+;;patrick_lelievre@orange.fr (Email fixe)
+;;06 33 51 06 77 (Cel. mobile)
+;;m.lambert@bollore-mainguet.fr (Email)
+;;02 23 18 45 17  (Tel)
+;;2 residence des chevaliers 22100 QUEVERT
+;;
+424069 MILON Catherine (Mademoiselle);4056 BOUVET;07.86.27.19.31 (Tel.) / 02.99.40.00.04 (Tel.)
+;;13 place Bouvet 35400 SAINT-MALO
+;;
+424765 CARLIEZ Benjamin et Fabienne (M o;4056 BOUVET;fabienne.c35800@gmail.com (Email)
+;;4 place du Champ clos 22100 DINAN
+;;
+424816 SPARFEL Yves (Monsieur);4056 BOUVET;yves.sparfel@gmail.com (Email) / 06.75.65.48.21 (Cel.)
+;;13  Place Bouvet 35400 SAINT-MALO
+;;
+425255 HENRY-LIMONON Catherine (Mademois;4056 BOUVET;06.07.22.28.18 (Tel)
+;;109  RUE DUHESME 75018 PARIS
+;;
+;;
+443433 BOUVET (S.C.I.);4056 BOUVET;athenagroupeimmobilier@gmail.com (Email)
+;;10, rue de la Corbiniere 35400 ST MALO
+;;
+421662 FERAL J.C. (M ou Mme);4074 BLATRERIE;01.43.31.60.89 (Tel.)
+;;86 Boulevard St Marcel 75005 PARIS
+;;
+421669 SCI LA MALODIERE ();4074 BLATRERIE;02.99.81.70.29 (Tel.)
+;;M. Jacques CHEFTEL La Huperie
+;;35400 SAINT-MALO
+;;
+421671 JANNIN Maurice (M ou Mme);4074 BLATRERIE;02.99.89.64.54 (Tel.)
+;;maurice.jannin3535@orange.fr (Email) / 0650318519 (Cel.)
+;;janninpierre@gmail.com (Email)
+;;CHEZ MR JANNIN Pierre 1 B, RUE MALAGUTI
+;;35000 RENNES
+;;
+421888 FERAL Franck (M ou Mme);4074 BLATRERIE;01.49.85.90.20 (Tel.) / 01.46.54.88.38 (Tel.)
+;;06 73 26 29 44 (Fax.)
+;;feral.franck@orange.fr (Email E-MAIL)
+;;06.73.26.29.44 (Cel. PORTABLE)
+;;8 Square de la Premontiere 92220 BAGNEUX
+;;
+421976 GESTRAUD Herve (Monsieur);4074 BLATRERIE;02.99.56.34.09 (Tel.) / 06 18 32 27 85 (Tel.)
+;;06 18 32 27 85 (Cel. MOBILE)
+;;varechhh@wanadoo.fr (Email MAIL)
+;;83  Avenue des Portes Cartier 35400 SAINT-MALO
+;;
+422029 SCI LA BLATRERIE Mme SAUVAGE Olga;4074 BLATRERIE;02 99 23 40 10 (Tel.) / ngenest@vicartem.fr (Email mail)
+;;M. Louis MARIAULT (Cel. mobile) / 02 99 23 40 12 (Fax fax)
+;;35 boulevard de la Liberte 35000 RENNES
+;;
+422071 SCI LA CROZTA ();4074 BLATRERIE;Magasin MIM (Tel.) / r.barre@giboire.com (Email)
+;;MME DOUET CATHERINE 314 AV.MARECHAL FOCH BAT B
+;;83000 TOULON
+;;
+422100 THIEBAUT Marie-Pierre (Madame);4074 BLATRERIE;06 87 96 25 97 (Tel.)
+;;mariepierre.thiebaut@laposte.net  (Email)
+;;06.87.96.25.97 (Cel.)
+;;10  rue du Dahomey 75011 PARIS
+;;
+422102 HEINRY Paulette (Madame);4074 BLATRERIE;02.99.56.06.01 (Tel.) / 06 77 44 94 40 (Tel.)
+;;02 99 56 06 01 (Tel FIXE) / 06 77 44 94 40 (Cel. MOBILE)
+;;1  rue de la BLATRERIE 35400 SAINT-MALO
+;;
+422139 ROULT Roger et Brigitte (M ou Mme;4074 BLATRERIE;02.99.56.10.23 (Tel.) / 06 30 33 14 31 (Tel.)
+;;02 99 56 10 23 (Fax.)
+;;famille.roult@orange.fr (Email mail)
+;;02 99 56 10 23 (Tel fixe) / 06 30 33 14 31 (Cel. mobile)
+;;1 rue de La Blatrerie 35400 SAINT-MALO
+;;
+422185 DEVAUX Michelle (Madame);4074 BLATRERIE;02.99.40.89.96 (Tel.)
+;;1  rue de la Blatrerie 35400 SAINT-MALO
+;;
+425803 GOUIN Olivier (Monsieur);4074 BLATRERIE;01.53.61.27.02 (Tel.) / gouinovsky@gmail.com (Email)
+;;01 48 78 68 21 (Tel) / 06 74 97 65 40 (Cel.)
+;;1 rue de la Blatrerie Loft Annadreas
+;;
+;;35400 ST MALO
+;;
+428716 RODIER Pierre et Marlene (M et Mm;4074 BLATRERIE;pm.rodier35@gmail.com (Email mail)
+;;02 99 56 61 67 (Tel fixe) / 06 20 44 50 77 (Cel. mobile)
+;;1, rue de la Blatrerie 35400 ST MALO
+;;
+428772 REYNAL DE SAINT MICHEL Louis (Mon;4074 BLATRERIE;02 99 73 67 56 (Tel.)
+;;louis.reynal@dbmail.com (Email MAIL)
+;;02 99 73 67 56 (Tel fixe)
+;;1 rue de la Blatrerie 35400 ST MALO
+;;
+440701 DE RUDELLE Geraud et Seyrade (M.;4074 BLATRERIE;gderudelle@laposte.net (Email Mr )
+;;seyrade@hotmail.com (Email Mme) / 06.43.61.29.62 (Cel.)
+;;18 rue de Naples 75008 PARIS
+;;
+450517 LOZAIC Daniel et Isabelle (M. et;4074 BLATRERIE;daniel.lozaic@orange.fr (Email) / 02 99 69 39 31 (Tel)
+;;06 61 97 31 82 (Cel.)
+;;6 ALLEES HENRI QUEFFELEC 35520 LA MEZIERE
+;;
+452858 CHERONET (S.C.I.);4074 BLATRERIE;patrickcheronnet@hotmail.fr (Email)
+;;112 Chemin des Rivieres Le Malpas 8
+;;69390 VERNAISON
+;;
+449565 CONCEPT IB PROMOTION (S.A.R.L.);4074 BLATRERIE;mael.racinne@concept-ib.fr (Email)
+;;GERE PAR MR MACE ET MR RACINNE 2 BOULEVARD CHATEAUBRIAND
+;;35400 ST MALO
+;;
+421675 BECCAVIN-LEVY Yvette (Madame);4075 NICET;06 10 77 66 15 (Tel.) / 02 54 75 15 32 (Tel.)
+;;06 10 77 66 15 (Cel. PORTABLE) / 02 54 75 15 32 (Tel fixe)
+;;Chez Mme BAUDET LILIANE 46 RUE PASTEUR
+;;91700 STE GENEVIEVE DES BOIS
+;;
+421677 COCHET Marie Annick (Madame);4075 NICET;09 53 29 75 39 (Tel.) / 78marie56@gmail.com (Email)
+;;57 rue Aristide Briand 78140 VELIZY VILLACOUBLAY
+;;
+421678 DABOUINEAU Bernard et Annick (M o;4075 NICET;02 43 47 25 32 (Tel.) / 02 43 47 25 32 (Tel)
+;;Residence RENAISSANCE appt 104 1 allee Leprince d'Ardenay
+;;72000 LE MANS
+;;
+421679 DENIS Joseph et Claudine (M ou Mm;4075 NICET;06.43.95.89.91 (Tel.) / 02 99 66 16 88 (Tel.)
+;;02 99 66 16 88 (Tel fixe) / 06 43 95 89 91 (Cel. MOBILE)
+;;35 Avenue Chateaubriand 35520 MELESSE
+;;
+421682 GRUEL GERARD (M.);4075 NICET;06 36 44 03 18 (Tel.) / 02 99 50 37 31 (Tel.)
+;;06.36.44.03.18 (Cel.) / 02.99.50.37.31 (Tel)
+;;06.84.92.31.72 (Cel. NEW POTABLE)
+;;1 ALLEE DES MILLEPERTUIS 35136 SAINT-JACQUES DE LA LANDE
+;;
+421699 VIGOUR Patrick (M ou Mme);4075 NICET;06 14 76 40 62 (Tel.) / 02 99 52 65 08 (Tel.)
+;;06.14.76.40.62 (Cel. PORTABLE) / 02 99 52 65 08 (Tel FIXE)
+;;gisele.vigour@orange.fr (Email MAIL)
+;;4B Avenue de Gaulle 35170 BRUZ
+;;
+421700 VITRE Claude (M ou Mme);4075 NICET;02.99.60.67.80 (Tel.) / 06.73.01.75.83 (Tel.)
+;;0299606780 (Tel fixe) / 0673017583 (Cel. Inf portable)
+;;claudeetpaulette.vitre@sfr.fr (Email adresse mail)
+;;1 rue Laennec 35740 PACE
+;;
+;;
+421705 VAULEON Christian (M ou Mme);4075 NICET;06 84 81 73 75 (Tel.) / 02 99 51 69 70 (Tel.)
+;;christianvauleon@icloud.com (Email E-MAIL)
+;;0684817375 (Cel. Inf portable) / 0299516970 (Tel fixe)
+;;17 Rue du Docteur Calmette 35200 RENNES
+;;
+422010 LOUIS Marie-Paule (Madame);4075 NICET;02.99.53.41.70 (Tel.) / 06 25 65 00 08 (Tel.)
+;;06 25 65 00 08  (Cel. mobile ) / mplouis@hotmail.fr (Email)
+;;1 D  Avenue Monseigneur Mouezy 35000 RENNES
+;;
+422053 CHEVREL Michel (M ou Mme);4075 NICET;02 99 56 72 38 (Tel.) / 0299567238 (Tel fixe)
+;;06 75 90 46 81 (Cel.)
+;;14  Rue de la Fee des Greves 35400 SAINT-MALO
+;;
+422056 PAITEL Michele (Madame);4075 NICET;06.31.15.25.58 (Tel.) / 06 31 15 25 58 (Cel. PORTABLE)
+;;michele.paitel@outlook.fr (Email)
+;;19  Rue Georges Sand 35235 THORIGNE-FOUILLARD
+;;
+422209 HUBERT Jacqueline (Madame);4075 NICET;02.99.36.27.55 (Tel.) / 02.23.18.63.30 (Tel.)
+;;02 99 36 27 55 (Tel fixe)
+;;3  Boulevard Jeanne d'Arc 35000 RENNES
+;;
+422295 GUYON Jean Francois (M ou Mme);4075 NICET;02 33 58 40 86 (Tel.)
+;;jeanfrancoisguyon@orange.fr (Email E-MAIL)
+;;0233584086 (Tel fixe) / 0603831904 (Cel.)
+;;4  Impasse des Cerisiers 50300 ST-MARTIN-DES-CHAMPS
+;;
+424039 LOREAU-SIMONNEAUX Daniel (M ou Mm;4075 NICET;02 99 73 02 15 (Tel.) / 06 48 17 31 00 (Tel.)
+;;danyloreau@aol.com (Email EMAIL)
+;;06.48.17.31.00 (Cel. portable) / 02.99.73.02.15 (Tel FIXE)
+;;Tremouard 35270 COMBOURG
+;;
+424045 PATILLOT Herve et Danielle (M ou;4075 NICET;06 72 52 03 37 (Tel.) / 02 99 38 45 87 (Tel.)
+;;06.72.52.03.37 (Cel. PORTABLE) / 02.99.38.45.87 (Tel)
+;;pierre-mary@infonie.fr (Email)
+;;1 Allee de Hoedic KERFLEURY
+;;35760 SAINT-GREGOIRE
+;;
+424072 SCI LA RAFALE ();4075 NICET;02.96.34.77.86 (Tel M. Daniel ARZUR (gerant))
+;;02.99.80.71.40 (Tel Mme DE MATTOS (associee))
+;;02 99 80 71 40 (Tel SCI LA RAFALE (COMPTABLE))
+;;Sule 56450 SURZUR
+;;
+424567 GUYON Jean-Francois (M ou Mme);4075 NICET;06 03 83 19 04 (Tel.) / 02 33 58 40 86 (Tel.)
+;;06.03.83.19.04 (Cel. PORTABLE) / 0233584086 (Tel fixe)
+;;jeanfrancoisguyon@orange.fr (Email email)
+;;4 Impasse des Cerisiers 50300 SAINT-MARTIN-DES-CHAMPS
+;;
+424866 FAURE Jean-Francois (M ou Mme);4075 NICET;jacqueline@e-faure.net (Email) / 01 43 64 84 14 (Tel)
+;;06 78 81 93 11 (Cel.)
+;;143   rue de Bagnolet 75020 PARIS 20EME
+;;
+426058 LEFEUVRE Jean-paul & Michele (M o;4075 NICET;06.71.77.82.88 (Tel.) / 02 99 60 49 86 (Tel.)
+;;jpml2@wanadoo.fr (Email) / 06.71.77.82.88 (Cel. Inf)
+;;02.99.60.49.86 (Tel)
+;;1  rue de Launay 35310 MORDELLES
+;;
+;;
+439128 CHARLETOUX Christophe et Beatrice;4075 NICET;06 78 61 89 04 (Tel.) / 06 15 26 84 92 (Tel.)
+;;bdavourie@eurodel.be (Email)
+;;charletc@numericable.fr (Email)
+;;06 78 61 89 04  (Cel. mobile 1) / 06 15 26 84 92 (Cel. 2)
+;;16 Bis rue de la Chataigneraie 92500 RUEIL MALMAISON
+;;
+439130 REGLEY Philippe (M.);4075 NICET;philippe.regley@gmail.com (Email) / 06 11 33 29 61 (Cel.)
+;;5, rue Philippe DARTIS 95880 ENGHIEN LES BAINS
+;;
+450331 CORNIC Anais (Mme);4075 NICET;a.cor78@free.fr (Email) / 06 28 55 21 87 (Cel.)
+;;07 49 74 11 96 (Cel. Inf)
+;;24 rue De Saint Nom BAT 1 78112 FOURQUEUX
+;;
+450720 DAMIENS ET VANNIER (INDIVISION);4075 NICET;06 71 35 41 18 (Cel.) / pcdamiens@gmail.com (Email)
+;;3 rue du Telegraphe 35350 ST MELOIR DES ONDES
+;;
+453507 LEGOBIEN Pierrick (M.);4075 NICET;p.lego@wanadoo.fr (Email)
+;;55 rue du Chene Amoureux 35520 LA CHAPELLE DES FOUGERETZ
+;;
+421707 FROMENTOUX Jean-Claude ou Marie-F;4079 SILLON (57);02.99.06.50.10 (Tel.)
+;;mariefrancoise.fromentoux@wanadoo.fr (Email E-MAIL)
+;;06 87 29 72 75 (Cel. mme)
+;;Le Bois de Chaillou 35360 MONTAUBAN-DE-BRETAGNE
+;;
+421708 TOCZE Pierrick (Monsieur);4079 SILLON (57);Locataire (Tel.) / MAUDUIT Franck (Tel.)
+;;02.35.77.46.46 (Fax.)
+;;273 allee des Chenes 76500 ELBEUF (Cel. PORTABLE)
+;;02.35.67.48.18 (Cel. PORTABLE) / 02.35.77.46.46 (Fax FAX)
+;;ptocze@yahoo.fr (Email mail) / 0650559569 (Cel.)
+;;273 Allee des chenes 76500 ELBEUF
+;;
+421999 GRIFFON Gerard (M ou Mme);4079 SILLON (57);02.99.58.74.75 (Tel.)
+;;griffongerard@orange.fr (Email E-MAIL)
+;;locsaisonsill@yahoo.fr (Email mail)
+;;02 99 58 74 75 (Tel fixe) / 06 70 97 30 58 (Cel. mobile)
+;;53  Rue des Cotieres 35111 LA FRESNAIS
+;;
+422187 SCI Y.D. ();4079 SILLON (57);02.99.56.09.68 (Tel.) / Restaurant (Tel.)
+;;ynk.collin@orange.fr (Email E-MAIL)
+;;Mr ou Mme COLLIN Yannick 57  C haussee du Sillon
+;;35400 SAINT-MALO
+;;
+424191 COLLIN Yannick (M ou Mme);4079 SILLON (57);Restaurant (Tel.) / Le bouche a or (Tel.)
+;;ynk.collin@orange.fr (Email E-MAIL)
+;;57  Chaussee du Sillon 35400 SAINT-MALO
+;;
+428047 CARVAT (SARL);4079 SILLON (57);ybriand@antineahotel.com (Email) / 0299561075 (Tel)
+;;55 Chaussee du Sillon 35400 ST MALO
+;;
+447765 CELTON ELISABETH (Mme);4079 SILLON (57);celton.elisabeth@orange.fr (Email) / 07 87 12 27 15 (Cel.)
+;;02 99 46 82 33 (Cel.)
+;;49 RUE DANYCAN 35400 ST MALO
+;;
+421718 DE LASTELLE (Indivision);4080 EMERILLON INTRA SDC;01.43.59.43.13 (Tel.)
+;;USUFRUIT 100% tous pouvoir (Cel. PORTABLE)
+;;fdelastelle@delastelle.avocat.fr (Email)
+;;laurent@lastelle.com (Email cousin)
+;;
+;;+ 41796899392 (Cel. cousin)
+;;Chez Mr DE LASTELLE Francois 83 Quai d'Orsay
+;;75007 PARIS 07
+;;
+421722 GUERRIER Jacqueline (Madame);4080 EMERILLON INTRA SDC;02.99.56.08.99 (Tel.)
+;;33 Avenue Eugene Herpin 35400 SAINT-MALO
+;;
+421728 ROGER-JOURNIEUX (INDIVISION);4080 EMERILLON INTRA SDC;pjournieux@hotmail.fr (Email) / 0660842325. (Cel.)
+;;02.99.40.12.46 (Tel) / 06 30 05 33 14 (Cel. USUFRUTIERE)
+;;CHEZ MR JOURNIEUX PATRICK 41, RUE FERMAT
+;;59000 LILLE
+;;
+421996 NICOLAS (S.C.I.);4080 EMERILLON INTRA SDC;06 07 50 36 39 (Tel.) / 06 33 87 07 64 (Fax.)
+;;lepetitmalouin@gmail.com (Email EMAIL)
+;;0607503639 (Cel. MOBILE)
+;;Mme M.LEFEUVRE/Mr N.LEFEUVRE 6 Rue de la Vieille Boucherie
+;;35400 SAINT-MALO
+;;
+422410 BIENVENUE (S.C.I.);4080 EMERILLON INTRA SDC;06 07 09 90 41 (Tel.)
+;;scibienvenue@yahoo.fr (Email E-MAIL)
+;;07-88-29-07-59 (Cel. PORTABLE)
+;;Madame HERVOUET  43 boulevard Blanquin
+;;75013 PARIS  XIIIeme
+;;
+424238 GASNIER Jean-Marc (Monsieur);4080 EMERILLON INTRA SDC;06 20 33 45 59 (Tel.) / 06.20.33.45.59 (Cel. PORTABLE)
+;;gasnier.jeanmarc63@gmail.com (Email EMAIL)
+;;La fontaine Loup Carnet 50240 CARNET
+;;
+425125 NICOLAS (S.C.I.);4080 EMERILLON INTRA SDC;06 33 87 07 64 (Tel.) / 06 07 50 36 39 (Tel.)
+;;gerante Mme Lefeuvre monique (Cel. PORTABLE)
+;;Mme M.LEFEUVRE/Mr N.LEFEUVRE   6 rue de la Vieille Boucherie
+;;35400 SAINT-MALO
+;;
+428056 BERTIN Paul et Isabelle (M et Mme;4080 EMERILLON INTRA SDC;06 73 21 09 49 (Tel.) / ibertin2017@gmail.com (Email EMAIL)
+;;0673210949 (Cel. PORTABLE)
+;;8 RUE DU MUGUETS 35620 ERCE EN LAMEE
+;;
+428329 HENRY Pascal et Muriel (M et Mme);4080 EMERILLON INTRA SDC;jaune.orange904@outlook.fr (Email)
+;;07.68.28.33.67 (Cel. Monsieur)
+;;07.68.28.33.67 (Cel. Monsieur)
+;;9, bis rue de la Collinerie 37270 ATHEE SUR CHER
+;;
+447560 SUN KY (M.);4080 EMERILLON INTRA SDC;contact@eskael.com (Email)
+;;1 PASSAGE DE L EMERILLON 35400 ST MALO
+;;
+448260 KARRAZ LOAY (M.);4080 EMERILLON INTRA SDC;loaykarraz@hotmail.com (Email) / 06 77 59 23 23 (Cel.)
+;;06 77 59 23 23 (Cel.)
+;;35 RUE SAINT DIDIER 75116 PARIS
+;;
+452115 HABERT PIERRE & MIRAY (M. et Mme);4080 EMERILLON INTRA SDC;habert.pierre@gmail.com (Email)
+;;06.09.03.13.78 (Cel. Monsieur)
+;;60 RUE DE TALLEYRAND 51100 REIMS
+;;
+421735 COEURU Yannick (Monsieur);4084 ERASMUS;02.99.82.18.49 (Tel.) / 06 51 70 35 20 (Tel.)
+;;yannickcoeuru@hotmail.fr (Email EMAIL)
+;;02.99.46.10.97 (Tel FIXE) / 06.51.70.35.20 (Cel. PORTABLE)
+;;6  impasse des Sternes 35350 SAINT-MELOIR DES ONDES
+;;
+;;
+421743 FERRANTIN Dominique (M ou Mme);4084 ERASMUS;06 71 48 75 16 (Tel.) / 06 73 66 12 03 (Tel.)
+;;nitnarref@laposte.net (Email) / 06.73.66.12.03 (Cel.)
+;;Lieu dit Les Carrieres 46090 MAXOU
+;;
+421750 HERY Helene (Mme);4084 ERASMUS;02 99 89 01 73 (Tel.) / pascal.hy@neuf.fr (Email)
+;;06 61 14 66 35 (Cel. MR HERY)
+;;Lieu-dit Le Preau 35350 SAINT-COULOMB
+;;
+421763 MOMY Jean-Louis (M ou Mme);4084 ERASMUS;02 99 89 70 54 (Tel.) / 06 67 33 52 03 (Tel.)
+;;momy.jeanlouis.35@orange.fr (Email EMAIL)
+;;02.99.89.70.54 (Tel FIXE) / 06.67.33.52.03 (Cel. PORTABLE)
+;;49  Bld d'Armor 35260 CANCALE
+;;
+421767 RAFFRAY MAGALI (Mme);4084 ERASMUS;02 99 56 35 74 (Tel.) / liste rouge (Tel.)
+;;02 30 42 01 08 (Fax.) / yanou19561@yahoo.fr (Email EMAIL)
+;;02.30.42.01.08 (Tel FIXE)
+;;16 B RUE DU HAMEAU  91540 MENNECY
+;;
+421769 RIOU Jean-Claude (M ou Mme);4084 ERASMUS;02 99 58 11 63 (Tel.) / 07 89 77 89 02 (Tel.)
+;;madeleine.riou@gmail.com (Email)
+;;07 89 77 89 02 (Cel. MOBILE)
+;;06 33 48 49 54 (Email loc mr morel )
+;;02 99 58 11 63 (Tel FIXE)
+;;6, Loumas 35540 PLERGUER
+;;
+421771 ROBERT David (Monsieur);4084 ERASMUS;06 79 86 57 89 (Tel.) / 02 43 03 68 61 (Tel.)
+;;drobert1@outlook.fr (Email EMAIL)
+;;02.43.03.68.61 (Tel FIXE) / 06.79.86.57.89 (Cel. PORTABLE)
+;;3 RUE HAUTE CHIFFOLIERE 53000 LAVAL
+;;
+421778 COEURU Yannick (Monsieur);4084 ERASMUS;02 99 46 10 97 (Tel.) / 06 51 70 35 20 (Tel.)
+;;yannickcoeuru@hotmail.fr (Email EMAIL)
+;;06.51.70.35.20 (Cel. PORTABLE) / 02.99.46.10.97 (Tel FIXE)
+;;6  impasse des Sternes 35350 SAINT-MELOIR-DES-ONDES
+;;
+421787 RAFFRAY XAVIER (M.);4084 ERASMUS;x.raffray35@gmail.com (Email Inf) / 06 42 75 86 16 (Cel.)
+;;10 ALLEE D AURIGNY 35400 ST MALO
+;;
+422065 OUTY Ernest (M ou Mme);4084 ERASMUS;02 99  88 61 2 (Tel.) / 02 99 88 61 22 (Tel fixe)
+;;30 Rue du Reverend Pere Lebret 35870 LE MINIHIC SUR RANCE
+;;
+422066 ROUL Joel (M ou Mme);4084 ERASMUS;02 99 72 95 90 (Tel.) / 06.70.34.65.59 (Tel.)
+;;roul-dugast@orange.fr (Email) / 02 99 72 90 65  (Tel)
+;;06 70 34 65 59  (Cel.)
+;;LA VALLEE 35390 LA DOMINELAIS
+;;
+422737 PARNET Bertrand et Brigitte (M ou;4084 ERASMUS;06 44 21 62 49 (Tel.) / bgparnet@gmail.com (Email)
+;;06.44.21.62.49 (Cel.)
+;;La Musiquerie 35350 ST MELOIR DES ONDES
+;;
+422746 DOURVER Jacqueline (Madame);4084 ERASMUS;02 99 40 98 26 (Tel.) / Mr DOURVER decede (Cel. PORTABLE)
+;;59 Avenue des Portes Cartier 35400 SAINT MALO
+;;
+422747 NOEL Joel (M ou Mme);4084 ERASMUS;02 99 48 73 15 (Tel.)
+;;joel.noel5@wanadoo.fr (Email E-MAIL)
+;;La Ville Pican 35610 TRANS LA FORET
+;;
+;;
+422751 SAUVAGE-PENVERN Janick (Madame);4084 ERASMUS;02 99 56 21 96 (Tel.)
+;;5 RUE DE BEAULIEU 35400 SAINT MALO
+;;
+423511 THE Rene (M ou Mme);4084 ERASMUS;02.99.37.56.14 (Tel.) / thebrigitte@hotmail.fr (Email)
+;;Le Petit Bois Rond 35410 NOUVOITOU
+;;
+423536 SAUVAGE-PENVERN Janick (Madame);4084 ERASMUS;02 99 56 21 96 (Tel.)
+;;5 RUE DE BEAULIEU 35400 SAINT MALO
+;;
+424102 PAPAIL Samuel (Monsieur);4084 ERASMUS;02.99.58.92.55 (Tel.) / 06 22 52 73 97 (Tel.)
+;;samuel.papail@wanadoo.fr (Email E-MAIL)
+;;06.22.52.73.97 (Cel. PORTABLE) / 02.99.58.92.55 (Tel FIXE)
+;;39 RUE DES AULNAIES 35540 PLERGUER
+;;
+424180 MOISON Philippe et Catherine (M o;4084 ERASMUS;moison.catherine@gmail.com (Email E-MAIL)
+;;philippe.moison@aliceadsl.fr (Email E-MAIL)
+;;5 rue de la Lande Saint-Martin 22100 LEHON
+;;
+424491 CADIOU Didier (M ou Mme);4084 ERASMUS;02 99 82 83 02 (Tel.) / 06 18 95 30 83 (Tel.)
+;;cadiou-frederique@wanadoo.fr (Email E-MAIL)
+;;02.99.82.83.02 (Tel FIXE) / 06.18.95.30.83 (Cel. PORTABLE)
+;;Les Petits Douets 35400 SAINT MALO
+;;
+424565 ADOUANI David (Monsieur);4084 ERASMUS;david.adouani@vertiv.com (Email E-MAIL)
+;;18 LOTISSEMENT  LE CLOS DES MUIDS
+;;28300 COLTAINVILLE
+;;
+424791 TERRIER Philippe & Sophie (M ou M;4084 ERASMUS;02 99 58 84 62 (Tel.) / 06 78 66 01 46 (Tel.)
+;;terrier.philippe@neuf.fr (Email EMAIL)
+;;06.78.66.01.46 (Cel. PORTABLE) / 02.99.58.84.62 (Tel FIXE)
+;;02.99.58.84.62 (Tel FIXE)
+;;11  rue des Champs du Moulin 35430 Saint-Pere
+;;
+425023 RAQUIDEL rep M. RAQUIDEL Jean-Mar;4084 ERASMUS;06.10.33.71.98 (Tel.)
+;;jeanmarie.raquidel@gmail.com (Email E-MAIL)
+;;06.10.33.71.98 (Cel. PORTABLE)
+;;cathy.raquidel@gmail.com (Email E-MAIL)
+;;1, rue de la Croix des Champs 35260 CANCALE
+;;
+425029 ALMAS Karim (M ou Mme);4084 ERASMUS;06.19.59.61.73 (Tel.) / 06 27 22 91 46 (Tel.)
+;;tic.tic.35@hotmail.fr (Email EMAIL)
+;;06.27.22.91.46 (Cel. PORTABLE - MME ALMAS)
+;;34 Rouesnel 35720 TRESSE
+;;
+425096 DESRAIS Norbert (Monsieur);4084 ERASMUS;06 64 17 10 54 (Tel.) / 07 88 24 63 72 (Tel.)
+;;02 99 19 87 37 (Fax.)
+;;seashellyacht@gmail.com (Email EMAIL)
+;;06.64.17.10.54 (Cel. PORTABLE - MERE (FILS MARIN))
+;;02.99.19.87.37 (Tel FIXE) / 07.88.24.63.72 (Cel. PORTABLE)
+;;2 la Ville Besnard 35400 SAINT-MALO
+;;
+425463 ROBIN Maxime (Monsieur);4084 ERASMUS;06 81 21 68 81 (Tel.) / 06.81.21.68.81 (Cel. PORTABLE)
+;;maximerobin0401@gmail.com (Email)
+;;41, rue des Pres de Noisy 93460 GOURNAY-SUR-MARNE
+;;
+425617 HAMON Frederic & Irina (M ou Mme);4084 ERASMUS;fhamon@outlook.fr (Email E-MAIL)
+;;
+;;frede.hamon@gmail.com (Email)
+;;7  rue du Bray 78400 CHATOU
+;;
+425828 HELLEUX-BARBOT Bertrand  (INDIVIS;4084 ERASMUS;06 01 98 56 66 (Tel.)
+;;bertrand.helleux@wanadoo.fr (Email E-MAIL)
+;;06.01.98.56.66 (Cel. PORTABLE)
+;;20 RUE LOUIS LEMARCHAND 35400 ST MALO
+;;
+425965 SARRAZIN-NZE-EYOUNE Audrey (Madam;4084 ERASMUS;audrey.sarrazin.bzh@gmail.com (Email)
+;;06 67 45 08 65 (Cel.)
+;;145 RUE DE BOISDENIER 37000 TOURS
+;;
+425986 SOULAT Dominique & Veronique (M o;4084 ERASMUS;02 99 89 22 34 (Tel.) / 06 52 85 98 34 (Tel.)
+;;domsoulat@hotmail.com (Email EMAIL)
+;;06.52.85.98.34 (Cel. PORTABLE) / 02.99.89.22.34 (Tel FIXE)
+;;Le Champ d'Avoine 35350 SAINT-MELOIR-DES-ONDES
+;;
+425993 DESLANDES Marie & Nathalie (Indiv;4084 ERASMUS;06 60 86 13 07 (Tel.) / 02 99 89 12 59 (Tel.)
+;;nathy.deslandes@gmail.com (Email EMAIL)
+;;02.99.89.12.59 (Tel FIXE) / 06.60.86.13.07 (Cel. PORTABLE)
+;;Le Tertre Janson 35350 SAINT-MELOIR-DES-ONDES
+;;
+426024 DEMAY Karel (Mademoiselle);4084 ERASMUS;06 67 35 21 23 (Tel.) / karel.demay@gmail.com (Email EMAIL)
+;;06.67.35.21.23 (Cel. PORTABLE)
+;;13 RUE GOUNOD 35170 BRUZ
+;;
+426067 DESRAIS Lydie (Madame);4084 ERASMUS;06 64 17 10 54 (Tel.) / 06.64.17.10.54 (Cel.)
+;;lydiedesrais@gmail.com (Email)
+;;Z.A. La ville Besnard 35400 SAINT-MALO
+;;
+428018 PAILLETTE Bernard & Therese (M et;4084 ERASMUS;02 99 95 00 98 (Tel.) / 07 86 05 81 38 (Tel.)
+;;02 99 95 00 98 (Tel) / 07 86 05 81 38 (Cel.)
+;;thedav54@gmail.com (Email)
+;;paillette.bernard@orange.fr (Email Inf)
+;;3, rue Dauphin Brouard 35420 LOUVIGNE DU DESERT
+;;
+428332 AHMED ADEN FADAN Frederic (Monsie;4084 ERASMUS;06 67 35 21 23 (Tel.)
+;;frederic.aden@gmail.com (Email EMAIL)
+;;06.67.35.21.23 (Cel. PORTABLE)
+;;13 RUE GOUNOD 35170 BRUZ
+;;
+428787 THEBAULT David (Monsieur);4084 ERASMUS;david.thebault@laposte.net (Email) / 07 61 05 46 60 (Tel)
+;;APPARTEMENT 23 10 C ALLEE DE LANVAUX
+;;35700 RENNES
+;;
+438267 AUBIN David et Melinda (M. et Mme;4084 ERASMUS;melinda.aubin@orange.fr (Email) / 06 81 78 79 52 (Cel.)
+;;06 48 62 60 67 (Cel.)
+;;7 Residence de la Vigne 35190 ST DOMINEUC
+;;
+438506 ORY Thierry et Rozenn (M. et Mme);4084 ERASMUS;rozenn.ory@laposte.net (Email) / 06 11 42 92 37 (Cel.)
+;;06 18 64 32 73 (Cel.)
+;;6 rue de la Ville Aux Archers 35590 LA CHAPELLE THOUARAULT
+;;
+439875 DART Bertrand & Marie-christine (;4084 ERASMUS;07 71 34 74 41 (Tel.) / 01 75 34 74 41 (Tel.)
+;;btrd.dart@gmail.com (Email) / 01 75 34 74 41 (Tel)
+;;07 71 08 75 53  (Cel.) / mc.carraud@laposte.net (Email Inf)
+;;9 ALLEE DES TILLEULS 93110 ROSNY SOUS BOIS
+;;
+;;
+440094 PAUTREMAT Yannick et Maryelle (M.;4084 ERASMUS;yannick.pautremat@wanadoo.fr (Email mail)
+;;06 45 96 90 31 (Cel.)
+;;06 89 76 91 48 (Cel. mr cocherel (loc))
+;;22 rue Victor Schoelcher 35650 LE RHEU
+;;
+440503 BERAME (S.A.R.L.);4084 ERASMUS;berenger-stephanie@wanadoo.fr (Email)
+;;02 99 16 06 37 (Tel) / 06 03 18 60 72 (Cel.)
+;;GERANT MR GUILLOU BERENGER 11 ALLEE DES AURORES
+;;35730 PLEURTUIT
+;;
+440711 ESCANEZ Charles (M.);4084 ERASMUS;07 87 69 95 05 (Cel.) / charles.escanez@wanadoo.fr (Email)
+;;3 rue du Val Hervelin 22690 PLEUDIHEN SUR RANCE
+;;
+442407 REGNAULT FREDERIC ET JULIE (M. et;4084 ERASMUS;06 95 79 56 46 (Tel.) / regnault.fred@gmail.com (Email)
+;;06 95 79 56 46 (Cel.)
+;;2 ALLEE DE L'HERMIONE 87100 LIMOGES
+;;
+447236 HELLEUX Bertrand et christine (M.;4084 ERASMUS;bertrand.helleux@wanadoo.fr (Email)
+;;bertrand.helleux@wanadoo.fr (Email)
+;;06 01 98 56 66  (Cel.)
+;;20 RUE LOUIS LEMARCHAND 35400 ST MALO
+;;
+447296 ESCANEZ Jose et Isabelle (M. et M;4084 ERASMUS;jose.escanez@wanadoo.fr (Email) / 06 68 19 26 42 (Cel.)
+;;06 51 48 02 84 (Cel.) / 02 96 88 23 92 (Tel)
+;;3, rue du Val Herbelin 22690 PLEUDIHEN SUR RANCE
+;;
+447693 DUROX-THOMAS Julien et Ludivine (;4084 ERASMUS;ludivine.durox@laposte.net (Email) / 06 07 60 68 19 (Cel.)
+;;43 Avenue Paul GAUGUIN 35850 GEVEZE
+;;
+451057 DUFOUIL-MICHEL ARNAUD & VERONIQUE;4084 ERASMUS;arnaudetvero@free.fr (Email) / dufouil.a@free.fr (Email)
+;;09 51 18 98 80 (Tel) / 06 52 41 58 09 (Cel.)
+;;5 LA VILLE HULIN 35190 QUEBRIAC
+;;
+451513 BENHAMMACHT YASSINE & SYLVIE (M.;4084 ERASMUS;sylvie.benht@gmail.com (Email) / 03 23 64 23 96 (Tel)
+;;06 11 74 07 65  (Cel.)
+;;115 RUE QUENTIN BARRE 02100 ST QUENTIN
+;;
+452667 THUAL-QUERARD - SIMON Laurent et;4084 ERASMUS;laurent.thual@laposte.net. (Email) / 06 25 28 76 72 (Cel.)
+;;02 96 27 37 91 (Tel)
+;;8 RUE MARIE-PAULE SALONNE 22650 PLOUBALAY-BEAUSSAIS/MER
+;;
+452927 DOS ANJOS ET OLIVRIE Pierre & Ode;4084 ERASMUS;odelia.olivrie@gmail.com (Email) / 07-85-57-91-08 (Cel.)
+;;pierre.dosanjos1@gmail.com (Email Inf)
+;;11 RUE BRUNEL 75017 PARIS

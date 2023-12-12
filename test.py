@@ -165,7 +165,7 @@ def transform_file(csvfile):
         # Je sépare chaque coordonnée de la ligne 
         while letter < len(column):
             char = column[letter]
-            if char == '!': 
+            if char == '/': 
                 i +=1
                 donnee = {
                     'mail_numero':'',
@@ -175,7 +175,14 @@ def transform_file(csvfile):
                 coordonnee[i]['mail_numero'] += char
             letter+=1
         # Pour chaque coordonnée de la ligne 
+        #on recherche le nombre coordonnées sans 'nan'
+        nombre_coordonnee = 0
+        for n_coordonnee in range(i+1) : 
+            coor = coordonnee[n_coordonnee]['mail_numero']
+            if not pd.isna(coor) or coor == ' nan':
+                nombre_coordonnee += 1
         y = 0 #situe la coordonnée à laquelle on se situe 
+        print(i+1)
         for y in range(i+1): #je me +1 car le i rpz le nombre de / mais il y a une coordonnée avant le / 
             #Je copie la coordonnée  
             info = coordonnee[y]['mail_numero']
@@ -185,6 +192,11 @@ def transform_file(csvfile):
             TelMail= str('') #receuille une coordonnée un mail ou un tel 
             detail= str('') #recueille une info à récupérer ou non 
             leninfo = len(info)
+            #on met un cas particulier ou info représenteraient que 1 ou 2 caractères qui serait surement le cas si un / avait été écrit quelque part exemple (1/2 donation 9 (Tel.))
+            if leninfo < 3 and y+1 <= i+1: 
+                info += coordonnee[y+1]['mail_numero']
+                coordonnee[y+1]['mail_numero'] = info
+                continue
             caractère = 0
             while x < leninfo:
                 if info[x] == '(': 
@@ -240,7 +252,7 @@ def transform_file(csvfile):
                 for char in range(lenTelMail):
                     if 47 < ord(TelMail[char]) < 58 :
                         num_tel+=1
-                    else : 
+                    else :
                         num_letter +=1
                 if num_tel > 9 and parenthese==1 : #on vient récup que les tels car il y a forcément une parenthèse
                     numero={
@@ -249,8 +261,8 @@ def transform_file(csvfile):
                     tel.append(numero)
                     tel[T]['telephone']=TelMail
                     T += 1
-                elif parenthese == 0 :
-                    if adresse == False: 
+                elif parenthese == 0 and y == nombre_coordonnee or y+1 == nombre_coordonnee:
+                    if adresse == False : 
                         detail_ad ={
                             'adresse':'',
                         }
@@ -258,7 +270,7 @@ def transform_file(csvfile):
                         adresse_P[A]['adresse']=TelMail
                         A = 1 # on ne met pas +1 car il faut uniquement une adresse
                         adresse=True
-                    elif adresse == True: 
+                    elif adresse == True and y == i+1: 
                         detail_ville ={
                             'ville':'',
                         }
@@ -272,7 +284,7 @@ def transform_file(csvfile):
                     }
                     information.append(precision)
                     information[Inf]['info']=TelMail
-                    Inf += 1 
+                    Inf += 1
             # Je vais traité les info des coordonnées (les info pertinnennte sont plus longue que 13 char)
             if len(detail) > 14 :
                 precision = {
@@ -284,12 +296,13 @@ def transform_file(csvfile):
             y += 1
         
             # J'ai maintenant deux liste avec l'une comptenant l'adresse et peut-être la ville et l'autre comptenant la ville si sur deux lignes. 
-        # Je vais vérifier que si l'adresse est complété alors la ville aussi elle doivent toutes les deux être égale à 1 
+        # Je vais vérifier que si l'adresse est complétée alors la ville aussi elle doivent toutes les deux être égale à 1 
         if adresse == True and city == False :
             code_postale = adresse_P[0]['adresse']
             new_adresse = ''
             code = False
             char = 0
+            int = 0 
             new_code =''
             while char < len(code_postale):
                 if code == False :  
@@ -300,10 +313,12 @@ def transform_file(csvfile):
                                 new_code += code_postale[char]
                                 code = True
                                 char += 1 
+                                int +=1 
                                 break
                             elif 47 < ord(code_postale[char]) < 58:
                                 new_code += code_postale[char]
                                 char += 1 
+                                int +=1
                                 continue
                             elif code_postale[char] == ' ': 
                                 new_code += code_postale[char] 
@@ -325,6 +340,16 @@ def transform_file(csvfile):
             if code == False: 
                 new_adresse += new_code
                 new_code = ''
+            # je verifie que code postal n'a pas plus de 5 chiffres si il en a plus je remet les premiers chiffres à adresse 
+            n = 0 
+            CP = new_code
+            while int > 5 and n < len(new_code):
+                if 47 < ord(new_code[n]) < 58 : 
+                    new_adresse += new_code[n]
+                    n+=1
+                    int -=1
+            new_code = new_code[n:len(new_code)]
+
             #on créer copy la nouvelle adresse dans adresse_P et on créer la colonne dans ville avec sa valeur new_code quelle existe ou non. 
             adresse_P[0]['adresse'] = new_adresse
             detail_ville ={
@@ -357,16 +382,16 @@ def transform_file(csvfile):
 
 
 
-        # Lire chaque ligne du csv et remettre sur la même ligne les coordonnées 
-    row = 0
+    # Lire chaque ligne du csv et remettre sur la même ligne les coordonnées 
+    row = 0 
     i = 1 
-    while i < rows:
+    while i < rows :
         if not pd.isnull(fichier['coproprietaires'][i]):
             last_row = fichier.loc[i]
         else: 
             coordonnees = str(last_row['coordonnees'])
             Newcoordonnees = str(fichier['coordonnees'][i])
-            last_row['coordonnees'] = coordonnees+" ! "+Newcoordonnees
+            last_row['coordonnees'] = coordonnees+" / "+Newcoordonnees
         
     #envoie chaque ligne au hash pour trier chaque colonne 
         if i+1 < rows :

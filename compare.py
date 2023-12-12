@@ -1,67 +1,43 @@
 import pandas as pd
+import numpy as np
 
 def compare_list(liste_ics, liste_user): 
-    copro_ics = pd.read_csv(liste_ics,  delimiter=';', encoding='latin-1')
-    copro_user = pd.read_csv(liste_user,  delimiter=';', encoding='latin-1') 
-    #test
-    copro_vendu = []
-    #fin test
-    for row_u in range(len(copro_user)): 
-        trouve = 0
-        copropriete_trouve = 0
-        for row_i in range(len(copro_ics)): 
-            #on doit vérifier la copro aussi car un copro peut se trouver dans deux immeubles 
-            copropriete_u = str(copro_user['code_copropriete'][row_u]).lower().split()
-            copropriete_i = str(copro_ics['code_copropriete'][row_i]).lower().split()
-            coproprietaire_u = copro_user['code_coproprietaire'][row_u]
-            coproprietaire_i = copro_ics['code_coproprietaire'][row_i]
-            if copropriete_u == copropriete_i :
-                copropriete_trouve = 1
-                if coproprietaire_u == coproprietaire_i :  
-                    trouve = 1
-                    #on verifie que les informations sont toujours bonnes et on le supprime de copro_ics pour plus rapide: 
-                    columns =['Nom','civilite','copropriete','adresse', 'ville','tel1','tel2','tel3','mail1','mail2','mail3','informations1','informations2','informations3']
-                    for col in columns : 
-                        if copro_user[col][row_u] != copro_ics[col][row_i]: 
-                            copro_user[col][row_u] == copro_ics[col][row_i]
-                    copro_ics.drop([row_i], inplace=True)
-                    copro_ics.reset_index(drop=True, inplace=True)
-                    break
-        #on supprime les proprios plus présent dans copro_ics : 
-        if trouve == 0 and copropriete_trouve == 1: 
-            #test
-            print("je passe bien ici")
-            copro_vendu.append(copro_user.at[row_u, 'Nom'])
-            #fin test
-            copro_user.drop([row_u], inplace=True)
-            copro_user.reset_index(drop=True, inplace=True)
-
-
-    #pour tous les nouveaux copropriétaires présents dans copro_ics je veux ajouter uniquement les colonnes déjà présentes dans copro user :
-    for row in range(len(copro_ics)): 
-        ligneAajouter = copro_ics.iloc[row]
-        for col in copro_user.columns : 
-            lencopro_user = len(copro_user)
-            copro_user.loc[lencopro_user, col] = ligneAajouter[col]
-        copro_user.reset_index(drop=True, inplace=True)
+    copro_ics = pd.read_csv(liste_ics,  delimiter=';', encoding='latin-1', dtype='str')
+    copro_user = pd.read_csv(liste_user,  delimiter=';', encoding='latin-1', dtype='str') 
     
-    copro_user = copro_user.sort_values(by=['code_copropriete', 'Nom'])
+    # on verifie que les colonnes utile à la comparaison sont présentes 
+    if 'code_coproprietaire' not in copro_user.columns : 
+        return 'code_copropriétaire'
+  
+    if 'code_copropriete' not in copro_user.columns : 
+        return 'code_copropriété'
 
-    #test
-    copro_ics.to_csv('liste_user.csv',  sep=';', index=False)
-    df = pd.DataFrame(copro_vendu)
-    df.to_csv('liste_vendu.csv',  sep=';', index=False)
-    #fin test
+    # on ajoute les colonnes de l'user à ics : 
+    new_col = []
+    for col, indexcol in zip(copro_user.columns, range(len(copro_user.columns))) : 
+        if col not in copro_ics.columns: 
+            new_col.append(col)
+            copro_ics.insert(indexcol, col, [np.nan]*len(copro_ics))
 
-    copro_user.to_csv('liste_coproprietaires.csv', sep=';', index=False)
+
+    # on compare les code_copropriétaire et code_copropriété pour trouver les mêmes noms est transmettre les info des nouvelles colonnes 
+    for row in range(len(copro_ics)): 
+        if copro_ics['code_coproprietaire'][row] in copro_user['code_coproprietaire'].values :
+            #on accède à la row ou on trouve le code copro puis on lui réplique les nouvelles colonnes :
+            code_du_copropriétaire = copro_ics['code_coproprietaire'][row]
+            row_user = copro_user.index[copro_user["code_coproprietaire"].str.contains(code_du_copropriétaire)].tolist()
+            # on va vérifier que la liste row_user récupère le bon copro dans la bonne copro : 
+            for n in row_user: 
+                if copro_ics['code_copropriete'][row] == copro_user['code_copropriete'][n]:
+                    for col in new_col : 
+                        copro_ics.loc[row, col] = copro_user.loc[n, col]
+                    break
+
+    # verifier que copro_ics ne contient pas des colonnes supprimées par l'user 
+    for col in copro_ics.columns: 
+        if col not in copro_user.columns :
+           copro_ics.drop([col], axis=1, inplace=True)
+
+
+    copro_ics.to_csv('liste_coproprietaires.csv', sep=';', index=False)
     return 'liste_copropriétaires.csv'
-
-                
-                
-
-
-#verifier que les anciens se supprime et que les nouveaux s'ajoute et que les adresses ou autre infos changes. 
-
-
-            
-
