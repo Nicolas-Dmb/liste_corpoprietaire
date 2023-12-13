@@ -1,12 +1,9 @@
 # liste-corpopri-taire
 Récupérer les
-=> il y a des beugs sur les adresses et villes de liste_copropriétaire sur le ytrès grand échantillons sur les lignes 14 - 15 - 41 - 35 - 61 - 68 - 127 - 128 - 193 - 195 - 209 - 399 - 332
-=> j'ai du remettre le / pour séparé les coordonnées car il y en a entre les coordonnées dans le fichier de base de ICS, je ne sais plus vraiment pourquoi je l'avais supprimé par un ! mais je pense que c'est pour éviter les erreurs sur des informations transmises qui peuvent être des dates. 
+
+
 => indiquer que si on met des copropriété dans notre fichier user qu'il n'y a pas dans liste ics on en tiendra pas compte, à l'inverse il rajoutera les copropriété présente dans liste ics et non présente dans liste user. 
-=> problème sur les lignes tel et informations voici ce que j'ai sur informations : Tel. / 02 23 52 16 46 Tel. 
-Tel fixe / 06 77 47 69 35 Tel portable 
 => protéger la fiche nottament colone numéro de copro et numéro copropriétaire pour la MAJ. 
-=> ajouter du vert quand nouveau proprio et ajouter du vert sur les proprio qui ont changés d'info. 
 => regler ce problème qui fait que si un numéro se trouve dans le nom de la copro alors il va le mettre dans le numéro de la copro exemple : 401446	MOKA 
 => dès que l'app se coupe elle supprime les fichiers CSV présents 
 => au lieu de supprimer un par un tous les csv juste faire une boucle qui supprime tous les csv, dans /MAJliste supprimer tous sauf liste_copropriétaires.csv 

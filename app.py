@@ -10,7 +10,10 @@ from excel import names_coproprietes, residence_principale
 from lots import tri_liste_lot, add_lot
 from compare import compare_list
 
-app=Flask(__name__)
+template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
+static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
+
+app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 
 @app.route("/")
 def accueil():
@@ -223,4 +226,4 @@ def recuperer_newliste():
      
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
