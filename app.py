@@ -15,6 +15,10 @@ static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static
 
 app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 
+def remove_unsupported_characters(s): 
+    # Remplacez ou supprimez les caractères non pris en charge
+    return ''.join(char if char.isprintable() else '' for char in s)
+
 @app.route("/")
 def accueil():
     if os.path.exists("liste_coproprietaires.csv"):
@@ -22,6 +26,7 @@ def accueil():
     if os.path.exists("liste_lots.csv"):
         os.remove("liste_lots.csv")
     return render_template("accueil.html")
+
 
 @app.route("/fichier", methods=["GET", "POST"])
 def fichier(): 
@@ -37,7 +42,8 @@ def fichier():
                 if fichier_upload.filename.lower().endswith(".csv"):
                     
                     #récupere la liste donner par l'user 
-                    fichier = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
+                    fichier = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1', converters={'column_name': remove_unsupported_characters})
+                    fichier = fichier.replace("¬", "")
                     #transforme la liste de l'user en une liste détaillé  
                     try: 
                         new_list = transform_file(fichier)
@@ -82,10 +88,10 @@ def form():
                     nom_immeuble = liste_coproprietes[copropriete]
                     adresse_residence = request.form.get(f"adresses_{liste_coproprietes[copropriete]}") 
                     
-                    try :
-                        new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
-                    except Exception as e: 
-                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
+                    #try :
+                    new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
+                    #except Exception as e: 
+                            #return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
                     
                 else : 
                     continue
@@ -192,7 +198,7 @@ def recuperer_newliste():
             fichier = pd.read_csv("liste_ics.csv", delimiter=';', encoding='latin-1')
             liste_ics = transform_file(fichier)
             # on colle liste_ics dans liste_ics.csv
-            fichier = pd.read_csv(liste_ics, delimiter=';', encoding='latin-1')
+            fichier = pd.read_csv(liste_ics, delimiter=';', encoding='utf-8')
             fichier.to_csv("liste_ics.csv", sep=';', index=False)
             #puis supprimer le fichier liste_copropriétaires pour éviter la confusion 
             if os.path.exists("liste_coproprietaires.csv"):

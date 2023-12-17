@@ -2,7 +2,7 @@ import pandas as pd
 
 def names_coproprietes(liste_csv):
     names_coproprietes=[]
-    liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1')
+    liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1', dtype='str')
     liste.columns = ['code_coproprietaire','Nom','civilite','code_copropriete', 'copropriete','adresse','ville','RP','tel1','tel2','tel3', 'mail1','mail2','mail3','informations1','informations2','informations3', 'lot_logement','n_lot/n_plan/localisation(bat,esc,etg,pt)','lot_professionnel','lot_autre']
     for row in range(len(liste)):
         if row == 0:
@@ -14,9 +14,95 @@ def names_coproprietes(liste_csv):
             if name_copropriete == len(names_coproprietes): 
                 names_coproprietes.append(liste['copropriete'][row])
     return names_coproprietes                            
-                
+
+def recup_CP(Ville): 
+    digit = ""
+    ville = str(Ville)
+    for char in range(len(ville)): 
+        if ville[char].isdigit(): 
+            digit += ville[char]
+        if ville[char] == ' ' and len(digit) == 5:
+            break  
+    return digit         
+
+
 # on trie les adresses recu de la résidence on en fait des mots clés et on verifie _ on recoi les adresses une à une
 def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
+    # on sépare l'adresse du CP et de la ville
+    char = len(adresse_copropriete)-1
+    adresse = adresse_copropriete
+    CP_ville = ""
+    digit = 0 
+    while char != 0:
+        if adresse[char].isdigit():
+            digit += 1
+            if digit == 5:
+                adresse_copropriete = adresse[:char-1]
+                CP_ville = adresse[char:]
+                break
+        elif adresse[char] == ' ':
+            pass
+        else :
+            digit = 0 
+        char -= 1
+    
+    # on récupère une liste des mots clés sur l'adresse : 
+    not_key_word=[ 'rue', 'du', 'le', 'route', 'de', 'la', 'allee', 'des', 'avenue', 'av', 'bd', 'des', 'apt', 'square', 'les', 'residence', 'sur', 'bld', 'boulevard', 'av.', 'quai', 'chemin', 'cours', 'ter', 'res', 'au', 'aux', 'l', 'parc', 'impasse', 'imp', 'd', 'place', 'pl', 'allée']
+    key_word = []
+    adresse = str(adresse_copropriete).split()
+    for word in adresse :
+            if word.isdigit(): 
+                continue
+            elif len(word) < 3:
+                continue
+            elif word.lower() not in not_key_word : 
+                 key_word.append(word.lower())
+    
+    # On compare l'adresse de la copro au copropriétaire de liste_copropriétaires
+    liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1', dtype='str')
+
+    for row in range(len(liste)): 
+         if nom_immeuble == liste.loc[row,'copropriete'] : 
+            #on va récupérer les CP de la copro et du copropriétaire : 
+            CP_copro = recup_CP(CP_ville)
+            CP_coproprietaire = recup_CP(liste.loc[row,'ville'])
+            if str(CP_copro) == str(CP_coproprietaire) : 
+                # on compare la liste adresse copropriétaire avec celle de adresse copropriété 
+                adresse = str(liste.loc[row,'adresse']).lower().split()
+                for word in key_word : 
+                    if word in adresse : 
+                        liste.loc[row,'RP'] = 'Oui'
+
+    df = pd.DataFrame(liste)
+    df.to_csv('liste_coproprietaires.csv', sep=';', index=False)
+    return 'liste_coproprietaires.csv'
+        
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '''
     # on fait des mots clés avec l'adresse de l'immeuble
     key_word = [] #mots clés de l'adresse de l'immeuble (sans CP ou numéro)
     adresse_copropriete += " " #pour controler le dernier mot 
@@ -69,13 +155,13 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
             continue
 
     # on défini liste_csv 
-    liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1')
+    liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1', dtype='str')
     liste.columns = ['code_coproprietaire','Nom','civilite','code_copropriete', 'copropriete','adresse','ville','RP','tel1','tel2','tel3', 'mail1','mail2','mail3','informations1','informations2','informations3', 'lot_logement','n_lot/n_plan/localisation(bat,esc,etg,pt)','lot_professionnel','lot_autre']
                 
     # on liste les copropriétaires dans liste_csv on vérifie ceux de l'immeuble puis ceux de la ville de l'immeuble puis l'adresse 
     for row in range(len(liste)):
         if liste['copropriete'][row] == nom_immeuble: 
-            ville_coproprietaire = liste['ville'][row]
+            ville_coproprietaire = str(liste['ville'][row])
             CP_coproprietaire= ''
             for char in range(len(ville_coproprietaire)): 
                 if 47 < ord(ville_coproprietaire[char]) < 58 : 
@@ -86,7 +172,7 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
                     break
             if CP_coproprietaire == CP: 
                 adresse_coproprietaire = liste['adresse'][row]
-                list_adresse_coproprietaire = adresse_coproprietaire.split()
+                list_adresse_coproprietaire = str(adresse_coproprietaire).split()
                 for word_copropriete in range(len(key_word)): 
                     for word_coproprietaire in range(len(list_adresse_coproprietaire)):
                         word_coproprietaire_verif = list_adresse_coproprietaire[word_coproprietaire]
@@ -100,5 +186,5 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
     df = pd.DataFrame(liste)
     df.to_csv('liste_coproprietaires.csv', sep=';', index=False)
     return 'liste_coproprietaires.csv'
-
+'''
 

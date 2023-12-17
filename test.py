@@ -29,7 +29,7 @@ def transform_file(csvfile):
                 'informations2':'',
                 'informations3':'',
                 'lot_logement':'',
-                'n°_lot/n°_plan/loca(bât,esc,etg,pt)':'',
+                'n_lot/n_plan/localisation(bat,esc,etg,pt)':'',
                 'lot_professionnel':'',
                 'lot_autre':'',
             }
