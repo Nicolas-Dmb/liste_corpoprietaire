@@ -1,4 +1,5 @@
 import pandas as pd
+import unicodedata
 from pandas import *
 
 def transform_file(csvfile):
@@ -140,8 +141,12 @@ def transform_file(csvfile):
                 if n < 3:
                     data[row][columnedata[n]] = list[n][columnlist]
             n+=1
+    
+    def remove_accent(coordonnee): 
+        return unicodedata.normalize('NFKD', coordonnee).encode('ASCII', 'ignore').decode('utf-8', 'ignore')
 
     def add_to_list(list, coordonnee, categorie, information):
+        coordonnee = remove_accent(coordonnee)
         liste_mail = coordonnee.split("(")
         #ajouter la coordonnée à la liste
         liste_mail[0] = str(liste_mail[0]).strip()

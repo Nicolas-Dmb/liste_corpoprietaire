@@ -15,10 +15,6 @@ static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static
 
 app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 
-def remove_unsupported_characters(s): 
-    # Remplacez ou supprimez les caractères non pris en charge
-    return ''.join(char if char.isprintable() else '' for char in s)
-
 @app.route("/")
 def accueil():
     if os.path.exists("liste_coproprietaires.csv"):
@@ -42,8 +38,7 @@ def fichier():
                 if fichier_upload.filename.lower().endswith(".csv"):
                     
                     #récupere la liste donner par l'user 
-                    fichier = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1', converters={'column_name': remove_unsupported_characters})
-                    fichier = fichier.replace("¬", "")
+                    fichier = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
                     #transforme la liste de l'user en une liste détaillé  
                     try: 
                         new_list = transform_file(fichier)
@@ -88,10 +83,10 @@ def form():
                     nom_immeuble = liste_coproprietes[copropriete]
                     adresse_residence = request.form.get(f"adresses_{liste_coproprietes[copropriete]}") 
                     
-                    #try :
-                    new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
-                    #except Exception as e: 
-                            #return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
+                    try :
+                        new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
+                    except Exception as e: 
+                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
                     
                 else : 
                     continue
@@ -207,21 +202,16 @@ def recuperer_newliste():
             return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
         
         #on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
-        try : 
-            liste_user = compare_list("liste_ics.csv", "liste_user.csv")
-        except Exception as e:
-            return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
+        #try : 
+        liste_user = compare_list("liste_ics.csv", "liste_user.csv")
+        #except Exception as e:
+            #return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
 
-        #on supprime nos deux anciens csv
-        if os.path.exists("liste_ics.csv"):
-           os.remove("liste_ics.csv")
-        if os.path.exists("liste_user.csv"):
-           os.remove("liste_user.csv")
         
         #on  verifie le retour de compare_list 
-        if liste_user == 'code_copropriétaire': 
-            return render_template("erreur.html", attention = "la colonne 'code_copropriétaire' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
-        elif liste_user == 'code_copropriété': 
+        if liste_user == 'code_coproprietaire': 
+            return render_template("erreur.html", attention = "la colonne 'code_coproprietaire' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
+        elif liste_user == 'code_copropriete': 
             return render_template("erreur.html", attention = "la colonne 'code_copropriete' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
         else : 
             return redirect("/liste_coproprietaires_downloads")

@@ -66,7 +66,7 @@ def add_lot(liste_lot, liste_copro):
                 if type_lot.lower() == 'appartement' or type_lot.lower() == 'studio' or type_lot.lower() == 'maison' or type_lot[0] == 'T': 
                     liste_copros.loc[row_c,'lot_logement'] = type_lot
                     liste_copros.loc[row_c,'n_lot/n_plan/localisation(bat,esc,etg,pt)'] = liste_lots['n_lot/n_plan/localisation(bat,esc,etg,pt)'][row_l]
-                elif type_lot.lower() == 'local commerc.' or type_lot.lower() == 'local activites' or type_lot.lower() == 'bureau': 
+                elif type_lot.lower() == 'local commerc.' or type_lot.lower() == 'local activites' or type_lot.lower() == 'bureau' or type_lot.lower() == 'bureaux' or type_lot.lower() == 'local prof.' or type_lot.lower() == 'boutique': 
                     liste_copros.loc[row_c,'lot_professionnel'] = type_lot
                 else :
                     liste_copros.loc[row_c,'lot_autre'] = type_lot
