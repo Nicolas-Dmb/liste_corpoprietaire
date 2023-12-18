@@ -17,10 +17,10 @@ app = Flask(__name__, template_folder=template_folder, static_folder=static_fold
 
 @app.route("/")
 def accueil():
-    if os.path.exists("liste_coproprietaires.csv"):
-        os.remove("liste_coproprietaires.csv")
-    if os.path.exists("liste_lots.csv"):
-        os.remove("liste_lots.csv")
+    directory = os.path.dirname(os.path.realpath(__file__))
+    fichiers_csv = [fichier for fichier in os.listdir(directory) if fichier.endswith('.csv')]
+    for fichier_csv in fichiers_csv: 
+        os.remove(fichier_csv)
     return render_template("accueil.html")
 
 
@@ -166,6 +166,7 @@ def telechargement():
             download_name='liste_coproprietaires.csv',
             mimetype='text/csv')
 
+
 @app.route('/MAJliste', methods=["GET", "POST"])
 def recuperer_newliste(): 
     if request.method == "POST":
@@ -192,34 +193,87 @@ def recuperer_newliste():
         try: 
             fichier = pd.read_csv("liste_ics.csv", delimiter=';', encoding='latin-1')
             liste_ics = transform_file(fichier)
-            # on colle liste_ics dans liste_ics.csv
-            fichier = pd.read_csv(liste_ics, delimiter=';', encoding='utf-8')
-            fichier.to_csv("liste_ics.csv", sep=';', index=False)
-            #puis supprimer le fichier liste_copropriétaires pour éviter la confusion 
-            if os.path.exists("liste_coproprietaires.csv"):
-                os.remove("liste_coproprietaires.csv")
-        except Exception as e: 
+            fichier = pd.read_csv(liste_ics, delimiter=';', encoding='latin-1')
+            fichier = fichier.drop('RP', axis=1)
+            fichier.to_csv('liste_coproprietaires.csv', sep=';', index=False)
+        except Exception as e : 
             return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
         
-        #on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
-        #try : 
-        liste_user = compare_list("liste_ics.csv", "liste_user.csv")
-        #except Exception as e:
-            #return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
 
-        
-        #on  verifie le retour de compare_list 
-        if liste_user == 'code_coproprietaire': 
-            return render_template("erreur.html", attention = "la colonne 'code_coproprietaire' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
-        elif liste_user == 'code_copropriete': 
-            return render_template("erreur.html", attention = "la colonne 'code_copropriete' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
-        else : 
-            return redirect("/liste_coproprietaires_downloads")
+        return render_template("compare_list1.html")
         
     else:
         return render_template("comparer_liste.html") 
     
      
+@app.route('/MAJliste/lot', methods=["GET", "POST"])
+def addlot(): 
+    if request.method == "POST":
+        if request.form.get("OuiNon_lot") == "oui": 
+            if "lot_csv" in request.files:
+                fichier_upload = request.files["lot_csv"]
+                if fichier_upload.filename != "":
+                    nom_fichier = 'liste_lots.csv'
+
+                    fichier_upload.save(nom_fichier)
+
+                    if fichier_upload.filename.lower().endswith(".csv"):
+                        
+                        #récupere la liste donner par l'user 
+                        liste_lot = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
+                        
+                        #récupère les noms/prénoms en enlevant le ()
+                        try :  
+                            fichier_lot = tri_liste_lot(liste_lot)
+                        except Exception as e: 
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des lots, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+
+                        #pour chaque nom de copropritaire ajouter une colonne avec lot de l'appartement
+                        new_list='liste_coproprietaires.csv'
+                        try :
+                            new_list = add_lot(fichier_lot, new_list)
+                        except Exception as e: 
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+
+                        return redirect("/MAJliste/2")
+                        
+
+                    else:
+                        # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
+                        os.remove(nom_fichier)
+                        return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='')
+                else:
+                    return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné", erreur='')
+            else:
+                return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='')
+        else:
+            liste_csv = pd.read_csv('liste_coproprietaires.csv', delimiter=';', encoding='latin-1')
+            del liste_csv['lot_logement']
+            del liste_csv['n_lot/n_plan/localisation(bat,esc,etg,pt)']
+            del liste_csv['lot_professionnel']
+            del liste_csv['lot_autre']
+            liste_csv.to_csv('liste_coproprietaires.csv', sep=';', index=False)
+            return redirect("/MAJliste/2")
+    else:
+        return render_template("comparer_liste.html") 
+
+@app.route('/MAJliste/2')
+def MAJliste(): 
+    #on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
+    try : 
+        liste_user = compare_list("liste_coproprietaires.csv", "liste_user.csv")
+    except Exception as e:
+        return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
+
+    
+    #on  verifie le retour de compare_list 
+    if liste_user == 'code_coproprietaire': 
+        return render_template("erreur.html", attention = "la colonne 'code_coproprietaire' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
+    elif liste_user == 'code_copropriete': 
+        return render_template("erreur.html", attention = "la colonne 'code_copropriete' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
+    else : 
+        return redirect("/liste_coproprietaires_downloads")
+
 
 if __name__ == "__main__":
     app.run(debug=False)

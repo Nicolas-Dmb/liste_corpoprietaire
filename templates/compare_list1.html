@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}fichiers CSV 3{% endblock %}
+{% block link %}
+<script src="{{url_for('static', filename='listecopro3.js')}}" defer></script>
+<link rel="stylesheet" href="{{url_for('static', filename='listecopro2_3.css')}}">
+{% endblock %}
+{% block main %}
+    <h1> Transformer la liste copropriétaires d'ICS vers un fichier détaillé </h1>
+    <form action="/MAJliste/lot" method="POST" enctype="multipart/form-data">
+        <p>Souhaitez-vous mettre à jour <bold>type de lot</bold> et <bold>localisation lot</bold> ?</p>
+        <div class="OuiNonlot">
+            <label for="Oui_lot">Oui</label>
+                <input type="radio" name="OuiNon_lot" id="Oui_lot" value="oui">
+            <label for="Non_lot">Non</label>
+                <input type="radio" name="OuiNon_lot" id="Non_lot" value="non">
+        </div>
+        <div id="file_lot" class="file_lot">
+            <label for="lot_csv">Déposer votre liste de lot au format .csv :</label>
+                <input type="file" name="lot_csv" id="lot_csv" accept=".csv">
+        </div>
+        <input type="submit" value="transformer mon fichier">
+    </form>
+    <p>Comment récupérer une liste de lots au format Excel ?</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GLNXAol1ad0?si=SRgcmRQRd8fdMtQR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% endblock %}

@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 
-def compare_list(liste_ics, liste_user): 
+def compare_list(liste_ics, liste_user):
     copro_ics = pd.read_csv(liste_ics,  delimiter=';', encoding='latin-1', dtype='str')
     copro_user = pd.read_csv(liste_user,  delimiter=';', encoding='latin-1', dtype='str') 
     
