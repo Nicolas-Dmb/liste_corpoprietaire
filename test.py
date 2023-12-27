@@ -5,8 +5,10 @@ from pandas import *
 def transform_file(csvfile):
     # chargé les fichiers excel et changer le nom des colonnes  
     fichier = csvfile
-    fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees']
-
+    if len(fichier.columns) == 3 : 
+        fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees']
+    elif len(fichier.columns) == 4 :
+         fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees', '']
     #définition de toutes mes colonnes de mon futur tableau
     data= []
     for row in range(len(fichier)):

@@ -3,8 +3,7 @@
 import os
 from flask import Flask, flash, render_template, request, send_file, url_for, redirect
 import pandas as pd
-import threading
-import time
+import atexit 
 from test import transform_file
 from excel import names_coproprietes, residence_principale
 from lots import tri_liste_lot, add_lot
@@ -13,14 +12,18 @@ from compare import compare_list
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
+
 app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 
-@app.route("/")
-def accueil():
+def supprimer_fichier(): 
     directory = os.path.dirname(os.path.realpath(__file__))
     fichiers_csv = [fichier for fichier in os.listdir(directory) if fichier.endswith('.csv')]
     for fichier_csv in fichiers_csv: 
         os.remove(fichier_csv)
+
+@app.route("/")
+def accueil():
+    supprimer_fichier()
     return render_template("accueil.html")
 
 
@@ -43,7 +46,7 @@ def fichier():
                     try: 
                         new_list = transform_file(fichier)
                     except Exception as e: 
-                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
             
 
                     # on liste la ou les copropriétés présente dans notre nouvelle liste et le nombre de copro qu'on renvoie au second form 
@@ -83,10 +86,10 @@ def form():
                     nom_immeuble = liste_coproprietes[copropriete]
                     adresse_residence = request.form.get(f"adresses_{liste_coproprietes[copropriete]}") 
                     
-                    try :
-                        new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
-                    except Exception as e: 
-                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
+                    #try :
+                    new_list = residence_principale(new_list, adresse_residence, nom_immeuble)
+                    #except Exception as e: 
+                        #return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
                     
                 else : 
                     continue
@@ -156,7 +159,8 @@ def form2():
 #page d'indication et de bouton de téléchargement de liste_copropriétaires.csv
 @app.route('/liste_coproprietaires_downloads')
 def page_de_telechargement():
-    return render_template("downloads_liste_coproprietaires.html")
+    fichier = "liste_coproprietaires.csv"
+    return render_template("downloads_liste_coproprietaires.html", fichier = fichier)
 
 # fonction de renvoie de ma nouvelle liste
 @app.route('/downloads')
@@ -274,6 +278,7 @@ def MAJliste():
     else : 
         return redirect("/liste_coproprietaires_downloads")
 
+app.config['ENV'] = 'production'
 
 if __name__ == "__main__":
     app.run(debug=False)
