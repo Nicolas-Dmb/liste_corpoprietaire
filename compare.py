@@ -46,5 +46,5 @@ def compare_list(liste_ics, liste_user):
            copro_ics.drop([col], axis=1, inplace=True)
 
 
-    copro_ics.to_csv('liste_coproprietaires.csv', sep=';', index=False)
-    return 'liste_copropriétaires.csv'
+
+    return copro_ics

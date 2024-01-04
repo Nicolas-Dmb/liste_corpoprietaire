@@ -276,5 +276,4 @@ def transform_file(csvfile):
 
     #on remplace notre ancien fichier par les données de data
     df = pd.DataFrame(data)
-    df.to_csv('liste_coproprietaires.csv', sep=';', index=False)
-    return 'liste_coproprietaires.csv'
+    return df

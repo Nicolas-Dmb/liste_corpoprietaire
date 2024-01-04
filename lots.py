@@ -43,8 +43,7 @@ def tri_liste_lot(liste_lot):
         
     df = pd.DataFrame(new_data_lot)
     #print (fichier)
-    df.to_csv('liste_lots.csv', sep=';', index=False)
-    return 'liste_lots.csv'
+    return df
 
 
 def add_lot(liste_lot, liste_copro): 
@@ -73,7 +72,6 @@ def add_lot(liste_lot, liste_copro):
 
     df = pd.DataFrame(liste_copros)
     #print (fichier)
-    df.to_csv('liste_coproprietaires.csv', sep=';', index=False)
-    return 'liste_coproprietaires.csv'
+    return df
 
     #doit ajouter au fichier excel les lots et retourner le nom du fichier 

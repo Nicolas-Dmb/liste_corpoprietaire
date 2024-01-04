@@ -74,8 +74,7 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
                         liste.loc[row,'RP'] = 'Oui'
 
     df = pd.DataFrame(liste)
-    df.to_csv('liste_coproprietaires.csv', sep=';', index=False)
-    return 'liste_coproprietaires.csv'
+    return df
         
 
 
