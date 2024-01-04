@@ -17,6 +17,11 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    margin-top: 50px;
+    text-align: center;
+}
+
 label{
     font-size: 1.2em;
 }
@@ -44,6 +49,28 @@ p{
 }
 
 iframe {
-    padding: 2% 30% 2% 30%;
-    width:40%;
+    width : 40%;
+    margin:2% 30% 2% 30%; 
+    height: 400px;
 }
+
+.recommandations{
+    color: red;
+}
+
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 150%;
+    }
+    h2{
+        font-size: 120%;
+    }
+    .logo_accueil{
+        width: 5%;
+    }
+    iframe {
+        margin: auto;
+        width:100%;
+        padding:2% 0% 2% 0%;
+    }
+    }
