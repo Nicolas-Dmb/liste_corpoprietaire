@@ -2,6 +2,11 @@ import pandas as pd
 import unicodedata
 from pandas import *
 
+def nettoyer_caracteres(indata): 
+    if isinstance(indata, str): 
+        indata = indata.encode('latin-1', 'ignore').decode('latin-1')
+    return indata 
+
 def transform_file(csvfile):
     # chargé les fichiers excel et changer le nom des colonnes  
     fichier = csvfile
@@ -9,6 +14,11 @@ def transform_file(csvfile):
         fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees']
     elif len(fichier.columns) == 4 :
          fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees', '']
+
+    # on va nettoyer les caractères qui ne sont pas pris en charge 
+    for column in fichier.columns : 
+        fichier[column] = fichier[column].apply(nettoyer_caracteres)
+
     #définition de toutes mes colonnes de mon futur tableau
     data= []
     for row in range(len(fichier)):
