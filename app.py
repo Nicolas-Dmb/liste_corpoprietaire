@@ -1,7 +1,7 @@
 #flask run --host=0.0.0.0
 
 import os
-from flask import Flask, flash, render_template, request, send_file, url_for, redirect
+from flask import Flask, flash, render_template, request, send_file, url_for, redirect, session
 import pandas as pd
 import atexit 
 import shutil
@@ -84,11 +84,11 @@ def form():
                     nom_immeuble = liste_coproprietes[copropriete]
                     adresse_residence = request.form.get(f"adresses_{liste_coproprietes[copropriete]}") 
                     
-                    #try :
-                    df = residence_principale(new_list, adresse_residence, nom_immeuble)
-                    df.to_csv(new_list, sep=';', index=False)
-                    #except Exception as e: 
-                        #return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
+                    try :
+                        df = residence_principale(new_list, adresse_residence, nom_immeuble)
+                        df.to_csv(new_list, sep=';', index=False)
+                    except Exception as e: 
+                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
                     
                 else : 
                     continue
@@ -98,11 +98,22 @@ def form():
         else: 
             new_list = f"/tmp/{app.secret_key}.csv"
             liste_csv = pd.read_csv(new_list, delimiter=';', encoding='latin-1')
-            del liste_csv['RP']
+            if 'RP' in liste_csv.columns : 
+                del liste_csv['RP']
             liste_csv.to_csv(new_list, sep=';', index=False)
             return redirect("/fichier/lot")
     else: 
-        return render_template("listecopro2.html")
+        nom_fichier = f"/tmp/{app.secret_key}.csv"
+        if os.path.isfile(nom_fichier): 
+            liste_csv = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
+            #on rajoute la colonne RP si on ne l'a plus 
+            liste_csv.insert(2, 'RP', 'Non', allow_duplicates=False)
+            liste_csv.to_csv(nom_fichier, sep=';', index=False)
+            liste_coproprietes = names_coproprietes(nom_fichier)
+            nombre_coproprietes = len(liste_coproprietes)
+            return render_template("listecopro2.html",liste_coproprietes = liste_coproprietes , nombre_coproprietes = nombre_coproprietes)
+        else: 
+            return render_template("listecopro.html")
 
 #page pour ajouter les numéro de lot 
 @app.route("/fichier/lot", methods=["GET", "POST"])
