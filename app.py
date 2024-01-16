@@ -14,7 +14,9 @@ template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp
 static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
 
-app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+#app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+app = Flask(__name__)
+app.config['SERVER_NAME'] = 'listexcel.fr/' 
 
 app.secret_key = os.urandom(24)
 
@@ -249,7 +251,8 @@ def addlot():
                         #pour chaque nom de copropritaire ajouter une colonne avec lot de l'appartement
                         new_list=f'/tmp/{app.secret_key}liste_ics.csv'
                         try :
-                            new_list = add_lot(f"/tmp/{app.secret_key}liste_lots.csv", new_list)
+                            df = add_lot(f"/tmp/{app.secret_key}liste_lots.csv", new_list)
+                            df.to_csv(new_list, sep=';', index=False)
                         except Exception as e: 
                             return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
 
