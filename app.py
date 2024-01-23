@@ -1,38 +1,140 @@
-#flask run --host=0.0.0.0
-
 import os
 from flask import Flask, flash, render_template, request, send_file, url_for, redirect, session
 import pandas as pd
-import atexit 
-import shutil
+import secrets
 from test import transform_file
 from excel import names_coproprietes, residence_principale
 from lots import tri_liste_lot, add_lot
 from compare import compare_list
+from MP import test_password
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager, UserMixin, login_user, login_required
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy import String, select
+
+
 
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
-
-#app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 app = Flask(__name__)
-app.config['SERVER_NAME'] = 'listexcel.fr/' 
-
+#app.config['SERVER_NAME'] = 'listexcel.fr/' 
 app.secret_key = os.urandom(24)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+
+#flask-login 
+class User(UserMixin):
+    def __init__(self, id_user):
+        self.id_user = id_user
+
+    def get_id(self): 
+        return str(self.id_user)
+
+@login_manager.user_loader
+def load_user(id_user):
+    return User(id_user) 
+
+#Gestion de la base de données avec SQLalchemy
+class Base(DeclarativeBase): 
+    pass
+
+db_account = SQLAlchemy(model_class=Base)
+
+app.config['SQLALCHEMY_DATABASE_URI']  = 'sqlite:///session.db'
+db_account.init_app(app)
+
+class Account(db_account.Model): 
+    ID_user = db_account.Column(db_account.String(255), primary_key=True, unique=True, nullable=False)
+    Password = db_account.Column(db_account.String(255), nullable=False)
+    Email = db_account.Column(db_account.String(255), nullable=False, unique=True)
+
+with app.app_context():
+    db_account.create_all()
+
+
+@app.route("/login", methods=['GET', 'POST']) 
+def login(): 
+    session.clear()
+    if request.method == 'POST': 
+        if not request.form.get("username"): 
+            return render_template("login.html", attention = "Vous devez transmettre un identifiant")
+        
+        if not request.form.get("password"): 
+            return render_template("login.html", attention = "Vous devez transmettre un mot de passe")
+        
+        user_informations = Account.query.filter_by(ID_user = request.form.get("username")).first()
+
+        if user_informations: 
+            if bcrypt.check_password_hash(user_informations.Password, request.form.get("password")): 
+                session['secret_key'] = secrets.token_urlsafe(24)
+                user = User(user_informations.ID_user)
+                login_user(user)
+
+                return render_template('accueil.html')
+            else: 
+                return render_template("login.html", attention = "identifiant ou mot de passe invalide")
+        else: 
+            return render_template("login.html", attention = "identifiant ou mot de passe invalide")
+
+    else : 
+        return render_template("login.html")
+
+@app.route('/register', methods=['GET','POST'])
+def register(): 
+    if request.method == 'POST': 
+
+        # Vérifier les données saisies par l'user 
+        if not request.form.get("username"): 
+            return render_template("register.html", attention = "Vous devez transmettre un identifiant")
+        if not request.form.get("Email"): 
+            return render_template("register.html", attention = "Vous devez transmettre une adresse E-mail")
+        if not request.form.get("password"): 
+            return render_template("register.html", attention = "Vous devez transmettre un mot de passe")
+        if not request.form.get("password2"): 
+            return render_template("register.html", attention = "Vous devez confirmer votre mot de passe")
+        MP = test_password(request.form.get("password"))
+        if MP == False : 
+            return render_template("register.html", attention = "Le mot de passe doit contenir 8 caractères et minimum 1 MAJ, 1 MIN et 1 chiffre")
+        if request.form.get("password") != request.form.get("password2"):
+            return render_template("register.html", attention = "Erreur dans la confirmation du mot de passe")
+        
+        user_informations = Account.query.filter_by(ID_user = request.form.get("username")).first()
+        if user_informations: 
+            return render_template("register.html", attention = "Ce nom d'utilisateur existe déjà")
+
+        #Si toutes les données sont valides on les enregistres 
+        identifiant = request.form.get('username')
+        email = request.form.get('Email')
+        password = bcrypt.generate_password_hash(request.form.get('password'))
+        account = Account(ID_user = identifiant, Password = password, Email = email)
+        db_account.session.add(account)
+        db_account.session.commit()
+
+        return render_template('login.html')
+
+    else: 
+        return render_template("register.html")
 
 @app.route("/")
+@login_required
 def accueil():
     return render_template("accueil.html")
 
 
 @app.route("/fichier", methods=["GET", "POST"])
+@login_required
 def fichier(): 
     if request.method == "POST":
         if "fichiercsv" in request.files:
             fichier_upload = request.files["fichiercsv"]
 
+            # Générer une clé secrète unique pour cet utilisateur
+            secret_key = secrets.token_urlsafe(24)
+
             if fichier_upload.filename != "":
-                nom_fichier = f"/tmp/{app.secret_key}.csv"
+                nom_fichier = f"/tmp/{secret_key}.csv"
 
                 fichier_upload.save(nom_fichier)
 
@@ -51,7 +153,7 @@ def fichier():
                     # on liste la ou les copropriétés présente dans notre nouvelle liste et le nombre de copro qu'on renvoie au second form 
                     liste_coproprietes = names_coproprietes(nom_fichier)
                     nombre_coproprietes = len(liste_coproprietes)
-                    return render_template("listecopro2.html", liste_coproprietes = liste_coproprietes, nombre_coproprietes = nombre_coproprietes )
+                    return render_template("listecopro2.html", liste_coproprietes = liste_coproprietes, nombre_coproprietes = nombre_coproprietes, user_secret_key = secret_key )
                     
 
                 else:
@@ -67,6 +169,7 @@ def fichier():
 
 #affichage du 2eme form avant la création de liste_copropriétaires.csv
 @app.route("/fichier/RP", methods=["GET", "POST"])
+@login_required
 def form(): 
     if request.method == "POST":
         if request.form.get("OuiNon_RP")== "oui":
@@ -119,6 +222,7 @@ def form():
 
 #page pour ajouter les numéro de lot 
 @app.route("/fichier/lot", methods=["GET", "POST"])
+@login_required
 def form2():
     if request.method == "POST":
         if request.form.get("OuiNon_lot") == "oui": 
@@ -173,12 +277,14 @@ def form2():
     
 #page d'indication et de bouton de téléchargement de liste_copropriétaires.csv
 @app.route('/liste_coproprietaires_downloads')
+@login_required
 def page_de_telechargement():
     fichier = f"/tmp/{app.secret_key}.csv"
     return render_template("downloads_liste_coproprietaires.html", fichier = fichier)
 
 # fonction de renvoie de ma nouvelle liste
 @app.route('/downloads')
+@login_required
 def telechargement(): 
         return send_file(f"/tmp/{app.secret_key}.csv", 
             as_attachment=True,
@@ -187,6 +293,7 @@ def telechargement():
 
 
 @app.route('/MAJliste', methods=["GET", "POST"])
+@login_required
 def recuperer_newliste(): 
     if request.method == "POST":
         fichiers_user = ["votre_liste", "liste_ics"]
@@ -226,6 +333,7 @@ def recuperer_newliste():
     
      
 @app.route('/MAJliste/lot', methods=["GET", "POST"])
+@login_required
 def addlot(): 
     if request.method == "POST":
         if request.form.get("OuiNon_lot") == "oui": 
@@ -279,6 +387,7 @@ def addlot():
         return render_template("comparer_liste.html") 
 
 @app.route('/MAJliste/2')
+@login_required
 def MAJliste(): 
     #on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
     try : 

@@ -58,6 +58,11 @@ iframe {
     color: red;
 }
 
+.error{
+    color: red;
+    font-size: 0.5em;
+}
+
 @media screen and (max-width: 1200px) {
     h1 {
         font-size: 150%;

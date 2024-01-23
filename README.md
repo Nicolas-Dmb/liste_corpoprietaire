@@ -3,8 +3,6 @@ Récupérer les
 
 
 => indiquer que si on met des copropriété dans notre fichier user qu'il n'y a pas dans liste ics on en tiendra pas compte, à l'inverse il rajoutera les copropriété présente dans liste ics et non présente dans liste user. 
-=> protéger la fiche nottament colone numéro de copro et numéro copropriétaire pour la MAJ. 
-=> regler ce problème qui fait que si un numéro se trouve dans le nom de la copro alors il va le mettre dans le numéro de la copro exemple : 401446	MOKA 
 => dès que l'app se coupe elle supprime les fichiers CSV présents 
 => au lieu de supprimer un par un tous les csv juste faire une boucle qui supprime tous les csv, dans /MAJliste supprimer tous sauf liste_copropriétaires.csv 
 => Tester avec plusieurs copro si RP OUI/NON marche bien et lot OUI/NON marche bien,

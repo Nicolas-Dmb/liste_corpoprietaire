@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static', filename='connexion.js')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='connexion.css')}}">
+{% endblock %}
+{% block title %} Login {% endblock %}
+
+{% block main %}
+    <h1> Créer un compte </h1>
+    {% if attention: %}
+        <p class="error">{{ attention }}</p>
+    {% endif %}
+    <form action="{{ url_for('register') }}" class='newAccount' method="POST" enctype="multipart/form-data">
+        <label for="username">Identifiant</label>
+            <input type="text" id="username" name="username" minlength="1" maxlength="20">
+        <label for="Email">Adresse E-mail</label>
+            <input type="text" id="Email" name="Email">
+        <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password">
+                <p class="taille">Le mot de passe doit contenir au moins 8 caractères</p>
+                <p class="chiffre">Le mot de passe doit contenir au moins un chiffre</p>
+                <p class="lettre">Le mot de passe doit contenir au moins une lettre</p>
+                <p class="caractere">Le mot de passe doit contenir au moins un caractère spéciale</p>
+        <label for="password2">Confirmez votre mot de passe</label>
+            <input type="password" id="password2" name="password2">
+                <p class="same">mot de passe correct</p>
+        <input type="submit" value="Valider">
+    </form>
+{% endblock %}

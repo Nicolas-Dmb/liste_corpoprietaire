@@ -10,7 +10,7 @@
     <h1>Bienvenu</h1>
     
     <div class="container">
-        <p class="categorie"><a href="{{url_for('fichier')}}">Créer une liste</a></p>
-        <p class="categorie"><a href="{{url_for('recuperer_newliste')}}">Mise à jour liste</a></p>
+        <p class="categorie"><a href="{{url_for( templates, filename='listecopro.html')}}">Créer une liste</a></p>
+        <p class="categorie"><a href="{{url_for( templates, filename='comparer_liste.html')}}">Mise à jour liste</a></p>
     </div>
 {% endblock %}

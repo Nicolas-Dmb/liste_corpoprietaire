@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static', filename='')}}">
+{% endblock %}
+{% block title %} Login {% endblock %}
+
+{% block main %}
+    <h1> Connection </h1>
+    {% if attention: %}
+        <p class="error">{{ attention }}</p>
+    {% endif %}
+    <form action="{{ url_for('/login') }}" method="POST" enctype="multipart/form-data">
+        <label for="username">Identifiant</label>
+            <input type="text" id="username" name="username" minlength="1" maxlength="20">
+        <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password">
+        <input type="submit" value="Valider">
+    </form>
+{% endblock %}
