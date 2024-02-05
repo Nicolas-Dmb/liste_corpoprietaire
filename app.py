@@ -10,8 +10,8 @@ from MP import test_password
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, login_required
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import String, select
+from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy import String
 
 
 
@@ -22,19 +22,8 @@ app = Flask(__name__)
 #app.config['SERVER_NAME'] = 'listexcel.fr/' 
 app.secret_key = os.urandom(24)
 bcrypt = Bcrypt(app)
-login_manager = LoginManager(app)
 
-#flask-login 
-class User(UserMixin):
-    def __init__(self, id_user):
-        self.id_user = id_user
 
-    def get_id(self): 
-        return str(self.id_user)
-
-@login_manager.user_loader
-def load_user(id_user):
-    return User(id_user) 
 
 #Gestion de la base de données avec SQLalchemy
 class Base(DeclarativeBase): 
@@ -45,13 +34,23 @@ db_account = SQLAlchemy(model_class=Base)
 app.config['SQLALCHEMY_DATABASE_URI']  = 'sqlite:///session.db'
 db_account.init_app(app)
 
-class Account(db_account.Model): 
+class Account(UserMixin, db_account.Model): 
     ID_user = db_account.Column(db_account.String(255), primary_key=True, unique=True, nullable=False)
     Password = db_account.Column(db_account.String(255), nullable=False)
     Email = db_account.Column(db_account.String(255), nullable=False, unique=True)
 
 with app.app_context():
     db_account.create_all()
+
+#flask-login 
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(user_id): 
+    return Account.query.get((user_id))
 
 
 @app.route("/login", methods=['GET', 'POST']) 
@@ -69,10 +68,9 @@ def login():
         if user_informations: 
             if bcrypt.check_password_hash(user_informations.Password, request.form.get("password")): 
                 session['secret_key'] = secrets.token_urlsafe(24)
-                user = User(user_informations.ID_user)
-                login_user(user)
+                login_user(user_informations)
 
-                return render_template('accueil.html')
+                return render_template('accueil.html', secret_key=session['secret_key'])
             else: 
                 return render_template("login.html", attention = "identifiant ou mot de passe invalide")
         else: 
@@ -120,18 +118,26 @@ def register():
 @app.route("/")
 @login_required
 def accueil():
-    return render_template("accueil.html")
+    secret_key = session.get('secret_key')
+    if secret_key:
+        # Votre logique de téléchargement ici en utilisant la secret_key
+        return render_template("accueil.html", secret_key=session['secret_key'])
+    else:
+        # Redirigez ou gérez l'absence de secret_key
+        return redirect(url_for('login'))
+    
 
 
 @app.route("/fichier", methods=["GET", "POST"])
 @login_required
 def fichier(): 
+    # Générer une clé secrète unique pour cet utilisateur
+    secret_key = session.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
     if request.method == "POST":
         if "fichiercsv" in request.files:
             fichier_upload = request.files["fichiercsv"]
-
-            # Générer une clé secrète unique pour cet utilisateur
-            secret_key = secrets.token_urlsafe(24)
 
             if fichier_upload.filename != "":
                 nom_fichier = f"/tmp/{secret_key}.csv"
@@ -147,39 +153,42 @@ def fichier():
                         new_list = transform_file(fichier)
                         new_list.to_csv(nom_fichier, sep=';', index=False)
                     except Exception as e: 
-                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS",erreur='', secret_key=session['secret_key'])
             
 
                     # on liste la ou les copropriétés présente dans notre nouvelle liste et le nombre de copro qu'on renvoie au second form 
                     liste_coproprietes = names_coproprietes(nom_fichier)
                     nombre_coproprietes = len(liste_coproprietes)
-                    return render_template("listecopro2.html", liste_coproprietes = liste_coproprietes, nombre_coproprietes = nombre_coproprietes, user_secret_key = secret_key )
+                    return render_template("listecopro2.html", liste_coproprietes = liste_coproprietes, nombre_coproprietes = nombre_coproprietes, user_secret_key = secret_key, secret_key=session['secret_key'] )
                     
 
                 else:
                     # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                     os.remove(nom_fichier)
-                    return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='')
+                    return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='', secret_key=session['secret_key'])
             else:
-                return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné.", erreur='')
+                return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné.", erreur='', secret_key=session['secret_key'])
         else: 
-            return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='')
+            return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='', secret_key=session['secret_key'])
     else: 
-        return render_template("listecopro.html")
+        return render_template("listecopro.html", secret_key=session['secret_key'])
 
 #affichage du 2eme form avant la création de liste_copropriétaires.csv
 @app.route("/fichier/RP", methods=["GET", "POST"])
 @login_required
 def form(): 
+    secret_key = session.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
     if request.method == "POST":
         if request.form.get("OuiNon_RP")== "oui":
             # On refait la liste des différentes copro pour connaitre le nombre de retour
-            new_list = f"/tmp/{app.secret_key}.csv"
+            new_list = f"/tmp/{secret_key}.csv"
 
             try: 
                 liste_coproprietes = names_coproprietes(new_list)
             except Exception as e: 
-                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des immeubles, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des immeubles, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
             
             nombre_coproprietes = len(liste_coproprietes)
 
@@ -193,22 +202,22 @@ def form():
                         df = residence_principale(new_list, adresse_residence, nom_immeuble)
                         df.to_csv(new_list, sep=';', index=False)
                     except Exception as e: 
-                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur=f"erreur retournée : {str(e)}")
+                        return render_template("erreur.html", attention = "une erreur s'est produite lors de la recherche de résidence principale, veillez à transmettre le document d'origine d'ICS et les adresses des copropriétés sous cette form 'adresse, code postal ville'", erreur="", secret_key=session['secret_key'])
                     
                 else : 
                     continue
 
             # fonction de renvoie de ma nouvelle liste
-            return redirect("/fichier/lot")
+            return render_template("listecopro3.html", secret_key=session['secret_key'])
         else: 
-            new_list = f"/tmp/{app.secret_key}.csv"
+            new_list = f"/tmp/{secret_key}.csv"
             liste_csv = pd.read_csv(new_list, delimiter=';', encoding='latin-1')
             if 'RP' in liste_csv.columns : 
                 del liste_csv['RP']
             liste_csv.to_csv(new_list, sep=';', index=False)
-            return redirect("/fichier/lot")
+            return render_template("listecopro3.html", secret_key=session['secret_key'])
     else: 
-        nom_fichier = f"/tmp/{app.secret_key}.csv"
+        nom_fichier = f"/tmp/{secret_key}.csv"
         if os.path.isfile(nom_fichier): 
             liste_csv = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
             #on rajoute la colonne RP si on ne l'a plus 
@@ -216,20 +225,25 @@ def form():
             liste_csv.to_csv(nom_fichier, sep=';', index=False)
             liste_coproprietes = names_coproprietes(nom_fichier)
             nombre_coproprietes = len(liste_coproprietes)
-            return render_template("listecopro2.html",liste_coproprietes = liste_coproprietes , nombre_coproprietes = nombre_coproprietes)
+            return render_template("listecopro2.html",liste_coproprietes = liste_coproprietes , nombre_coproprietes = nombre_coproprietes, secret_key=session['secret_key'])
         else: 
-            return render_template("listecopro.html")
+            return render_template("listecopro.html", secret_key=session['secret_key'])
 
 #page pour ajouter les numéro de lot 
 @app.route("/fichier/lot", methods=["GET", "POST"])
 @login_required
 def form2():
+    # Générer une clé secrète unique pour cet utilisateur
+    secret_key = session.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
+    
     if request.method == "POST":
         if request.form.get("OuiNon_lot") == "oui": 
             if "lot_csv" in request.files:
                 fichier_upload = request.files["lot_csv"]
                 if fichier_upload.filename != "":
-                    nom_fichier = f"/tmp/{app.secret_key}lots.csv"
+                    nom_fichier = f"/tmp/{secret_key}lots.csv"
 
                     fichier_upload.save(nom_fichier)
 
@@ -243,61 +257,74 @@ def form2():
                             fichier_lot = tri_liste_lot(liste_lot)
                             fichier_lot.to_csv(nom_fichier, sep=';', index=False)
                         except Exception as e: 
-                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des lots, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des lots, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
 
                         #pour chaque nom de copropritaire ajouter une colonne avec lot de l'appartement
-                        new_list=f"/tmp/{app.secret_key}.csv"
+                        new_list=f"/tmp/{secret_key}.csv"
                         try :
                             df = add_lot(nom_fichier, new_list)
                             df.to_csv(new_list, sep=';', index=False)
                         except Exception as e: 
-                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
 
-                        return redirect("/liste_coproprietaires_downloads")
+                        return render_template("downloads_liste_coproprietaires.html", secret_key=session['secret_key'])
                         
 
                     else:
                         # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                         os.remove(nom_fichier)
-                        return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='')
+                        return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='', secret_key=session['secret_key'])
                 else:
-                    return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné", erreur='')
+                    return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné", erreur='', secret_key=session['secret_key'])
             else:
-                return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='')
+                return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='', secret_key=session['secret_key'])
         else:
-            liste_csv = pd.read_csv(f"/tmp/{app.secret_key}.csv", delimiter=';', encoding='latin-1')
+            liste_csv = pd.read_csv(f"/tmp/{secret_key}.csv", delimiter=';', encoding='latin-1')
             del liste_csv['lot_logement']
             del liste_csv['n_lot/n_plan/localisation(bat,esc,etg,pt)']
             del liste_csv['lot_professionnel']
             del liste_csv['lot_autre']
-            liste_csv.to_csv(f"/tmp/{app.secret_key}.csv", sep=';', index=False)
-            return redirect("/liste_coproprietaires_downloads")
+            liste_csv.to_csv(f"/tmp/{secret_key}.csv", sep=';', index=False)
+            return render_template("downloads_liste_coproprietaires.html", secret_key=session['secret_key'])
     else: 
-        return render_template("listecopro3.html")
+        return render_template("listecopro3.html", secret_key=session['secret_key'])
     
 #page d'indication et de bouton de téléchargement de liste_copropriétaires.csv
 @app.route('/liste_coproprietaires_downloads')
 @login_required
 def page_de_telechargement():
-    fichier = f"/tmp/{app.secret_key}.csv"
-    return render_template("downloads_liste_coproprietaires.html", fichier = fichier)
+    # Générer une clé secrète unique pour cet utilisateur
+    secret_key = session.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
+    
+    fichier = f"/tmp/{secret_key}.csv"
+    return render_template("downloads_liste_coproprietaires.html", fichier = fichier, secret_key=session['secret_key'])
 
 # fonction de renvoie de ma nouvelle liste
 @app.route('/downloads')
 @login_required
 def telechargement(): 
-        return send_file(f"/tmp/{app.secret_key}.csv", 
-            as_attachment=True,
-            download_name='liste_coproprietaires.csv',
-            mimetype='text/csv')
+    # Générer une clé secrète unique pour cet utilisateur
+    secret_key = session.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
+    return send_file(f"/tmp/{secret_key}.csv", 
+        as_attachment=True,
+        download_name='liste_coproprietaires.csv',
+        mimetype='text/csv')
 
 
 @app.route('/MAJliste', methods=["GET", "POST"])
 @login_required
-def recuperer_newliste(): 
+def recuperer_newliste():
+    # Générer une clé secrète unique pour cet utilisateur
+    secret_key = session.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
     if request.method == "POST":
         fichiers_user = ["votre_liste", "liste_ics"]
-        name_fichier = [f"/tmp/{app.secret_key}liste_user.csv", f"/tmp/{app.secret_key}liste_ics.csv"]
+        name_fichier = [f"/tmp/{secret_key}liste_user.csv", f"/tmp/{secret_key}liste_ics.csv"]
         for name in range(len(fichiers_user)): 
             if fichiers_user[name] in request.files: 
                 fichier = request.files[fichiers_user[name]]
@@ -309,38 +336,42 @@ def recuperer_newliste():
                         continue
                     else:
                         os.remove(name_fichier[name])
-                        return render_template("erreur.html", attention = f"Le fichier {fichiers_user[name]} n'est pas un fichier CSV.", erreur='')
+                        return render_template("erreur.html", attention = f"Le fichier {fichiers_user[name]} n'est pas un fichier CSV.", erreur='', secret_key=session['secret_key'])
                 else: 
-                     return render_template("erreur.html", attention = f"Aucun fichier n'a été sélectionné pour '{fichiers_user[name]}'", erreur='')
+                     return render_template("erreur.html", attention = f"Aucun fichier n'a été sélectionné pour '{fichiers_user[name]}'", erreur='', secret_key=session['secret_key'])
             else: 
-                return render_template("erreur.html", attention = f"Aucun fichier n'a été téléchargé concernant {fichiers_user[name]}'", erreur='')
+                return render_template("erreur.html", attention = f"Aucun fichier n'a été téléchargé concernant {fichiers_user[name]}'", erreur='', secret_key=session['secret_key'])
         
         # on met en page comme à la creation le fichier ICS 
         try: 
-            fichier = pd.read_csv(f"/tmp/{app.secret_key}liste_ics.csv", delimiter=';', encoding='latin-1')
+            fichier = pd.read_csv(f"/tmp/{secret_key}liste_ics.csv", delimiter=';', encoding='latin-1')
             df = transform_file(fichier)
             df = df.drop('RP', axis=1)
             #au lieu de listecopropriétaire.csv c'est toujours liste_ics.csv
-            df.to_csv(f"/tmp/{app.secret_key}liste_ics.csv", sep=';', index=False)
+            df.to_csv(f"/tmp/{secret_key}liste_ics.csv", sep=';', index=False)
         except Exception as e : 
-            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des copropriétaires, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
         
 
-        return render_template("compare_list1.html")
+        return render_template("compare_list1.html", secret_key=session['secret_key'])
         
     else:
-        return render_template("comparer_liste.html") 
+        return render_template("comparer_liste.html", secret_key=session['secret_key']) 
     
      
 @app.route('/MAJliste/lot', methods=["GET", "POST"])
 @login_required
-def addlot(): 
+def addlot():
+    # Générer une clé secrète unique pour cet utilisateur
+    secret_key = session.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
     if request.method == "POST":
         if request.form.get("OuiNon_lot") == "oui": 
             if "lot_csv" in request.files:
                 fichier_upload = request.files["lot_csv"]
                 if fichier_upload.filename != "":
-                    nom_fichier = f'/tmp/{app.secret_key}liste_lots.csv'
+                    nom_fichier = f'/tmp/{secret_key}liste_lots.csv'
 
                     fichier_upload.save(nom_fichier)
 
@@ -352,17 +383,17 @@ def addlot():
                         #récupère les noms/prénoms en enlevant le ()
                         try :  
                             df = tri_liste_lot(liste_lot)
-                            df.to_csv(f"/tmp/{app.secret_key}liste_lots.csv", sep=';', index=False)
+                            df.to_csv(f"/tmp/{secret_key}liste_lots.csv", sep=';', index=False)
                         except Exception as e: 
-                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des lots, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des lots, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
 
                         #pour chaque nom de copropritaire ajouter une colonne avec lot de l'appartement
-                        new_list=f'/tmp/{app.secret_key}liste_ics.csv'
+                        new_list=f'/tmp/{secret_key}liste_ics.csv'
                         try :
-                            df = add_lot(f"/tmp/{app.secret_key}liste_lots.csv", new_list)
+                            df = add_lot(f"/tmp/{secret_key}liste_lots.csv", new_list)
                             df.to_csv(new_list, sep=';', index=False)
                         except Exception as e: 
-                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur=f"erreur retournée : {str(e)}")
+                            return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
 
                         return redirect("/MAJliste/2")
                         
@@ -370,43 +401,47 @@ def addlot():
                     else:
                         # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                         os.remove(nom_fichier)
-                        return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='')
+                        return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='', secret_key=session['secret_key'])
                 else:
-                    return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné", erreur='')
+                    return render_template("erreur.html", attention = "Aucun fichier n'a été sélectionné", erreur='', secret_key=session['secret_key'])
             else:
-                return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='')
+                return render_template("erreur.html", attention = "Aucun fichier n'a été téléchargé dans la requête.", erreur='', secret_key=session['secret_key'])
         else:
-            liste_csv = pd.read_csv(f'/tmp/{app.secret_key}liste_ics.csv', delimiter=';', encoding='latin-1')
+            liste_csv = pd.read_csv(f'/tmp/{secret_key}liste_ics.csv', delimiter=';', encoding='latin-1')
             del liste_csv['lot_logement']
             del liste_csv['n_lot/n_plan/localisation(bat,esc,etg,pt)']
             del liste_csv['lot_professionnel']
             del liste_csv['lot_autre']
-            liste_csv.to_csv(f'/tmp/{app.secret_key}liste_ics.csv', sep=';', index=False)
+            liste_csv.to_csv(f'/tmp/{secret_key}liste_ics.csv', sep=';', index=False)
             return redirect("/MAJliste/2")
     else:
-        return render_template("comparer_liste.html") 
+        return render_template("compare_list1.html", secret_key=session['secret_key']) 
 
 @app.route('/MAJliste/2')
 @login_required
 def MAJliste(): 
+    # Générer une clé secrète unique pour cet utilisateur
+    secret_key = request.args.get('secret_key')
+    if not secret_key: 
+        return redirect(url_for('login'))
     #on compare liste_ics.csv et liste_user.csv et sa renvoie la nouvelle liste vers liste_copropriétaires
     try : 
-        liste_user = compare_list(f'/tmp/{app.secret_key}liste_ics.csv', f"/tmp/{app.secret_key}liste_user.csv")
+        liste_user = compare_list(f'/tmp/{secret_key}liste_ics.csv', f"/tmp/{secret_key}liste_user.csv")
     except Exception as e:
-        return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur=f"erreur retournée : {str(e)}")
+        return render_template("erreur.html", attention = "une erreur s'est produite lors de la mise à jour, veillez à transmettre le document d'origine d'ICS et que vous ayez bien conservé les colonnes nécessaires à la vérification (code_copropriete et code_coproprietaire)", erreur="", secret_key=session['secret_key'])
 
     
     #on  verifie le retour de compare_list 
     if isinstance(liste_user, pd.DataFrame):
-        liste_user.to_csv(f"/tmp/{app.secret_key}.csv", sep=';', index=False)
-        return redirect("/liste_coproprietaires_downloads")
+        liste_user.to_csv(f"/tmp/{secret_key}.csv", sep=';', index=False)
+        return render_template("downloads_liste_coproprietaires.html", secret_key=session['secret_key'])
     elif liste_user == 'code_coproprietaire': 
-        return render_template("erreur.html", attention = "la colonne 'code_coproprietaire' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
+        return render_template("erreur.html", attention = "la colonne 'code_coproprietaire' n'est pas présente dans votre liste impossible de mettre à jour le fichier", secret_key=session['secret_key'])
     elif liste_user == 'code_copropriete': 
-        return render_template("erreur.html", attention = "la colonne 'code_copropriete' n'est pas présente dans votre liste impossible de mettre à jour le fichier")
+        return render_template("erreur.html", attention = "la colonne 'code_copropriete' n'est pas présente dans votre liste impossible de mettre à jour le fichier", secret_key=session['secret_key'])
 
 
 app.config['ENV'] = 'production'
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)

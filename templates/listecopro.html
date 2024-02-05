@@ -7,7 +7,7 @@
 
 {% block main %}
     <h1> Transformer la liste copropriétaires d'ICS vers un fichier détaillé </h1>
-    <form action="{{ url_for('/fichier') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url_for('fichier') }}" method="POST" enctype="multipart/form-data">
         <label for="file_csv">Déposer votre dossier au format .csv :</label>
             <input type="file" name="fichiercsv" id="file_csv" accept=".csv">
         <input type="submit" value="transformer mon fichier">
