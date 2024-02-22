@@ -1,15 +1,15 @@
 # liste-corpopri-taire
 Récupérer les
 
+=> coder une fonction qui vérifie toutes les heures la date de création des fichiers dans instance/files/
+=> vérifier que app.py est en mode deploiement et non developpement
+=> accès logout et creation de compte 
+=> est ce que cette ligne 'secret_key = session.get('secret_key')' récupère la secret key de l'user actuelle ou celle du dernier inscrit ? 
+=> pour tous les fichiers stockés si les secrets tokens ont expirées alors supprimer les fichiers liées. 
+=> verifier le code pour toutes les fonctionnalités (création liste, avec et sans RP et avec et sans lots)(Maj liste, avec et sans lots, mot de passe) => normalement tout est bon je dois juste vérifier la creation d'un compte 
+=> remettre en ligne le projet
+=> mettre en place une suppressions des fichiers présents depuis une heure 
 
-=> indiquer que si on met des copropriété dans notre fichier user qu'il n'y a pas dans liste ics on en tiendra pas compte, à l'inverse il rajoutera les copropriété présente dans liste ics et non présente dans liste user. 
-=> dès que l'app se coupe elle supprime les fichiers CSV présents 
-=> au lieu de supprimer un par un tous les csv juste faire une boucle qui supprime tous les csv, dans /MAJliste supprimer tous sauf liste_copropriétaires.csv 
-=> Tester avec plusieurs copro si RP OUI/NON marche bien et lot OUI/NON marche bien,
-=> intégrer une vidéo explicative du rendu finale et de comment récupérer ses fichiers sur ICS et changer les images actuellement affiché. 
-=> S'il y a un beug sur une ligne au lieu de faire une erreur, il renvoie le beug de la ligne avec les informations récupérées à l'user qui l'enregistre manuellement. 
-=> regarder si je peux créer un fichier qui éxécute du code dans le terminal afin de lancer mon programme et ainsi faire tout en local sur les ordi et ne pas avoir besoin de push en ligne mon code. 
-=> faire un système de connexions pour une entreprise.
-=> faire mon truc de clé en extractant de ICS les entreprises et copropriétaire (pour noter qui récupère les clés ou pour des clés stocké chez nous de clés privative) QUID des nouvelles entreprises ou coprorpriétaire qui ne serait pas dans la liste à jour ? 
+
 
 

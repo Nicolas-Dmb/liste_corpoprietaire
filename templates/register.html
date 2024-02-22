@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout1.html" %}
 
 {% block link %}
 <link rel="stylesheet" href="{{url_for('static', filename='connexion.js')}}">
@@ -27,4 +27,5 @@
                 <p class="same">mot de passe correct</p>
         <input type="submit" value="Valider">
     </form>
+    <a class="link" href="{{ url_for('login')}}">Déjà un compte</a>
 {% endblock %}

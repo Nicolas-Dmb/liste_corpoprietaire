@@ -11,10 +11,6 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <header>
-        <a class="homepage" href="{{url_for('accueil')}}"><img class="logo_accueil" src="{{url_for('static', filename='homepage.svg')}}"></a>
-        <a class="logout" href="{{ url_for('logout')}}">Déconnexion</a>
-    </header>
     {% block main %}
     {% endblock %}
 </body>

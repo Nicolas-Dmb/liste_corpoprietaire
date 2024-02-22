@@ -44,8 +44,16 @@ p{
     text-align: center;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo_accueil{
-    width: 3%;
+    width:6%;
+}
+.logout{
+    margin:15px;
 }
 
 iframe {
@@ -63,6 +71,14 @@ iframe {
     font-size: 0.5em;
 }
 
+.link{
+    font-size: 1em;
+    display: block;
+    width: 120px; 
+    margin: auto;
+    color:black;
+}
+
 @media screen and (max-width: 1200px) {
     h1 {
         font-size: 150%;
@@ -71,7 +87,11 @@ iframe {
         font-size: 120%;
     }
     .logo_accueil{
-        width: 5%;
+        width: 12%;
+        margin:10px;
+    }
+    .logout{
+        margin:12px;
     }
     iframe {
         margin: auto;

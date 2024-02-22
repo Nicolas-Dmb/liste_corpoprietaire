@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout1.html" %}
 
 {% block link %}
 <link rel="stylesheet" href="{{url_for('static', filename='')}}">
@@ -17,4 +17,5 @@
             <input type="password" id="password" name="password">
         <input type="submit" value="Valider">
     </form>
+    <a class="link" href="{{ url_for('register')}}">Créer un compte</a>
 {% endblock %}

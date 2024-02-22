@@ -80,7 +80,11 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
 
 
 
-
+adresse_copropriete = "8 Rue de la Rousse, 35 400 Saint-Malo"
+nom_immeuble = "CHAMPLAIN"
+liste_csv = "liste champlain user.csv"
+liste_copro = residence_principale(liste_csv, adresse_copropriete, nom_immeuble)
+liste_copro.to_csv("liste champlain user.csv", encoding='latin-1')
                  
 
 
@@ -102,7 +106,7 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
 
 
 
-    '''
+'''
     # on fait des mots clés avec l'adresse de l'immeuble
     key_word = [] #mots clés de l'adresse de l'immeuble (sans CP ou numéro)
     adresse_copropriete += " " #pour controler le dernier mot 
