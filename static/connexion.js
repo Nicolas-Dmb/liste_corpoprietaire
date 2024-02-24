@@ -25,7 +25,6 @@ MPconf.addEventListener("input", () => {
 form.addEventListener("submit", (event)=> {
     // On empêche le comportement par défaut
     event.preventDefault();
-
     let verif = verifMP(MP)
     let same = sameMP(MP, MPconf)
 
@@ -90,8 +89,6 @@ function sameMP(MP, MPconf){
     let valeurMP = MP.value;
     let valeurMPconf = MPconf.value
     let same = document.querySelector(".same")
-    console.log(valeurMP)
-    console.log(valeurMPconf)
     if(valeurMP === valeurMPconf){
         same.classList.add("ok")
         return true; 

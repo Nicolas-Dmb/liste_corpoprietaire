@@ -1,7 +1,7 @@
 {% extends "layout1.html" %}
 
 {% block link %}
-<link rel="stylesheet" href="{{url_for('static', filename='connexion.js')}}">
+<script src="{{url_for('static', filename='connexion.js')}}" defer></script>
 <link rel="stylesheet" href="{{url_for('static', filename='connexion.css')}}">
 {% endblock %}
 {% block title %} Login {% endblock %}
