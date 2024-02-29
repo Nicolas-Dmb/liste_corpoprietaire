@@ -39,9 +39,12 @@ app.config['SQLALCHEMY_DATABASE_URI']  = 'sqlite:///session.db'
 db_account.init_app(app)
 
 class Account(UserMixin, db_account.Model): 
-    ID_user = db_account.Column(db_account.String(255), primary_key=True, unique=True, nullable=False)
+    id = db_account.Column(db_account.String(255), primary_key=True, unique=True, nullable=False)
     Password = db_account.Column(db_account.String(255), nullable=False)
     Email = db_account.Column(db_account.String(255), nullable=False, unique=True)
+
+    def get_id(self):
+        return str(self.id)
 
 with app.app_context():
     db_account.create_all()
@@ -87,7 +90,7 @@ def login():
         if not request.form.get("password"): 
             return render_template("login.html", attention = "Vous devez transmettre un mot de passe")
         
-        user_informations = Account.query.filter_by(ID_user = request.form.get("username")).first()
+        user_informations = Account.query.filter_by(id = request.form.get("username")).first()
 
         if user_informations: 
             if bcrypt.check_password_hash(user_informations.Password, request.form.get("password")): 
@@ -122,7 +125,7 @@ def register():
         if request.form.get("password") != request.form.get("password2"):
             return render_template("register.html", attention = "Erreur dans la confirmation du mot de passe")
         
-        user_informations = Account.query.filter_by(ID_user = request.form.get("username")).first()
+        user_informations = Account.query.filter_by(id = request.form.get("username")).first()
         if user_informations: 
             return render_template("register.html", attention = "Ce nom d'utilisateur existe déjà")
 
@@ -130,7 +133,7 @@ def register():
         identifiant = request.form.get('username')
         email = request.form.get('Email')
         password = bcrypt.generate_password_hash(request.form.get('password'))
-        account = Account(ID_user = identifiant, Password = password, Email = email)
+        account = Account(id = identifiant, Password = password, Email = email)
         db_account.session.add(account)
         db_account.session.commit()
 
