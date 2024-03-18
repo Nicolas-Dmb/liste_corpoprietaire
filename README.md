@@ -5,8 +5,6 @@ Application web créée pour gérer les données extraites du logiciel ICS (logi
 
 Tableau après traitement :
 ![Tableau après](static/Apres.png)
-## Avertissement
-Les données extraites d'ICS sont sensibles. Ce projet s'inscrit dans une démarche d'apprentissage du developpement informatique. Il est vivement déconseillé de l'utiliser pour le traitement des données de votre entreprise.
 
 ## Demo
 ### Extraitres les données d'ICS 
@@ -58,3 +56,5 @@ Avec ce projet j'ai pu réutiliser le framework flask, déjà vu grâce à CS50.
 - Le déploiement d'une application web sur un VPS, 
 - La sécurisation d'un VPS. 
 
+## Avertissement
+Les données extraites d'ICS sont sensibles. Ce projet s'inscrit dans une démarche d'apprentissage du developpement informatique. Il est vivement déconseillé de l'utiliser pour le traitement des données de votre entreprise.
