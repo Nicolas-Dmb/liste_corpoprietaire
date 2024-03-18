@@ -8,18 +8,18 @@ def nettoyer_caracteres(indata):
     return indata 
 
 def transform_file(csvfile):
-    # chargé les fichiers excel et changer le nom des colonnes  
+    # charger les fichiers excel et changer le nom des colonnes  
     fichier = csvfile
     if len(fichier.columns) == 3 : 
         fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees']
     elif len(fichier.columns) == 4 :
          fichier.columns= ['coproprietaires', 'immeubles', 'coordonnees', '']
 
-    # on va nettoyer les caractères qui ne sont pas pris en charge 
+    # Nettoyage des caractères non traitable
     for column in fichier.columns : 
         fichier[column] = fichier[column].apply(nettoyer_caracteres)
 
-    #définition de toutes mes colonnes de mon futur tableau
+    #définition de toutes mes colonnes
     data= []
     for row in range(len(fichier)):
         if not pd.isnull(fichier['coproprietaires'][row]):
@@ -171,7 +171,7 @@ def transform_file(csvfile):
         #ajouter à info ce qu'il y a après la parenthèse si l'info est plus grande que 14
         if len(liste_mail) > 1:
             if len(liste_mail[1]) > 15 :
-                info = str(liste_mail[1]).strip('('' '')')#on supprime les espaces au début et à la fin ainsi que la '('et ')'
+                info = str(liste_mail[1]).strip('('' '')') #on supprime les espaces au début et à la fin ainsi que la '('et ')'
                 donnée ={
                     'info': info,
                 }
@@ -186,7 +186,7 @@ def transform_file(csvfile):
         information= []
         adresse_P=[]
         ville=[]
-        # je créer une liste des coordonnées en séparant les ! et les / avant une ') ':
+        # on sépare les ! et les / avant une ') ':
         column = column.replace(") /", "!")
         list_coordonnees = column.split('!')
 
@@ -194,7 +194,7 @@ def transform_file(csvfile):
         for coordonnee in list_coordonnees :
             coordonnee = coordonnee.strip()
 
-        # on cherche à verifier si c'est un num en comptant le nom de chiffre
+        # on cherche à verifier si c'est un num en comptant le nombre de chiffre
             digit = 0 
             for char in coordonnee:
                 if char.isdigit() :
@@ -222,7 +222,7 @@ def transform_file(csvfile):
             char = len(adresse_P[0]['adresse']) - 1 
             adresse = adresse_P[0]['adresse']
             digit = 0
-            # on fait une boucle inversée pour trouver les 5 derniers chiffres à la suite
+            # on fait une boucle inversé pour trouver les 5 derniers chiffres à la suite
             while char != 0 :
                 if adresse[char].isdigit() :
                     digit += 1
