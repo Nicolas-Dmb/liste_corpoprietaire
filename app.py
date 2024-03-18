@@ -20,7 +20,7 @@ template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp
 static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 
 app = Flask(__name__)
-#app.config['SERVER_NAME'] = 'listexcel.fr/' 
+app.config['SERVER_NAME'] = 'listexcel.fr/' 
 app.secret_key = os.urandom(24)
 bcrypt = Bcrypt(app)
 
@@ -158,7 +158,6 @@ def accueil():
     if is_user_session_expired(secret_key) == True :
         return render_template("accueil.html", secret_key=session['secret_key'])
     else:
-        # Redirigez ou gérez l'absence de secret_key
         return redirect(url_for('logout'))
     
 
@@ -183,7 +182,7 @@ def fichier():
                     chemin_fichier = os.path.join(uploads_dir, nom_fichier)
                     #récupere la liste donner par l'user 
                     fichier = pd.read_csv(chemin_fichier, delimiter=';', encoding='latin-1')
-                    #transforme la liste de l'user en une liste détaillé  
+                    #transforme la liste de l'user en une liste détaillée  
                     try: 
                         new_list = transform_file(fichier)
                         new_list.to_csv(chemin_fichier, sep=';', index=False)
@@ -198,7 +197,6 @@ def fichier():
                     
 
                 else:
-                    # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                     os.remove(chemin_fichier)
                     return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='', secret_key=session['secret_key'])
             else:
@@ -217,7 +215,7 @@ def form():
         return redirect(url_for('logout'))
     if request.method == "POST":
         if request.form.get("OuiNon_RP")== "oui":
-            # On refait la liste des différentes copro pour connaitre le nombre de retour
+            # On refait la liste des différentes copros pour connaitre le nombre de retour
             new_list = os.path.join(uploads_dir, f"{secret_key['key']}.csv")
 
             try: 
@@ -227,7 +225,7 @@ def form():
             
             nombre_coproprietes = len(liste_coproprietes)
 
-            # on liste copro par copro les adresses recu 
+            # on liste copro par copro les adresses recues
             for copropriete in range(nombre_coproprietes): 
                 if request.form.get(f"adresses_{liste_coproprietes[copropriete]}"):
                     nom_immeuble = liste_coproprietes[copropriete]
@@ -264,11 +262,10 @@ def form():
         else: 
             return render_template("listecopro.html", secret_key=session['secret_key'])
 
-#page pour ajouter les numéro de lot 
+#page pour ajouter les numéros de lot
 @app.route("/fichier/lot", methods=["GET", "POST"])
 @login_required
 def form2():
-    # Générer une clé secrète unique pour cet utilisateur
     secret_key = session.get('secret_key')
     if is_user_session_expired(secret_key) == False: 
         return redirect(url_for('logout'))
@@ -284,7 +281,6 @@ def form2():
 
                     if fichier_upload.filename.lower().endswith(".csv"):
                         nom_fichier = os.path.join(uploads_dir, nom_fichier)
-                        #récupere la liste donner par l'user 
                         liste_lot = pd.read_csv(nom_fichier, delimiter=';', encoding='latin-1')
                         
                         #récupère les noms/prénoms en enlevant le ()
@@ -306,7 +302,6 @@ def form2():
                         
 
                     else:
-                        # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                         os.remove(nom_fichier)
                         return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='', secret_key=session['secret_key'])
                 else:
@@ -329,7 +324,6 @@ def form2():
 @app.route('/liste_coproprietaires_downloads')
 @login_required
 def page_de_telechargement():
-    # Générer une clé secrète unique pour cet utilisateur
     secret_key = session.get('secret_key')
     if is_user_session_expired(secret_key) == False: 
         return redirect(url_for('logout'))
@@ -341,7 +335,6 @@ def page_de_telechargement():
 @app.route('/downloads')
 @login_required
 def telechargement(): 
-    # Générer une clé secrète unique pour cet utilisateur
     secret_key = session.get('secret_key')
     if is_user_session_expired(secret_key) == False: 
         return redirect(url_for('logout'))
@@ -355,7 +348,6 @@ def telechargement():
 @app.route('/MAJliste', methods=["GET", "POST"])
 @login_required
 def recuperer_newliste():
-    # Générer une clé secrète unique pour cet utilisateur
     secret_key = session.get('secret_key')
     if is_user_session_expired(secret_key) == False: 
         return redirect(url_for('logout'))
@@ -401,7 +393,6 @@ def recuperer_newliste():
 @app.route('/MAJliste/lot', methods=["GET", "POST"])
 @login_required
 def addlot():
-    # Générer une clé secrète unique pour cet utilisateur
     secret_key = session.get('secret_key')
     if is_user_session_expired(secret_key) == False: 
         return redirect(url_for('logout'))
@@ -426,7 +417,7 @@ def addlot():
                         except Exception as e: 
                             return render_template("erreur.html", attention = "une erreur s'est produite lors de la récupération des lots, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
 
-                        #pour chaque nom de copropritaire ajouter une colonne avec lot de l'appartement
+                        #pour chaque nom de copropritaire on ajoute une colonne avec lot de l'appartement
                         new_list=os.path.join(uploads_dir, f'{secret_key["key"]}liste_ics.csv')
                         try :
                             df = add_lot(nom_fichier, new_list)
@@ -435,7 +426,6 @@ def addlot():
                             return render_template("erreur.html", attention = "une erreur s'est produite lors de la transmission des lots à votre liste copropriétaire, veillez à transmettre le document d'origine d'ICS", erreur="", secret_key=session['secret_key'])
                 
                     else:
-                        # Si ce n'est pas un fichier CSV, vous pouvez supprimer le fichier et renvoyer un message d'erreur
                         nom_fichier = os.path.join(uploads_dir, nom_fichier)
                         os.remove(nom_fichier)
                         return render_template("erreur.html", attention = "Le fichier téléchargé n'est pas un fichier CSV.", erreur='', secret_key=session['secret_key'])
