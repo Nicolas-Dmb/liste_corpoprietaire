@@ -26,9 +26,9 @@ def recup_CP(Ville):
     return digit         
 
 
-# on trie les adresses recu de la résidence on en fait des mots clés et on verifie _ on recoi les adresses une à une
+# Récupère les mots clés de chaque adresse  
 def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
-    # on sépare l'adresse du CP et de la ville
+    # Sépare l'adresse du CP et de la ville
     char = len(adresse_copropriete)-1
     adresse = adresse_copropriete
     CP_ville = ""
@@ -46,7 +46,6 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
             digit = 0 
         char -= 1
     
-    # on récupère une liste des mots clés sur l'adresse : 
     not_key_word=[ 'rue', 'du', 'le', 'route', 'de', 'la', 'allee', 'des', 'avenue', 'av', 'bd', 'des', 'apt', 'square', 'les', 'residence', 'sur', 'bld', 'boulevard', 'av.', 'quai', 'chemin', 'cours', 'ter', 'res', 'au', 'aux', 'l', 'parc', 'impasse', 'imp', 'd', 'place', 'pl', 'allée']
     key_word = []
     adresse = str(adresse_copropriete).split()
@@ -59,16 +58,16 @@ def residence_principale(liste_csv, adresse_copropriete, nom_immeuble):
             elif word.lower() not in not_key_word : 
                  key_word.append(word.lower())
     
-    # On compare l'adresse de la copro au copropriétaire de liste_copropriétaires
+    # Compare l'adresse de la copro aux copropriétaires
     liste = pd.read_csv(liste_csv, delimiter=';', encoding='latin-1', dtype='str')
 
     for row in range(len(liste)): 
          if nom_immeuble == liste.loc[row,'copropriete'] : 
-            #on va récupérer les CP de la copro et du copropriétaire : 
+            #Recupère les CP de la copro et du copropriétaire : 
             CP_copro = recup_CP(CP_ville)
             CP_coproprietaire = recup_CP(liste.loc[row,'ville'])
             if str(CP_copro) == str(CP_coproprietaire) : 
-                # on compare la liste adresse copropriétaire avec celle de adresse copropriété 
+                # Comparaison
                 adresse = str(liste.loc[row,'adresse']).lower().split()
                 for word in key_word : 
                     if word in adresse : 
