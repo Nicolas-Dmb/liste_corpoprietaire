@@ -1,0 +1,36 @@
+Lot;Coproprietaire;NoPlan;CChg;Bat-Esc-Etg-Pt
+;;;;
+0001 Parking Ext.;MARTIN Martin (M ou Mme);1;;00  Co
+0002 Parking Ext.;NICOLAS Nicolas (Monsieur);2;;00  co
+0003 Parking Ext.;JOSEPHINE Josephine  (Mme);3;;0
+0004 Parking Ext.;JOSEPHINE Josephine  (Mme);4;;0
+0005 Parking Ext.;PIERRE Pierre  (M ou Mme);5;;00  co
+0006 Parking Ext.;FANCH Fanch  (M et Mme);6;;00  co
+0007 Parking Ext.;KA ka (Mme);7;;00  co
+0008 Parking couvert;MICHELLE Michelle (Madame);8;;00  SS
+0009 Parking couvert;THIERRY Thierry  (Indivision);9;;00  SS
+0010 Parking couvert;ANNA Anna (Mme);10;;00  SS
+0011 Parking couvert;LOLO Lolo (Madame);11;;00  SS
+0013 Cave;LOLO Lolo (Madame);13;;00  SS
+0014 Cave;FANCH Fanch (M et Mme);14;;00  SS
+0015 Cave;MICHELLE Michelle (Madame);9;;00  SS
+0016 Cave;ANNA Anna (Mme);16;;00  SS
+0017 Cave;MARTIN Martin (M ou Mme);17;;00  SS
+0018 Cave;PIERRE Pierre  (M ou Mme);18;;00  SS
+0021 Cave;KA ka (Mme);21;;00  SS
+0022 Cave;THIERRY Thierry  (Indivision);22;;00  SS
+0024 T2;MICHELLE Michelle (Madame);24;;00  RC
+0025 Appartement;LOLO Lolo (Madame);25;;00  RC
+0026 Appartement;FANCH Fanch (M et Mme);26;;00  RC
+0027 Appartement;NICOLAS Nicolas (Monsieur);27;;00  RC
+0028 Appartement;ANNA Anna (Mme);28;;00  01
+0029 Cellier;ANNA Anna (Mme);29;;00  01
+0030 Cellier;MARTIN Martin (M ou Mme);30;;00  01
+0031 Appartement;MARTIN Martin (M ou Mme);31;;00  01
+0032 Appartement;PIERRE Pierre  (M ou Mme);32;;00  01
+0033 Cellier;PIERRE Pierre  (M ou Mme);33;;00  01
+0036 Appartement;JOSEPHINE Josephine  (Mme);36;;00  02
+0037 Appartement;KA ka (Mme);37;;00  02
+0038 Appartement;THIERRY Thierry  (Indivision);38;;00  02
+0039 Grenier;JOSEPHINE Josephine  (Mme);39;;00  CO
+9999 lot;THIERRY Thierry  (Indivision);9999;;0

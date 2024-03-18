@@ -1,0 +1,10 @@
+code_coproprietaire;Nom;civilite;code_copropriete;copropriete;adresse;ville;RP;tel1;mail1;DŽmarchages;lot_logement;n_lot/n_plan/localisation(bat,esc,etg,pt);lot_professionnel;lot_autre
+420904;MARTIN Martin ;M/Mme;221;CHAMP;22 Rue de Flask,;01001 La Ville;Non;02.99.00.00.00;;Oui;Appartement;lot:0031/plan:31.0/loc:00  01;;Cellier
+420910;JOSEPHINE Josephine  ;Mme;221;CHAMP;01 Rue de Python;10010 Le Monde;Non;06.72.72.72.72;ker@gmail.com;Oui;Appartement;lot:0036/plan:36.0/loc:00  02;;Grenier
+420917;PIERRE Pierre  ;M/Mme;221;CHAMP;;;Non;02.99.99.99.99;;Oui;Appartement;lot:0032/plan:32.0/loc:00  01;;Cellier
+420918;FANCH Fanch ;M/Mme;221;CHAMP;22 Rue de Javascript,;11000 Ldenzk;Non;;;Oui;Appartement;lot:0026/plan:26.0/loc:00  RC;;Cave
+424944;MICHELLE Michelle ;Mme;221;CHAMP;22 Rue de HTML,;11011 LE Ville;Non;06.30.30.30.30;lte@sfr.fr;Non;T2;lot:0024/plan:24.0/loc:00  RC;;Cave
+428334;KA ka ;Mme;221;CHAMP;;;Non;;;Oui;Appartement;lot:0037/plan:37.0/loc:00  02;;Cave
+428383;THIERRY Thierry  ;Indivision;221;CHAMP;22 Rue CSV,;01111 LE Ville;Non;02.99.99.99.99;fam@gmail.com;Oui;Appartement;lot:0038/plan:38.0/loc:00  02;;lot
+446744;ANNA Anna ;Mme;221;CHAMP;22 Rue de Excel,;00100 LE Ville;Non;06.21.21.21.21;bp@gmail.com;Non;Appartement;lot:0028/plan:28.0/loc:00  01;;Cellier
+449626;LOLO Lolo ;Mme;221;CHAMP;22 Rue de Pandas,E;00001 LE Ville;Non;;sop@gmail.com;Oui;Appartement;lot:0025/plan:25.0/loc:00  RC;;Cave
