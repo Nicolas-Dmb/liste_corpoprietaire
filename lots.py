@@ -42,18 +42,17 @@ def tri_liste_lot(liste_lot):
         new_data_lot = col_coproprietaire(liste_lot['Coproprietaire'][row], row, new_data_lot)
         
     df = pd.DataFrame(new_data_lot)
-    #print (fichier)
     return df
 
 
 def add_lot(liste_lot, liste_copro): 
     liste_lots = pd.read_csv(liste_lot, delimiter=';', encoding='latin-1', dtype='str')
     liste_copros = pd.read_csv(liste_copro, delimiter=';', encoding='latin-1', dtype='str')
-# on vient ici mettre les lots en fonction du type de lot dans la colonne qui correspond au mm nom dans liste copro 
+# met les lots en fonction du type de lot dans la colonne qui correspond au nom dans liste copro 
     # trois limites 
     # - si le copropriétaire est inscrit plusieurs fois dans la liste copro il y aura les mêmes lot d'indiqué 
     # - si le copropriétaire à plus d'un apt plus d'un lot divers et plus d'un bien local commercial il n'apparaitra qu'un seul de chaque type 
-    # - on ne distingue aucun immeuble ici car la liste lot n'affiche pas l'immeuble on regarde juste les noms si un copro est copro dans deux immeubles il sera affiche les lot d'un de ses immeubles sur les deux copro 
+    # - on ne distingue aucun immeuble ici car la liste lot n'affiche pas l'immeuble on regarde juste les noms si un copro est copro dans deux immeubles il sera affiché les lots d'un de ses immeubles sur les deux copro 
     for row_c in range(len(liste_copros)):
         for row_l in range(len(liste_lots)): 
             name_liste_copro =str(liste_copros['Nom'][row_c]).lower().strip()
@@ -71,7 +70,4 @@ def add_lot(liste_lot, liste_copro):
                     liste_copros.loc[row_c,'lot_autre'] = type_lot
 
     df = pd.DataFrame(liste_copros)
-    #print (fichier)
     return df
-
-    #doit ajouter au fichier excel les lots et retourner le nom du fichier 
